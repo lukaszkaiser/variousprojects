@@ -213,6 +213,16 @@ h3 { font-size: clamp(1.18rem, 1.9vw, 1.6rem); }
   display: block;
 }
 
+.card-image-link {
+  display: block;
+  height: 100%;
+}
+
+.card-image-link:focus-visible {
+  outline: 3px solid rgba(13, 97, 109, 0.55);
+  outline-offset: 4px;
+}
+
 .hero-fallback,
 .image-fallback {
   background:

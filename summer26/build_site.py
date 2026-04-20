@@ -1548,6 +1548,16 @@ STYLES = dedent(
       display: block;
     }
 
+    .card-image-link {
+      display: block;
+      height: 100%;
+    }
+
+    .card-image-link:focus-visible {
+      outline: 3px solid rgba(13, 97, 109, 0.55);
+      outline-offset: 4px;
+    }
+
     .hero-fallback,
     .image-fallback {
       background:
@@ -2028,10 +2038,26 @@ def ensure_dirs() -> None:
     (SITE / "towns").mkdir(parents=True, exist_ok=True)
 
 
-def render_image(url: str, alt: str, fallback_label: str, klass: str = "card-image") -> str:
+def render_image(
+    url: str,
+    alt: str,
+    fallback_label: str,
+    klass: str = "card-image",
+    href: str | None = None,
+) -> str:
     if url:
-        return f'<img class="{klass}" src="{escape(url)}" alt="{escape(alt)}" loading="lazy">'
-    return f'<div class="image-fallback"><div style="padding:1.3rem;color:white;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;">{escape(fallback_label)}</div></div>'
+        image_html = f'<img class="{klass}" src="{escape(url)}" alt="{escape(alt)}" loading="lazy">'
+    else:
+        image_html = (
+            '<div class="image-fallback">'
+            '<div style="padding:1.3rem;color:white;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;">'
+            f"{escape(fallback_label)}"
+            "</div>"
+            "</div>"
+        )
+    if href:
+        return f'<a class="card-image-link" href="{escape(href)}" aria-label="{escape(alt)}">{image_html}</a>'
+    return image_html
 
 
 def render_sources(items: list[tuple[str, str]]) -> str:
@@ -2130,10 +2156,12 @@ def layout(title: str, body: str, depth: int = 0) -> str:
 def build_index() -> None:
     shortlist_cards = []
     for hotel in SHORTLIST:
+        hotel_page = hotel_link(hotel)
+        town_page = town_link(next(t for t in TOWNS if t["slug"] == hotel["town_slug"]))
         shortlist_cards.append(
             f"""
             <article class="hotel-card">
-              {render_image(hotel["image"], hotel["name"], hotel["name"])}
+              {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
               <div class="hotel-card-body">
                 <div class="card-topline">
                   <span class="rank">{hotel["rank"]}</span>
@@ -2145,8 +2173,8 @@ def build_index() -> None:
                 </div>
                 <p>{escape(hotel["headline"])}</p>
                 <div class="hero-actions" style="margin-top:0;">
-                  <a class="button secondary small" href="{hotel_link(hotel)}">Open hotel page</a>
-                  <a class="button secondary small" href="{town_link(next(t for t in TOWNS if t["slug"] == hotel["town_slug"]))}">Open town page</a>
+                  <a class="button secondary small" href="{hotel_page}">Open hotel page</a>
+                  <a class="button secondary small" href="{town_page}">Open town page</a>
                 </div>
               </div>
             </article>
@@ -2156,10 +2184,11 @@ def build_index() -> None:
     ranking_cards = []
     for hotel in HOTELS:
         row = AVAILABILITY_MATRIX[hotel["slug"]]
+        hotel_page = hotel_link(hotel)
         ranking_cards.append(
             f"""
             <article class="hotel-card">
-              {render_image(hotel["image"], hotel["name"], hotel["name"])}
+              {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
               <div class="hotel-card-body">
                 <div class="card-topline">
                   <span class="rank">{hotel["rank"]}</span>
@@ -2171,7 +2200,7 @@ def build_index() -> None:
                 </div>
                 <p class="dense-copy">{escape(row["family_unit"])} family fit. {escape(row["grandparents_room"])} grandparents room. {escape(row["kitchenette"])}</p>
                 <div class="hero-actions" style="margin-top:0;">
-                  <a class="button secondary small" href="{hotel_link(hotel)}">Hotel report</a>
+                  <a class="button secondary small" href="{hotel_page}">Hotel report</a>
                 </div>
               </div>
             </article>
@@ -2194,17 +2223,18 @@ def build_index() -> None:
     for town in TOWNS:
         linked_hotels = HOTELS_BY_TOWN.get(town["slug"], [])
         hotel_labels = ", ".join(hotel["name"] for hotel in linked_hotels) if linked_hotels else "No matching hotel in the source notes"
+        town_page = town_link(town)
         town_cards.append(
             f"""
             <article class="town-card">
-              {render_image(town["image"], town["name"], town["name"])}
+              {render_image(town["image"], town["name"], town["name"], href=town_page)}
               <div class="town-card-body">
                 <div>
                   <h3>{escape(town["name"])}</h3>
                   <p class="muted" style="margin-top:0.5rem;">{escape(town["headline"])}</p>
                 </div>
                 <p>{escape(hotel_labels)}</p>
-                <a class="button secondary small" href="{town_link(town)}">Town page</a>
+                <a class="button secondary small" href="{town_page}">Town page</a>
               </div>
             </article>
             """
