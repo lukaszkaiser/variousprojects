@@ -21,7 +21,15 @@ def commons_page_url(filename: str) -> str:
 def maps_search_url(query: str) -> str:
     return f"https://www.google.com/maps/search/?api=1&query={quote(query)}"
 
-RESEARCH_DATE = "April 17, 2026"
+
+def booking_search_url(query: str) -> str:
+    return f"https://www.booking.com/searchresults.html?ss={quote(query)}"
+
+
+def tripadvisor_search_url(query: str) -> str:
+    return f"https://www.tripadvisor.com/Search?q={quote(query)}"
+
+RESEARCH_DATE = "April 20, 2026"
 STAY_WINDOW = "June 28, 2026 to July 25, 2026"
 STAY_NIGHTS = 27
 FAMILY_MODEL = (
@@ -47,6 +55,8 @@ INTERPRETATION_NOTES = [
     "The source note used `Marina w Kołobrzegu`; I treated that as `Marine Hotel` in Kołobrzeg.",
     "The source note used `Rosewia`; the resort brand is `Rosevia Resort & SPA`.",
     "Wave Międzyzdroje Resort & SPA was added as an extra comparison property.",
+    "This pass expands Świnoujście with the Baltic Park apartment ecosystem: Molo, Fort, and Loft.",
+    "Sopot was added as a new town, but the strongest apartment-style family option there sits on the Gdańsk / Jelitkowo edge rather than on the pier itself.",
 ]
 
 
@@ -63,7 +73,7 @@ HOTELS = [
         "signal_class": "verified",
         "headline": "Best overall match for the exact family layout you described.",
         "summary": (
-            "This is the cleanest all-around fit I found. The resort openly positions itself as a "
+            "This is still the cleanest all-around fit in the study. The resort openly positions itself as a "
             "rooms-and-apartments property by the sea, has strong kid infrastructure, and returned live "
             "inventory for both the parents-with-kids unit and a separate grandparents room across the full "
             "27-night sample window."
@@ -106,7 +116,7 @@ HOTELS = [
         "signal_class": "verified",
         "headline": "Best apartment-first option if privacy and space matter more than classic hotel corridors.",
         "summary": (
-            "Rosevia is the strongest true-resort apartment concept in the shortlist. The official site describes "
+            "Rosevia remains the strongest true-resort apartment concept in the set. The official site describes "
             "apartments in multiple houses, terraces or balconies, private beach access, heated pools, and a kids club. "
             "The live booking engine also returned a deep inventory of apartment categories for the long July window."
         ),
@@ -148,9 +158,9 @@ HOTELS = [
         "signal_class": "verified",
         "headline": "Excellent calmer-beach option near Kołobrzeg, with the clearest kitchenette wording of the shortlist.",
         "summary": (
-            "Grzybowo gives you a quieter base than Kołobrzeg while staying close to city infrastructure. The biggest "
-            "advantage here is that the live inventory explicitly included a `Premium Apartment with Kitchenette`, which "
-            "maps neatly to your parents-plus-kids setup."
+            "Grzybowo still gives you one of the best practical answers in the whole study. The biggest "
+            "advantage is that the live inventory explicitly included a `Premium Apartment with Kitchenette`, which "
+            "maps neatly to your parents-plus-kids setup while keeping Kołobrzeg close by."
         ),
         "why_it_works": [
             "Quiet location is helpful with a 3-year-old and 6-year-old.",
@@ -180,6 +190,84 @@ HOTELS = [
     },
     {
         "rank": 4,
+        "slug": "baltic-park-molo",
+        "name": "Baltic Park Molo Apartments by Zdrojowa",
+        "town": "Świnoujście",
+        "town_slug": "swinoujscie",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/de/26/f5/baltic-park-molo-apartments.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Beachfront apartment ecosystem with aquapark access",
+        "signal_class": "strong",
+        "headline": "Most promising new direct-beach apartment option in Świnoujście.",
+        "summary": (
+            "This is the most important addition in the new pass. Baltic Park Molo sits in the same high-energy "
+            "Baltic Park resort zone as Hilton and Radisson, but the product shape is much better for your trip: suites, "
+            "kitchenettes, promenade access, beach access, restaurants, and aquapark convenience in one compact ecosystem."
+        ),
+        "why_it_works": [
+            "Official description explicitly says the suites have fully equipped kitchenettes.",
+            "The location solves kid logistics unusually well: beach, promenade, food, and aquapark are all close together.",
+            "Review evidence repeatedly mentions breakfast in the Hilton and easy access to the broader complex infrastructure.",
+        ],
+        "family_fit": [
+            "This is one of the easiest 'parents in an apartment, grandparents nearby in the same ecosystem' ideas in the whole study.",
+            "It looks stronger as a real-life family base than the classic hotel rooms at Hilton or Radisson next door.",
+        ],
+        "availability": [
+            "Tripadvisor metasearch returned live pricing for the sample stay window and surfaced Booking.com as an active offer source.",
+            "I did not verify the exact parents-plus-kids apartment and separate grandparents room end to end inside the official booking engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "Parking fees, late-arrival communication, and some noise/ventilation complaints come up often enough to matter.",
+            "The ecosystem is easy, but exact check-in and breakfast logistics should be confirmed before paying.",
+        ],
+        "sources": [
+            ("Official apartment page", "https://zdrojowahotels.pl/en/baltic-park-molo"),
+            ("Booking.com search / listing", booking_search_url("Baltic Park Molo Apartments by Zdrojowa Świnoujście")),
+        ],
+    },
+    {
+        "rank": 5,
+        "slug": "golden-tulip-miedzyzdroje",
+        "name": "Golden Tulip Międzyzdroje Residence",
+        "town": "Międzyzdroje",
+        "town_slug": "miedzyzdroje",
+        "image": "https://media.iceportal.com/25592/photos/76919991_L.jpg",
+        "image_credit": "Official site / IcePortal image",
+        "signal": "Beach-apartment residence with very strong family review signal",
+        "signal_class": "strong",
+        "headline": "Best added Międzyzdroje option if you want a proven apartment residence near the beach.",
+        "summary": (
+            "Golden Tulip Międzyzdroje is exactly the kind of hotel-connected apartment residence that belongs in this study. "
+            "Tripadvisor descriptions and guest reviews point to large units, kitchenettes, a short beach walk, pool access, and "
+            "a much calmer family rhythm than the flashier premium towers."
+        ),
+        "why_it_works": [
+            "Tripadvisor describes the rooms as apartments with refrigerators and kitchenettes.",
+            "Family reviews repeatedly praise spacious layouts, breakfast, and the beach being very close.",
+            "This gives Międzyzdroje a second serious product shape beyond the premium Wave option.",
+        ],
+        "family_fit": [
+            "Very strong if you want an easier, more practical family apartment stay instead of a luxury-first stay.",
+            "This may be the safer Międzyzdroje family base if Wave availability or pricing gets uncomfortable.",
+        ],
+        "availability": [
+            "Tripadvisor metasearch returned live pricing for the sample stay, which is a meaningful positive signal for late June through July.",
+            "I did not verify the exact two-booking combination for parents-plus-kids and grandparents separately in the official engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "The residence sits on the quieter edge of town, which is either a plus or a minus depending on how much promenade life you want.",
+            "Wellness scale looks smaller than at Wave, and Wi‑Fi appears weaker than the room product deserves.",
+        ],
+        "sources": [
+            ("Official residence site", "https://miedzyzdroje.goldentulip.com/en-us/"),
+            ("Booking.com reviews", "https://www.booking.com/reviews/pl/hotel/golden-tulip-miedzyzdroje-residence.en-gb.html"),
+        ],
+    },
+    {
+        "rank": 6,
         "slug": "saltic-leba",
         "name": "Saltic Resort & Spa Łeba",
         "town": "Łeba",
@@ -188,11 +276,11 @@ HOTELS = [
         "image_credit": "Official resort image",
         "signal": "Verified directly in the live booking engine",
         "signal_class": "verified",
-        "headline": "A strong functional pick in a very family-friendly town, with one finish caveat.",
+        "headline": "A strong functional pick in one of the most family-friendly towns on the coast.",
         "summary": (
-            "Łeba is one of the strongest towns in the note set, and the Saltic booking engine did return "
-            "real long-stay availability for family and adult-only configurations. Functionally it works. The main hesitation "
-            "is the source-note warning that some of the Łeba rooms feel a bit plain."
+            "Łeba is still one of the strongest towns in the whole note set, and the Saltic booking engine did return "
+            "real long-stay availability for family and adult-only configurations. It slips slightly only because the new "
+            "Świnoujście and Międzyzdroje apartment ecosystems fit the brief even more directly."
         ),
         "why_it_works": [
             "Łeba is a very family-friendly town because of the dunes, beach scale, and excursion value.",
@@ -221,7 +309,7 @@ HOTELS = [
         ],
     },
     {
-        "rank": 5,
+        "rank": 7,
         "slug": "wave-miedzyzdroje",
         "name": "Wave Międzyzdroje Resort & SPA",
         "town": "Międzyzdroje",
@@ -232,10 +320,9 @@ HOTELS = [
         "signal_class": "strong",
         "headline": "The strongest premium wild-card: very likely to fit, but it needs manual inventory confirmation.",
         "summary": (
-            "Wave absolutely deserves to be in the serious shortlist. The official site "
-            "positions it as a luxury resort with spacious apartments by the beach, and the children page shows a real kids zone "
-            "rather than token family marketing. It looks structurally very close to what you want. I just could not complete a "
-            "clean July inventory proof at the same level as the Profitroom properties above."
+            "Wave still deserves to stay high because the product shape is extremely attractive: large apartments, direct beach feel, "
+            "real kids infrastructure, spa, and a proper premium-resort mood. It falls behind the more grounded apartment ecosystems only "
+            "because the hard July inventory proof remains softer."
         ),
         "why_it_works": [
             "Official site explicitly says apartments by the beach, plus spa and food.",
@@ -261,7 +348,85 @@ HOTELS = [
         ],
     },
     {
-        "rank": 6,
+        "rank": 8,
+        "slug": "baltic-park-fort",
+        "name": "Baltic Park Fort by Zdrojowa",
+        "town": "Świnoujście",
+        "town_slug": "swinoujscie",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/b0/63/fd/baltic-park-fort-by-zdrojowa.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Same beachfront ecosystem, but slightly less friction-free than Molo",
+        "signal_class": "strong",
+        "headline": "Very viable Świnoujście backup if Molo is tight or priced out.",
+        "summary": (
+            "Baltic Park Fort belongs in the same promising cluster as Molo. The review evidence points to a strong location, "
+            "big apartments, kitchen-and-balcony practicality, breakfast access in the Hilton, and one-hour aquapark access. "
+            "It ranks below Molo because the operational friction looks higher."
+        ),
+        "why_it_works": [
+            "Beach and promenade position are repeatedly praised by guests.",
+            "Kitchen-and-balcony comments suggest the day-to-day apartment experience really works for families.",
+            "The broader Baltic Park ecosystem still gives you weather-proof backup and dining choices.",
+        ],
+        "family_fit": [
+            "Very plausible if the family wants Świnoujście but does not need the absolute newest-feeling apartment block.",
+            "This is still much closer to your target shape than the classic rooms in Hilton or Radisson.",
+        ],
+        "availability": [
+            "Booking.com and Tripadvisor both show active property footprint and live 2026 pricing signals.",
+            "I did not verify the exact long-stay two-booking combination inside the official engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "Reception being in another building, parking friction, and extra fees come up regularly.",
+            "It looks easy to use once settled, but less seamless than Molo on the arrival/operations side.",
+        ],
+        "sources": [
+            ("Official apartment page", "https://zdrojowahotels.pl/en/baltic-park-fort"),
+            ("Booking.com listing", "https://www.booking.com/hotel/pl/baltic-park-fort-by-zdrojowa.pl.html"),
+        ],
+    },
+    {
+        "rank": 9,
+        "slug": "golden-tulip-gdansk-residence",
+        "name": "Golden Tulip Gdańsk Residence",
+        "town": "Sopot edge / Jelitkowo",
+        "town_slug": "sopot",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/63/8f/bc/golden-tulip-gdansk-residence.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best apartment-style family option around Sopot",
+        "signal_class": "strong",
+        "headline": "The strongest Sopot-area fit, even though it sits just on the Gdańsk side of the beach.",
+        "summary": (
+            "If the goal is Sopot-style access without losing the apartment logic, this is the property to know. "
+            "Golden Tulip Gdańsk Residence sits in Jelitkowo near the Sopot edge, right by the sand, and the official "
+            "description explicitly says the rooms have fully equipped kitchenettes."
+        ),
+        "why_it_works": [
+            "Kitchenettes are clearly described in the official product and guest reviews.",
+            "Families repeatedly mention the beach walk, play areas, paddling pool, and larger room layouts.",
+            "This is the cleanest answer I found for 'Sopot, but with family apartment practicality.'",
+        ],
+        "family_fit": [
+            "Very strong if you want the Tri-City zone but do not need to sleep right by Sopot pier.",
+            "It is more convincing for your brief than the classic luxury hotels in central Sopot.",
+        ],
+        "availability": [
+            "Tripadvisor metasearch returned live pricing for the sample stay, and Booking.com review traffic is deep and current.",
+            "I did not verify the exact parents-plus-kids plus grandparents combination in a direct booking engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "This is a Sopot-area solution, not a literal central-Sopot-on-the-pier solution.",
+            "Several guests mention soft beds, occasional cleaning inconsistency, and limited kitchen hardware in some categories.",
+        ],
+        "sources": [
+            ("Official residence site", "https://www.gdanskgoldentulip.pl/en/"),
+            ("Booking.com reviews", "https://www.booking.com/reviews/pl/hotel/golden-tulip-gdansk-residence.html"),
+        ],
+    },
+    {
+        "rank": 10,
         "slug": "apollo-residence",
         "name": "Apollo Residence",
         "town": "Darłówko / Darłowo",
@@ -272,10 +437,9 @@ HOTELS = [
         "signal_class": "strong",
         "headline": "A high-upside apartment choice if space matters most and hotel-style service matters less.",
         "summary": (
-            "Apollo Residence looks very good from an apartment point of view. The official site highlights seaside apartments "
+            "Apollo Residence still looks good from a pure apartment point of view. The official site highlights seaside apartments "
             "roughly 38 to 120 square meters in size, which is exactly the kind of space profile that works for parents with two "
-            "young kids. The catch is that the site behaves more like an apartment residence or development-style presentation than "
-            "a straightforward hotel booking system."
+            "young kids. The catch is that the site behaves more like an apartment residence than a conventional hotel booking flow."
         ),
         "why_it_works": [
             "Large apartment sizes suggest comfortable real-world living for a longer family stay.",
@@ -292,14 +456,14 @@ HOTELS = [
         ],
         "watchouts": [
             "Weakest online availability transparency among the serious contenders.",
-            "The site does not make hotel-connected service levels as clear as Rosevia, Linea Mare, or Saltic.",
+            "The site does not make hotel-connected service levels as clear as Rosevia, Linea Mare, or Baltic Park Molo.",
         ],
         "sources": [
             ("Official residence site", "https://apollo.masterm.pl/"),
         ],
     },
     {
-        "rank": 7,
+        "rank": 11,
         "slug": "aquarius-spa",
         "name": "Hotel Aquarius SPA",
         "town": "Kołobrzeg",
@@ -311,8 +475,8 @@ HOTELS = [
         "headline": "Best Kołobrzeg hotel-first candidate if you are willing to trade some apartment certainty for family amenities.",
         "summary": (
             "Aquarius looks like a genuinely family-capable 5-star resort. The official navigation clearly exposes an `Apartment` "
-            "category, and the children section highlights attractions, amenities, animations, and baby support. If you decide that "
-            "a strong hotel with an apartment option is good enough, Aquarius becomes much more compelling."
+            "category, and the children section highlights attractions, amenities, animations, and baby support. It remains one of "
+            "the best hotel-first fallbacks if the apartment-led properties tighten."
         ),
         "why_it_works": [
             "Apartment category exists on the official site.",
@@ -338,19 +502,19 @@ HOTELS = [
         ],
     },
     {
-        "rank": 8,
+        "rank": 12,
         "slug": "shellter-rogowo",
         "name": "Shellter Hotel Resort & Spa",
         "town": "Rogowo",
         "town_slug": "rogowo",
-        "image": "https://hotelshellter.pl/wp-content/uploads/2024/11/shellter-hotel-resort-and-spa-logo.webp",
+        "image": "https://hotelshellter.pl/wp-content/uploads/2025/02/DSCF3886-HDR-scaled.jpg",
         "image_credit": "Official hotel image",
-        "signal": "Good family-resort signal, but apartment depth is less clear than the top group",
+        "signal": "Good family-resort signal, but apartment depth is less clear than the stronger beach ecosystems",
         "signal_class": "strong",
-        "headline": "A plausible quiet-family resort, but weaker than the top shortlist on apartment evidence.",
+        "headline": "A plausible quiet-family resort, but weaker than the top apartment-led choices.",
         "summary": (
             "The Shellter official site leans heavily into family-with-children positioning and mentions a playroom, game room, "
-            "children’s water zone, and animations. As a family resort it makes sense. What I could not prove as strongly is that "
+            "children’s water zone, and animations. As a family resort it makes sense. What I still cannot prove as strongly is that "
             "it solves your exact apartment-plus-grandparents-room layout better than the properties ranked above it."
         ),
         "why_it_works": [
@@ -363,12 +527,12 @@ HOTELS = [
             "Less compelling if the apartment-with-micro-kitchen requirement is central.",
         ],
         "availability": [
-            "Official booking page exists, but I did not capture the same hard long-stay inventory proof as the top verified group.",
+            "Official booking page exists, but I did not capture the same hard long-stay inventory proof as the verified group.",
             "Use this one as a secondary shortlist candidate, not the first call.",
         ],
         "watchouts": [
             "The source note used the name `Shelter`; the official property name appears to be `Shellter`.",
-            "The official evidence for apartment depth is weaker than at Rosevia, Linea Mare, or Saltic Grzybowo.",
+            "The official evidence for apartment depth is weaker than at Rosevia, Linea Mare, or Baltic Park Molo.",
         ],
         "sources": [
             ("Official hotel site", "https://hotelshellter.pl/en/homepage/"),
@@ -376,7 +540,83 @@ HOTELS = [
         ],
     },
     {
-        "rank": 9,
+        "rank": 13,
+        "slug": "sopot-marriott-resort-spa",
+        "name": "Sopot Marriott Resort & Spa",
+        "town": "Sopot",
+        "town_slug": "sopot",
+        "image": "https://www.sopotmarriott.pl/resourcefiles/homeimages/widok-z-lotu-ptaka_1.png?version=3302026103048",
+        "image_credit": "Official hotel image",
+        "signal": "Premium direct-beach hotel, but more hotel-first than apartment-first",
+        "signal_class": "manual",
+        "headline": "Best classic beachfront Sopot hotel if you decide apartment shape matters less.",
+        "summary": (
+            "Sopot Marriott is a strong beachfront resort with an excellent location, spa depth, and a family-friendly tone. "
+            "It lands mid-pack because it looks like a very good hotel stay, not because it is the cleanest answer to the apartment-plus-grandparents-room brief."
+        ),
+        "why_it_works": [
+            "Direct beach position is one of the strongest in the whole Sopot area.",
+            "Booking and Tripadvisor both point to strong spa, breakfast, and family comfort.",
+            "This is a good fallback if you want Sopot itself more than apartment certainty.",
+        ],
+        "family_fit": [
+            "Works best if the parents-and-kids group can live comfortably in a hotel room or suite instead of an apartment.",
+            "Grandparents would likely find the classic resort format easy.",
+        ],
+        "availability": [
+            "Tripadvisor metasearch returned live sample-stay pricing and Booking.com has an active 2026 property footprint.",
+            "I did not verify a two-booking setup with a separate grandparents room and kitchenette-bearing family unit.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "This is more hotel-and-spa than apartment-and-residence.",
+            "Value for money and room shape matter more here than beach quality, which is excellent.",
+        ],
+        "sources": [
+            ("Official hotel site", "https://www.sopotmarriott.pl/"),
+            ("Booking.com reviews", "https://www.booking.com/reviews/pl/hotel/sopot-marriott-resort-and-spa.html"),
+        ],
+    },
+    {
+        "rank": 14,
+        "slug": "sheraton-sopot-hotel",
+        "name": "Sheraton Sopot Hotel",
+        "town": "Sopot",
+        "town_slug": "sopot",
+        "image": "https://www.sheratonsopot.pl/resourcefiles/homeimages/basen-sea-soul-spa.png?version=4082026121856",
+        "image_credit": "Official hotel image",
+        "signal": "Iconic beachfront Sopot hotel, but fundamentally hotel-first",
+        "signal_class": "manual",
+        "headline": "Prime central Sopot location, yet a weaker fit for the apartment brief than it first appears.",
+        "summary": (
+            "Sheraton Sopot is the obvious flagship if central Sopot matters. It is directly by the beach and pier, has high review scores, "
+            "and would be easy to love as a premium hotel trip. It stays below the residence-style options because the room shape is simply less aligned with what you asked for."
+        ),
+        "why_it_works": [
+            "Direct beach and pier location are hard to beat.",
+            "Review evidence around breakfast, location, and room comfort is consistently strong.",
+            "Grandparents would likely enjoy the classic luxury-hotel format.",
+        ],
+        "family_fit": [
+            "The location is exceptional, but the apartment-with-kitchen logic is much weaker than at Golden Tulip Gdańsk Residence.",
+            "This is better if the family is happy with premium hotel rooms rather than apartment living.",
+        ],
+        "availability": [
+            "Booking.com and Tripadvisor both show strong active property signal and live 2026 visibility.",
+            "I did not verify a family apartment plus separate grandparents-room combination, because that is not the natural product shape here.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "This is likely one of the pricier Sopot options.",
+            "If the kitchenette preference is real, central-Sopot prestige does not make up for the room-shape mismatch.",
+        ],
+        "sources": [
+            ("Official hotel site", "https://www.sheratonsopot.pl/"),
+            ("Booking.com reviews", "https://www.booking.com/reviews/pl/hotel/sheratonsopot.html"),
+        ],
+    },
+    {
+        "rank": 15,
         "slug": "grand-lubicz",
         "name": "Grand Lubicz Uzdrowisko",
         "town": "Ustka",
@@ -387,9 +627,8 @@ HOTELS = [
         "signal_class": "strong",
         "headline": "A very good hotel recommendation, but not one of the best apartment recommendations.",
         "summary": (
-            "The source notes flagged Grand Lubicz as a solid Ustka option and also warned that it is probably a bit away "
-            "from the beach. My research agrees with the overall shape: this looks like a strong, infrastructure-heavy family resort "
-            "with pools and wellness, but not an obvious apartment-first solution."
+            "Grand Lubicz remains a strong Ustka option with heavyweight pools, wellness, and family weather-proofing. "
+            "It lands lower only because the newer additions brought in more apartment-native options right on the beach."
         ),
         "why_it_works": [
             "Strong all-weather infrastructure is helpful with kids and grandparents.",
@@ -413,7 +652,7 @@ HOTELS = [
         ],
     },
     {
-        "rank": 10,
+        "rank": 16,
         "slug": "marine-hotel",
         "name": "Marine Hotel",
         "town": "Kołobrzeg",
@@ -425,8 +664,8 @@ HOTELS = [
         "headline": "A respectable Kołobrzeg resort, but not the shape I would pick first for your layout.",
         "summary": (
             "I treated the note `Marina w Kołobrzegu` as Marine Hotel. The official site shows a big-service seaside hotel with a "
-            "Kids Club, beach proximity, bowling, and lots of activity. That makes it easy to imagine as a pleasant vacation. It still "
-            "reads more like a hotel-first decision than the apartment-leaning options above it."
+            "Kids Club, beach proximity, bowling, and lots of activity. It still reads more like a hotel-first decision than the "
+            "apartment-leaning options above it."
         ),
         "why_it_works": [
             "Strong resort infrastructure and a direct seaside setting.",
@@ -443,14 +682,14 @@ HOTELS = [
         ],
         "watchouts": [
             "Name inference: the source notes said `Marina`; I mapped that to `Marine Hotel`.",
-            "Kołobrzeg has many neighboring apartment products, which may actually be better for your needs than the core hotel.",
+            "Kołobrzeg has better beach-apartment answers nearby than the core hotel itself.",
         ],
         "sources": [
             ("Official hotel site", "https://zdrojowahotels.pl/en/marine-hotel"),
         ],
     },
     {
-        "rank": 11,
+        "rank": 17,
         "slug": "hilton-swinoujscie",
         "name": "Hilton Świnoujście Resort & Spa",
         "town": "Świnoujście",
@@ -461,10 +700,8 @@ HOTELS = [
         "signal_class": "manual",
         "headline": "Excellent resort quality, weaker alignment to the apartment-and-kitchen priority.",
         "summary": (
-            "The source notes named Hilton and Radisson for Świnoujście, and the Hilton clearly belongs on any premium resort shortlist. "
-            "The official pages show a serious full-service resort inside the Baltic Park Molo complex, with strong dining, gym, and "
-            "shared attraction access. The issue is not quality. The issue is fit: this is much more obviously a high-end hotel than "
-            "an apartment-led family base."
+            "Hilton still belongs in the landscape because the broader Baltic Park district is so promising. "
+            "But once Molo and Fort are on the table, the Hilton becomes much easier to classify: premium hotel, weaker room-shape fit."
         ),
         "why_it_works": [
             "Top-tier resort standards and a strong Świnoujście location.",
@@ -489,7 +726,7 @@ HOTELS = [
         ],
     },
     {
-        "rank": 12,
+        "rank": 18,
         "slug": "radisson-blu-swinoujscie",
         "name": "Radisson Blu Resort, Świnoujście",
         "town": "Świnoujście",
@@ -498,11 +735,10 @@ HOTELS = [
         "image_credit": "",
         "signal": "Big-resort option, but not a leading fit for the apartment brief",
         "signal_class": "manual",
-        "headline": "A strong mainstream resort, but I would not start here for this exact family format.",
+        "headline": "A strong mainstream resort, but not the first place to start for this room format.",
         "summary": (
-            "Radisson Blu in Świnoujście makes sense on paper because the destination is strong and the resort is a known flagship. "
-            "But once I filtered everything through your actual layout needs, it ended up behind the apartment-first and verified "
-            "hybrid options."
+            "Radisson Blu in Świnoujście still makes sense in a conventional luxury-hotel comparison. "
+            "For this study, though, the apartment-led properties in the same district simply solve the brief more directly."
         ),
         "why_it_works": [
             "Świnoujście is one of the easiest big-beach destinations on the coast.",
@@ -515,15 +751,54 @@ HOTELS = [
         ],
         "availability": [
             "I did not confirm long-stay July availability for your exact configuration.",
-            "This stayed in the study because it appeared in the source notes, not because it beat the top apartment-led properties.",
+            "This stayed in the study because it appeared in the source notes, not because it beat the apartment-led properties nearby.",
         ],
         "watchouts": [
             "Apartment certainty is weak.",
-            "Compared with Wave in the same region, this one looks less naturally aligned with your stated setup.",
+            "Compared with Baltic Park Molo or Fort in the same district, this looks less naturally aligned with your stated setup.",
         ],
         "sources": [
             ("Official Radisson site", "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-swinoujscie"),
             ("Local resort page", "https://zdrojowahotels.pl/en/radisson-blu"),
+        ],
+    },
+    {
+        "rank": 19,
+        "slug": "baltic-park-loft",
+        "name": "Baltic Park Loft by Zdrojowa",
+        "town": "Świnoujście",
+        "town_slug": "swinoujscie",
+        "image": "",
+        "image_credit": "",
+        "signal": "Same complex ecosystem, but still the weakest direct evidence in this pass",
+        "signal_class": "strong",
+        "headline": "Worth checking if Molo and Fort are tight, but still the lowest-confidence Baltic Park lead.",
+        "summary": (
+            "Baltic Park Loft sits in the same attractive zone and Booking evidence suggests modern apartments, usable kitchens, "
+            "Hilton breakfast, and aquapark access. The reason it sits last is not that it looks bad. The reason is that its direct evidence base "
+            "is thinner than Molo, Fort, and the stronger standalone resorts."
+        ),
+        "why_it_works": [
+            "Booking reviews point to modern interiors, beach access, kitchen usability, and family stays with children.",
+            "The same Baltic Park ecosystem still gives you a very practical weather-proof vacation setup.",
+            "This may become important if you decide Świnoujście is the town and the first two apartment buildings are sold out.",
+        ],
+        "family_fit": [
+            "Potentially useful as a backup within the best new ecosystem added in this pass.",
+            "Harder to rank high because it is the least independently proven property in that cluster.",
+        ],
+        "availability": [
+            "Booking.com shows an active 2026 listing and review footprint, and Tripadvisor metasearch surfaced live pricing.",
+            "I did not verify the exact multi-room July setup or find as much deep review context as for Molo and Fort.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {STAY_WINDOW} ({STAY_NIGHTS} nights).",
+        ],
+        "watchouts": [
+            "This is the weakest-evidence property in the Baltic Park group.",
+            "Service follow-through and sofa-bed comfort appear in the limited complaint set that is available.",
+        ],
+        "sources": [
+            ("Official apartment page", "https://zdrojowahotels.pl/en/baltic-park-loft"),
+            ("Booking.com listing", "https://www.booking.com/hotel/pl/baltic-park-loft-by-zdrojowa.html"),
         ],
     },
 ]
@@ -625,24 +900,51 @@ TOWNS = [
     {
         "slug": "miedzyzdroje",
         "name": "Międzyzdroje",
-        "image": commons_file_url("Molo Międzyzdroje4.JPG"),
-        "headline": "Classic premium resort town with beach, promenade, and one of the most promising added options.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Miedzyzdroje_plaza_%281%29.jpg/1200px-Miedzyzdroje_plaza_%281%29.jpg",
+        "headline": "Now a two-path town: premium Wave on one side, practical family apartments on the other.",
         "summary": (
-            "Międzyzdroje deserves its late addition. It combines a well-known resort feel with a strong premium apartment-resort candidate in Wave, "
-            "plus the broader appeal of the Wolin coast."
+            "Międzyzdroje got stronger in this pass. Wave still covers the premium-apartment fantasy, but Golden Tulip Międzyzdroje "
+            "Residence gives the town a second, more grounded family-apartment option close to the beach."
         ),
         "best_for": [
-            "Families who want a more classic flagship seaside town.",
-            "Trips where the parents want something a bit nicer without giving up kid appeal.",
+            "Families who want a classic resort town with a real promenade and proper beach rhythm.",
+            "Trips where you want a choice between upscale resort feel and calmer apartment practicality.",
         ],
         "watchouts": [
-            "Premium pricing is likely.",
-            "Wave looks great, but the exact July inventory still needs manual confirmation.",
+            "Premium pricing is likely at the top end of the town's hotel set.",
+            "Wave looks great, but Golden Tulip may be the safer value-and-layout answer for longer family stays.",
         ],
         "source_links": [
             ("Wikipedia", "https://pl.wikipedia.org/wiki/Międzyzdroje"),
             ("Official town site", "https://miedzyzdroje.pl/"),
-            ("Anchor resort", "https://wavemiedzyzdroje.pl/"),
+            ("Wave Międzyzdroje", "https://wavemiedzyzdroje.pl/"),
+            ("Golden Tulip Międzyzdroje Residence", "https://miedzyzdroje.goldentulip.com/en-us/"),
+        ],
+    },
+    {
+        "slug": "sopot",
+        "name": "Sopot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Sopot_Molo_and_main_square_2024_aerial.jpg/1200px-Sopot_Molo_and_main_square_2024_aerial.jpg",
+        "headline": "Beautiful beach-and-pier town, but the best family apartment fit sits just outside the postcard core.",
+        "summary": (
+            "Sopot is still one of the nicest seaside towns in Poland, but the family-layout answer is split in two. "
+            "Sheraton and Marriott give you central or direct-beach resort quality, while Golden Tulip Gdańsk Residence "
+            "on the Jelitkowo edge gives you the stronger apartment-with-kitchenette logic."
+        ),
+        "best_for": [
+            "Families who want the Tri-City zone, beach access, and the option of a more polished urban-seaside trip.",
+            "Trips where grandparents may appreciate Sopot's walkability, cafes, and easier off-beach dining.",
+        ],
+        "watchouts": [
+            "The cleanest apartment-style family option is not right at Sopot pier; it sits closer to the Gdańsk / Jelitkowo side.",
+            "True central Sopot beachfront hotels are strong on location but weaker on kitchenette-first family practicality.",
+        ],
+        "source_links": [
+            ("Wikipedia", "https://en.wikipedia.org/wiki/Sopot"),
+            ("Official tourism site", "https://visit.sopot.pl/"),
+            ("Sheraton Sopot Hotel", "https://www.sheratonsopot.pl/"),
+            ("Sopot Marriott Resort & Spa", "https://www.sopotmarriott.pl/"),
+            ("Golden Tulip Gdańsk Residence", "https://www.gdanskgoldentulip.pl/en/"),
         ],
     },
     {
@@ -741,23 +1043,25 @@ TOWNS = [
     {
         "slug": "swinoujscie",
         "name": "Świnoujście",
-        "image": commons_file_url("Marina żeglarska w Świnoujściu.jpg"),
-        "headline": "Big-beach flagship destination with strong hotels, but weaker alignment to your room-shape requirements.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Swinoujscie_%28dron2%29.jpg/1200px-Swinoujscie_%28dron2%29.jpg",
+        "headline": "Now one of the strongest town ecosystems in the study because the Baltic Park apartments finally solve the room shape.",
         "summary": (
-            "Świnoujście is one of the easiest towns to sell in general because the beach is huge and the resort infrastructure is obvious. "
-            "The reason it ranks lower here is that the named properties in town are excellent hotels, not the best apartment-led family bases."
+            "Świnoujście changed the most in this pass. Once Baltic Park Molo, Fort, and Loft are added to the Hilton and Radisson context, "
+            "the town stops looking like a hotel-first compromise and starts looking like one of the easiest kid-and-grandparents resort ecosystems on the coast."
         ),
         "best_for": [
-            "Families who want a big, easy promenade-and-beach resort city.",
-            "Trips where grandparents would enjoy a polished mainstream resort experience.",
+            "Families who want one huge beach, a real promenade, aquapark backup, and easy food access.",
+            "Trips where the family wants apartment living but still wants branded-hotel infrastructure nearby.",
         ],
         "watchouts": [
-            "The best named options are hotel-first and likely expensive.",
-            "Not ideal if the kitchenette request is strong.",
+            "The Baltic Park district looks strong, but exact check-in and breakfast rules vary by building and should be confirmed.",
+            "It is still a bigger, busier resort city than places like Pobierowo or Grzybowo.",
         ],
         "source_links": [
             ("Wikipedia", "https://pl.wikipedia.org/wiki/Świnoujście"),
             ("Official city site", "https://www.swinoujscie.pl/"),
+            ("Baltic Park Molo", "https://zdrojowahotels.pl/en/baltic-park-molo"),
+            ("Baltic Park Fort", "https://zdrojowahotels.pl/en/baltic-park-fort"),
             ("Hilton", "https://www.hilton.com/en/hotels/szzhihi-hilton-swinoujscie-resort-and-spa/"),
             ("Radisson", "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-swinoujscie"),
         ],
@@ -864,20 +1168,55 @@ TOWN_DETAILS = {
         "family_spots": [
             ("Międzyzdroje pier", maps_search_url("Molo Międzyzdroje")),
             ("Promenade and beach", maps_search_url("Promenada Gwiazd Międzyzdroje")),
-            ("Wolin park viewpoint", maps_search_url("Kawcza Góra Międzyzdroje")),
+            ("Kawcza Góra viewpoint", maps_search_url("Kawcza Góra Międzyzdroje")),
+            ("Baltic Miniature Park", maps_search_url("Bałtycki Park Miniatur Międzyzdroje")),
         ],
         "gallery": [
             (
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Miedzyzdroje_plaza_%281%29.jpg/1200px-Miedzyzdroje_plaza_%281%29.jpg",
+                "Międzyzdroje beach",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/Mi%C4%99dzyzdroje",
+            ),
+            (
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Mi%C4%99dzyzdroje_31%2C_wej%C5%9Bcie_na_molo.jpg/1000px-Mi%C4%99dzyzdroje_31%2C_wej%C5%9Bcie_na_molo.jpg",
+                "Międzyzdroje pier entrance",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/Mi%C4%99dzyzdroje",
+            ),
+            (
                 commons_file_url("Molo Międzyzdroje4.JPG"),
-                "Międzyzdroje pier",
+                "Międzyzdroje pier from the water",
                 "Wikimedia Commons",
                 commons_page_url("Molo Międzyzdroje4.JPG"),
             ),
+        ],
+    },
+    "sopot": {
+        "family_spots": [
+            ("Sopot Pier", maps_search_url("Molo Sopot")),
+            ("Main beach", maps_search_url("Plaża Sopot")),
+            ("Monte Cassino promenade", maps_search_url("Bohaterów Monte Cassino Sopot")),
+            ("Aquapark Sopot", maps_search_url("Aquapark Sopot")),
+        ],
+        "gallery": [
             (
-                commons_file_url("Miedzyzdroje plaza (1).jpg"),
-                "Międzyzdroje beach",
-                "Wikimedia Commons",
-                commons_page_url("Miedzyzdroje plaza (1).jpg"),
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Sopot_Molo_and_main_square_2024_aerial.jpg/1200px-Sopot_Molo_and_main_square_2024_aerial.jpg",
+                "Sopot pier and square from above",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/Sopot",
+            ),
+            (
+                "https://visit.sopot.pl/cmsImages/banerFacebook.jpg",
+                "Sopot beachfront mood shot",
+                "Visit Sopot official image",
+                "https://visit.sopot.pl/",
+            ),
+            (
+                "https://visit.sopot.pl/res/475377/28729821/teznia-solankowa-3-600x400.jpg",
+                "Sopot brine graduation tower",
+                "Visit Sopot official image",
+                "https://visit.sopot.pl/",
             ),
         ],
     },
@@ -956,15 +1295,29 @@ TOWN_DETAILS = {
     "swinoujscie": {
         "family_spots": [
             ("Main beach", maps_search_url("Plaża Świnoujście")),
-            ("Lighthouse", maps_search_url("Latarnia Morska Świnoujście")),
+            ("Baltic Park Molo Aquapark", maps_search_url("Baltic Park Molo Aquapark by Zdrojowa Świnoujście")),
+            ("Promenade", maps_search_url("Promenada Świnoujście")),
             ("Stawa Młyny", maps_search_url("Stawa Młyny Świnoujście")),
+            ("Lighthouse", maps_search_url("Latarnia Morska Świnoujście")),
         ],
         "gallery": [
             (
-                commons_file_url("Marina żeglarska w Świnoujściu.jpg"),
-                "Świnoujście marina",
-                "Wikimedia Commons",
-                commons_page_url("Marina żeglarska w Świnoujściu.jpg"),
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Swinoujscie_%28dron2%29.jpg/1200px-Swinoujscie_%28dron2%29.jpg",
+                "Świnoujście beach district from above",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/%C5%9Awinouj%C5%9Bcie",
+            ),
+            (
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Beacon_Stawa_M%C5%82yny%2C_%C5%9Awinouj%C5%9Bcie.jpg/1200px-Beacon_Stawa_M%C5%82yny%2C_%C5%9Awinouj%C5%9Bcie.jpg",
+                "Stawa Młyny beacon",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/%C5%9Awinouj%C5%9Bcie",
+            ),
+            (
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/%C5%9Awinouj%C5%9Bcie_widok_z_promu.JPG/1200px-%C5%9Awinouj%C5%9Bcie_widok_z_promu.JPG",
+                "Świnoujście harbor-side view",
+                "Wikipedia image",
+                "https://en.wikipedia.org/wiki/%C5%9Awinouj%C5%9Bcie",
             ),
         ],
     },
@@ -1085,6 +1438,52 @@ HOTEL_EXTERNALS = {
             "Some guests felt the design worked better in photos than in practical day-to-day use.",
         ],
     },
+    "baltic-park-molo": {
+        "maps": maps_search_url("Baltic Park Molo Apartments by Zdrojowa Świnoujście"),
+        "booking_url": booking_search_url("Baltic Park Molo Apartments by Zdrojowa Świnoujście"),
+        "booking_snapshot": "Booking.com: about 8.4/10 from roughly 789 reviews.",
+        "booking_praise": [
+            "Guests often praise the location, easy beach access, promenade energy, and the practical apartment layout.",
+            "Family stays repeatedly call out the aquapark access and the convenience of having restaurants and cafes nearby.",
+        ],
+        "booking_watch": [
+            "Parking costs, sofa-bed comfort, and some arrival-day coordination problems are recurring complaints.",
+            "The complex feels easy once settled, but guest feedback suggests check-in details should be read carefully.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Baltic Park Molo Apartments by Zdrojowa"),
+        "tripadvisor_snapshot": "Tripadvisor: 4.1/5 from 34 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests like the roomy apartments, beach location, and the feeling of being inside a lively resort district.",
+            "Positive reviews also mention that the setup works well for longer family stays compared with standard hotel rooms.",
+        ],
+        "tripadvisor_watch": [
+            "Ventilation, street noise, late-arrival communication, and extra parking cost show up more than once.",
+            "Some guests found the sofa bed weaker than the main bed, which matters for a longer stay.",
+        ],
+    },
+    "golden-tulip-miedzyzdroje": {
+        "maps": maps_search_url("Golden Tulip Międzyzdroje Residence"),
+        "booking_url": "https://www.booking.com/reviews/pl/hotel/golden-tulip-miedzyzdroje-residence.en-gb.html",
+        "booking_snapshot": "Booking.com: deep active review footprint with strong family-apartment sentiment.",
+        "booking_praise": [
+            "Booking reviews repeatedly emphasize large apartments, good breakfast, and the short walk to the beach.",
+            "Families especially like the calmer location and the feeling of having usable space rather than just a hotel room.",
+        ],
+        "booking_watch": [
+            "The quieter edge-of-town location is not ideal if you want maximum promenade life right outside the door.",
+            "A few guests mention smaller wellness facilities and uneven Wi‑Fi quality.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Golden Tulip Międzyzdroje Residence"),
+        "tripadvisor_snapshot": "Tripadvisor: 4.2/5 from 217 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests like the huge apartments, beach proximity, and the fact that the property feels genuinely family-ready.",
+            "Breakfast quality and roomy layouts are more consistent themes than luxury-service complaints.",
+        ],
+        "tripadvisor_watch": [
+            "The wellness zone appears smaller than the room product deserves.",
+            "Some reviews frame the location as a little outside the center, which is either peaceful or mildly inconvenient.",
+        ],
+    },
     "wave-miedzyzdroje": {
         "maps": maps_search_url("Wave Międzyzdroje Resort & Spa"),
         "booking_url": "https://www.booking.com/reviews/pl/hotel/wave-miedzyzdroje-resort-amp-spa.html",
@@ -1105,7 +1504,53 @@ HOTEL_EXTERNALS = {
         ],
         "tripadvisor_watch": [
             "Service organization, check-in flow, and wellness management are the most repeated complaints.",
-            "This reinforces the view that the property is very attractive but less operationally proven than the top four.",
+            "This reinforces the view that the property is very attractive but less operationally proven than the most verified tier.",
+        ],
+    },
+    "baltic-park-fort": {
+        "maps": maps_search_url("Baltic Park Fort by Zdrojowa Świnoujście"),
+        "booking_url": "https://www.booking.com/hotel/pl/baltic-park-fort-by-zdrojowa.pl.html",
+        "booking_snapshot": "Booking.com: about 8.3/10 from roughly 1,152 reviews.",
+        "booking_praise": [
+            "Guests like the beach-side position, larger apartments, and the convenience of the surrounding Baltic Park district.",
+            "Families often mention aquapark access and the practical kitchen-and-balcony setup.",
+        ],
+        "booking_watch": [
+            "Reception being outside the building and parking friction show up frequently.",
+            "Several guests also mention extra cleaning or fee surprises that are worth checking before payment.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Baltic Park Fort by Zdrojowa"),
+        "tripadvisor_snapshot": "Tripadvisor: 3.9/5 from 26 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests repeatedly praise the beach location, breakfast access in the Radisson/Hilton ecosystem, and apartment size.",
+            "The kitchen and balcony comments support it as a genuinely usable family stay, not just a nice-looking listing.",
+        ],
+        "tripadvisor_watch": [
+            "Administrative friction, parking, and reception logistics come up in weaker reviews.",
+            "This looks practical, but less smooth than Molo.",
+        ],
+    },
+    "golden-tulip-gdansk-residence": {
+        "maps": maps_search_url("Golden Tulip Gdańsk Residence"),
+        "booking_url": "https://www.booking.com/reviews/pl/hotel/golden-tulip-gdansk-residence.html",
+        "booking_snapshot": "Booking.com: about 8.7/10 from roughly 3,500 reviews.",
+        "booking_praise": [
+            "Booking reviewers frequently call out the short beach walk, family facilities, and larger suite-like room feel.",
+            "The property stands out as a better practical family stay than many classic Sopot hotels.",
+        ],
+        "booking_watch": [
+            "Soft beds, inconsistent cleaning, and some kitchen limitations show up often enough to note.",
+            "This is also more of a Sopot-edge location than a pure central-Sopot address.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Golden Tulip Gdańsk Residence"),
+        "tripadvisor_snapshot": "Tripadvisor: 4.1/5 from 449 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests praise the beach access, paddling-pool-and-playroom family setup, and roomy units with kitchenettes.",
+            "The comments line up well with a longer family stay rather than a short luxury break.",
+        ],
+        "tripadvisor_watch": [
+            "Noise and cleanliness consistency appear more than once.",
+            "Some reviewers felt the kitchenette hardware was basic rather than fully apartment-grade.",
         ],
     },
     "apollo-residence": {
@@ -1169,6 +1614,52 @@ HOTEL_EXTERNALS = {
         "tripadvisor_watch": [
             "The earliest detailed review flags service and buffet execution as below the design quality.",
             "With so few Tripadvisor reviews, this remains a lower-certainty read than the established top picks.",
+        ],
+    },
+    "sopot-marriott-resort-spa": {
+        "maps": maps_search_url("Sopot Marriott Resort & Spa"),
+        "booking_url": "https://www.booking.com/reviews/pl/hotel/mera-spa.html",
+        "booking_snapshot": "Booking.com: strong direct-beach review signal with high recent satisfaction.",
+        "booking_praise": [
+            "Booking guests repeatedly praise the beach position, breakfast quality, rooftop views, and family-friendly atmosphere.",
+            "This reads like a strong premium resort stay for families who do not insist on apartment living.",
+        ],
+        "booking_watch": [
+            "Value for money and room shape are the main tradeoffs, especially for longer stays.",
+            "It looks better as a premium hotel choice than as a kitchenette-led family base.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Sopot Marriott Resort & Spa"),
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 928 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests like the beach setting, pools, spa quality, and generally polished resort feel.",
+            "The hotel performs well as a comfortable classic resort with kids and grandparents.",
+        ],
+        "tripadvisor_watch": [
+            "The biggest issue for this study is shape, not quality: it is still more hotel than apartment.",
+            "Some guests also question value versus the rate level in peak season.",
+        ],
+    },
+    "sheraton-sopot-hotel": {
+        "maps": maps_search_url("Sheraton Sopot Hotel"),
+        "booking_url": "https://www.booking.com/reviews/pl/hotel/sheratonsopot.html",
+        "booking_snapshot": "Booking.com: about 9.1/10 from roughly 2,972 reviews.",
+        "booking_praise": [
+            "Guests love the direct beach-and-pier location, strong breakfast, and the easy feeling of a premium central Sopot stay.",
+            "The overall review tone is very strong if you want a classic luxury-hotel trip.",
+        ],
+        "booking_watch": [
+            "Deposits, parking cost, and the lack of apartment-style room flexibility are the main practical negatives.",
+            "This is a location-led luxury choice, not a kitchenette-led family-residence solution.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Sheraton Sopot Hotel"),
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 1,037 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor reviews strongly praise the location, breakfast, lounge, and private-beach feel.",
+            "The guest tone supports it as a dependable central-Sopot flagship hotel.",
+        ],
+        "tripadvisor_watch": [
+            "Parking, crowding, and value-for-money complaints recur more than serious quality failures.",
+            "For this study, the bigger issue is still room shape rather than service weakness.",
         ],
     },
     "grand-lubicz": {
@@ -1257,6 +1748,28 @@ HOTEL_EXTERNALS = {
             "Like Hilton, it is easier to recommend as a classic resort than as the ideal family apartment base.",
         ],
     },
+    "baltic-park-loft": {
+        "maps": maps_search_url("Baltic Park Loft by Zdrojowa Świnoujście"),
+        "booking_url": "https://www.booking.com/hotel/pl/baltic-park-loft-by-zdrojowa.html",
+        "booking_snapshot": "Booking.com: about 8.6/10 from roughly 242 reviews.",
+        "booking_praise": [
+            "Early guest feedback likes the modern apartments, beach access, kitchen practicality, and the same Baltic Park ecosystem benefits as the stronger sister buildings.",
+            "The raw apartment product appears family-usable and well located.",
+        ],
+        "booking_watch": [
+            "The review footprint is much thinner than for Molo and Fort, so confidence is lower.",
+            "As with the rest of the complex, parking and operational details need careful checking.",
+        ],
+        "tripadvisor_url": tripadvisor_search_url("Baltic Park Loft by Zdrojowa"),
+        "tripadvisor_snapshot": "Tripadvisor: no stable review footprint surfaced in this pass.",
+        "tripadvisor_praise": [
+            "Treat this mainly as a same-ecosystem backup if the stronger Baltic Park buildings are too tight or too expensive.",
+        ],
+        "tripadvisor_watch": [
+            "This is the weakest-supported listing in the new Świnoujście cluster.",
+            "Without deeper review depth, it should stay behind Molo and Fort.",
+        ],
+    },
 }
 
 
@@ -1265,7 +1778,7 @@ for hotel in HOTELS:
     HOTELS_BY_TOWN.setdefault(hotel["town_slug"], []).append(hotel)
 
 
-SHORTLIST = [hotel for hotel in HOTELS if hotel["rank"] <= 4]
+SHORTLIST = [hotel for hotel in HOTELS if hotel["rank"] <= 6]
 
 AVAILABILITY_MATRIX = {
     "linea-mare-pobierowo": {
@@ -1283,6 +1796,16 @@ AVAILABILITY_MATRIX = {
         "grandparents_room": "Verified",
         "kitchenette": "Strongest proof: live `Apartment with Kitchenette` category",
     },
+    "baltic-park-molo": {
+        "family_unit": "Strong apartment fit",
+        "grandparents_room": "Likely in same ecosystem; confirm exact pairing",
+        "kitchenette": "High confidence: official description says kitchenette",
+    },
+    "golden-tulip-miedzyzdroje": {
+        "family_unit": "Strong apartment fit",
+        "grandparents_room": "Likely",
+        "kitchenette": "High confidence from listings and reviews",
+    },
     "saltic-leba": {
         "family_unit": "Verified",
         "grandparents_room": "Verified",
@@ -1292,6 +1815,16 @@ AVAILABILITY_MATRIX = {
         "family_unit": "Strong fit, not fully verified",
         "grandparents_room": "Needs manual confirmation",
         "kitchenette": "Likely, but not verified",
+    },
+    "baltic-park-fort": {
+        "family_unit": "Strong apartment fit",
+        "grandparents_room": "Likely in same ecosystem; confirm exact pairing",
+        "kitchenette": "Good evidence from guest reviews",
+    },
+    "golden-tulip-gdansk-residence": {
+        "family_unit": "Strong apartment fit",
+        "grandparents_room": "Likely",
+        "kitchenette": "High confidence: official description says kitchenette",
     },
     "apollo-residence": {
         "family_unit": "Looks strong",
@@ -1306,6 +1839,16 @@ AVAILABILITY_MATRIX = {
     "shellter-rogowo": {
         "family_unit": "Possible",
         "grandparents_room": "Possible",
+        "kitchenette": "Weak evidence",
+    },
+    "sopot-marriott-resort-spa": {
+        "family_unit": "Possible, but hotel-first",
+        "grandparents_room": "Likely",
+        "kitchenette": "Weak evidence",
+    },
+    "sheraton-sopot-hotel": {
+        "family_unit": "Possible, but hotel-first",
+        "grandparents_room": "Likely",
         "kitchenette": "Weak evidence",
     },
     "grand-lubicz": {
@@ -1327,6 +1870,11 @@ AVAILABILITY_MATRIX = {
         "family_unit": "Possible, but hotel-first",
         "grandparents_room": "Likely",
         "kitchenette": "Weak evidence",
+    },
+    "baltic-park-loft": {
+        "family_unit": "Possible backup",
+        "grandparents_room": "Possible in same ecosystem",
+        "kitchenette": "Moderate evidence",
     },
 }
 
@@ -2241,13 +2789,8 @@ def build_index() -> None:
         )
 
     hero_ranked_links = " ".join(
-        [
-            f'<a href="{hotel_link(HOTELS[0])}">1. Linea Mare</a>',
-            f'<a href="{hotel_link(HOTELS[1])}">2. Rosevia</a>',
-            f'<a href="{hotel_link(HOTELS[2])}">3. Saltic Grzybowo</a>',
-            f'<a href="{hotel_link(HOTELS[3])}">4. Saltic Łeba</a>',
-            f'<a href="{hotel_link(HOTELS[4])}">5. Wave Międzyzdroje</a>',
-        ]
+        f'<a href="{hotel_link(hotel)}">{hotel["rank"]}. {escape(hotel["name"])}</a>'
+        for hotel in HOTELS[:6]
     )
 
     html = f"""
@@ -2258,8 +2801,8 @@ def build_index() -> None:
             <span class="eyebrow">Family Vacation Study</span>
             <h1>Best Polish Coast Fits</h1>
             <p class="lede">
-              Filtered for one room shape: parents and kids in an apartment-style unit, grandparents in a separate room,
-              ideally in the same resort, with kitchenette evidence where possible.
+              Weighted toward beach-adjacent apartment stays for parents and kids, plus a separate grandparents room,
+              with kitchenette evidence where possible.
             </p>
             <div class="meta-row">
               <span class="pill">{escape(RESEARCH_DATE)} research snapshot</span>
@@ -2292,7 +2835,7 @@ def build_index() -> None:
               <span class="eyebrow">Shortlist</span>
               <h2>Best Bets Right Now</h2>
             </div>
-            <p class="section-note">These are the strongest first calls.</p>
+            <p class="section-note">Top beach-first leads for this exact room shape.</p>
           </div>
           <div class="grid grid-2">
             {"".join(shortlist_cards)}
@@ -2307,7 +2850,7 @@ def build_index() -> None:
               <span class="eyebrow">Ranking</span>
               <h2>Full Hotel Ranking</h2>
             </div>
-            <p class="section-note">Ordered by fit, not prestige.</p>
+            <p class="section-note">Ordered by fit, beach convenience, and room shape.</p>
           </div>
           <div class="grid grid-3">
             {"".join(ranking_cards)}
@@ -2347,7 +2890,7 @@ def build_index() -> None:
               <span class="eyebrow">Destinations</span>
               <h2>Town Pages</h2>
             </div>
-            <p class="section-note">Now with town photos, map links, and quick pins.</p>
+            <p class="section-note">Expanded with Sopot, stronger Świnoujście mapping, and more town imagery.</p>
           </div>
           <div class="grid grid-3">
             {"".join(town_cards)}
@@ -2376,12 +2919,12 @@ def build_index() -> None:
         <div class="wrapper">
           <div class="grid grid-3">
             <article class="note-card">
-              <strong>Safest booking leads</strong>
-              <p>Linea Mare, Rosevia, Saltic Grzybowo, and Saltic Łeba are the strongest first calls because I verified them directly against live inventory.</p>
+              <strong>Most proven inventory</strong>
+              <p>Linea Mare, Rosevia, Saltic Grzybowo, and Saltic Łeba still have the cleanest direct booking-engine evidence.</p>
             </article>
             <article class="note-card">
-              <strong>Best premium upside</strong>
-              <p>Wave Międzyzdroje looks like it could be excellent if availability and apartment details check out, but it is not as strongly proven as the top four.</p>
+              <strong>Best new ecosystems</strong>
+              <p>Baltic Park Molo and Fort materially improve Świnoujście, while Golden Tulip properties make both Międzyzdroje and the Sopot area more practical for a long family stay.</p>
             </article>
             <article class="note-card">
               <strong>Main caveat</strong>
