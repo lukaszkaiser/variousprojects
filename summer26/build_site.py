@@ -32,11 +32,17 @@ def tripadvisor_search_url(query: str) -> str:
 RESEARCH_DATE = "April 20, 2026"
 STAY_WINDOW = "June 28, 2026 to July 25, 2026"
 STAY_NIGHTS = 27
+FLYOUT_WINDOW = "June 27, 2026 to July 11, 2026"
+FLYOUT_NIGHTS = 14
 FAMILY_MODEL = (
     "Family inventory was checked as 2 adults plus two children using common booking-engine age "
     "bands that best match ages 3 and 6."
 )
 GRANDPARENTS_MODEL = "Grandparents were checked as a separate room for 2 adults."
+OUTBOUND_MODEL = (
+    "Fly-out options were judged from Aachen, Germany with the working assumption of rail access to Frankfurt Airport, "
+    "a two-hour airport buffer, and a bias against flights that force a pre-5am wake-up."
+)
 
 
 WHATSAPP_QUOTES = [
@@ -1879,6 +1885,686 @@ AVAILABILITY_MATRIX = {
 }
 
 
+FLYOUT_ROUTE_NOTES = [
+    {
+        "title": "Aachen to Frankfurt airport is workable on normal-morning trains",
+        "body": (
+            "Deutsche Bahn search pages surfaced sample Aachen Hbf -> Frankfurt Airport long-distance station journeys of "
+            "06:18–08:19 and 07:38–09:13, plus a two-hour pattern. That makes late-morning to afternoon flights realistic "
+            "without a stressful middle-of-the-night departure."
+        ),
+        "links": [
+            ("DB journey search snapshot", "https://www.bahn.de/reisen/view/verbindung/aachen/flughafen-frankfurt.shtml"),
+            ("Trip.com timing snapshot", "https://de.trip.com/trains/germany/route/aachen-to-frankfurt-m-flughafen-fernbf/"),
+        ],
+    },
+    {
+        "title": "Croatia has the cleanest open-jaw geometry",
+        "body": (
+            "Discover's published summer 2026 schedule shows non-stop Frankfurt service to Dubrovnik, Split, Zadar, and Lamezia's "
+            "Croatian peers sit inside the same family of leisure routes. Wrocław's timetable and route databases also show direct "
+            "seasonal returns from the Adriatic, so Croatia wins on transport simplicity."
+        ),
+        "links": [
+            ("Discover summer 2026 schedule", "https://www.discover-airlines.com/content/dam/four_y/pdfs/b2b/4y_summer-flight-schedule_2026.pdf"),
+            ("Wrocław Airport timetable", "https://airport.wroclaw.pl/en/passenger/departure/timetable/"),
+        ],
+    },
+    {
+        "title": "Italy works, but only when the resort is strong enough",
+        "body": (
+            "Italy can absolutely beat Poland on beauty, but the route layer is less forgiving. Sicily scored down because the direct "
+            "Frankfurt -> Catania flight pattern is early enough to push you toward an airport hotel, while Calabria and Puglia scored "
+            "better only when the resort itself clearly solved the apartment-plus-beach brief."
+        ),
+        "links": [
+            ("Lufthansa Frankfurt -> Catania flight page", "https://www.flight.info/LH306"),
+            ("FlightsFrom Frankfurt -> Lamezia", "https://www.flightsfrom.com/FRA-SUF"),
+        ],
+    },
+]
+
+
+FLYOUT_HOTELS = [
+    {
+        "flyout_rank": 1,
+        "slug": "falkensteiner-residences-senia",
+        "name": "Falkensteiner Residences Senia",
+        "town": "Punta Skala / Petrčane",
+        "town_slug": "punta-skala-petrcane",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/2b/a5/bb/outdoor-pool.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best fly-out balance of apartment proof, resort access, and Croatia routing",
+        "signal_class": "strong",
+        "headline": "The cleanest foreign fit if you want a real apartment inside a premium resort ecosystem.",
+        "summary": (
+            "Residences Senia is the strongest foreign addition because it checks almost every box at once: serviced apartments, "
+            "sea-facing terraces, clear kitchen equipment evidence, resort restaurants and sports, and a travel pattern that is much "
+            "more forgiving than Sicily. It is not the cheapest option, but this is exactly the type of abroad-only product that "
+            "actually justifies the flight effort."
+        ),
+        "why_it_works": [
+            "The official page calls Senia a set of premium sea-view holiday apartments inside Punta Skala, with breakfast and half-board options within the resort.",
+            "Booking.com explicitly lists apartments with microwave, coffee machine, dishwasher, sofa bed, and balcony.",
+            "Tripadvisor returned live June 27 to July 11 pricing for 2 rooms and describes it as serviced apartments inside a private resort peninsula.",
+        ],
+        "family_fit": [
+            "Very strong if parents and kids want apartment living, but still want resort restaurants, pools, and sports nearby.",
+            "This is also one of the easiest foreign leads for grandparents because they can stay in a classic neighboring room product inside the same Punta Skala system.",
+        ],
+        "availability": [
+            "Tripadvisor returned live pricing for the sample window: from about USD 12,410 total for 2 rooms over 14 nights, with official-hotel availability visible.",
+            "The official Falkensteiner site shows one-bedroom and two-bedroom residences, and the rental pages remain actively bookable for summer 2026.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Aachen -> Frankfurt airport is realistic on standard-morning rail timings, so this can be a same-day departure if you target the later Zadar rotation instead of the earliest one.",
+            "Discover's summer 2026 schedule shows non-stop Frankfurt -> Zadar service, and Wrocław's network still shows direct seasonal Zadar links.",
+            "Current Zadar -> Wrocław schedule data shows an unpleasant 05:45 Monday pattern, so this is best booked around a non-Monday return if the final summer timetable stays similar.",
+        ],
+        "watchouts": [
+            "One 2025 Tripadvisor review flagged construction in front of parts of the residence blocks.",
+            "Value-for-money is weaker than the location and apartment quality, and some wellness access sits in the neighboring hotel stack rather than fully inside Senia itself.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official residences site", "https://www.falkensteiner.com/en/residences-senia"),
+            ("Official apartment types", "https://www.falkensteiner.com/en/residences-senia/apartments"),
+            ("Booking.com review page", "https://www.booking.com/reviews/hr/hotel/falkensteiner-senia-apartments-zadar.en-gb.html"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g1182225-d7707770-Reviews-Falkensteiner_Residences_Senia-Petrcane_Zadar_County_Dalmatia.html"),
+            ("Discover summer 2026 schedule", "https://www.discover-airlines.com/content/dam/four_y/pdfs/b2b/4y_summer-flight-schedule_2026.pdf"),
+            ("Zadar -> Wrocław route timing", "https://info.flightmapper.net/flight/Ryanair_FR_8494"),
+        ],
+    },
+    {
+        "flyout_rank": 2,
+        "slug": "sun-gardens-dubrovnik",
+        "name": "Sun Gardens Dubrovnik",
+        "town": "Dubrovnik Riviera / Orašac",
+        "town_slug": "dubrovnik-riviera-orasac",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/ff/0a/1a/resort-aerial.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Most beautiful full-service residence resort in the foreign pass",
+        "signal_class": "strong",
+        "headline": "Best foreign luxury lead if the resort itself is the main event.",
+        "summary": (
+            "Sun Gardens is the most compelling 'this is why we flew abroad' property in the entire expansion. The residence product is "
+            "clearly real rather than marketing fluff, the setting above the Adriatic is beautiful, and both Tripadvisor and Booking "
+            "support the idea that families actually use it for longer, apartment-style stays rather than only short hotel breaks."
+        ),
+        "why_it_works": [
+            "The residence pages explicitly show one- and two-bedroom sea-view and garden-view units with built-in or fully equipped kitchenettes.",
+            "Tripadvisor returned live pricing for 2 rooms over the full 14-night sample and describes the resort as a five-star family resort with kids club, pools, beach, and sports center.",
+            "Booking snippets mention two-bedroom residence categories and fully equipped kitchenettes, which is exactly the missing proof many luxury hotels never provide.",
+        ],
+        "family_fit": [
+            "Extremely strong if the goal is a premium residence by the sea, with grandparents able to use the hotel side while the parents-and-kids unit lives more comfortably.",
+            "This is also one of the most convincing 'beautiful enough to justify the flights' options in the study.",
+        ],
+        "availability": [
+            "Tripadvisor surfaced live sample-stay pricing from about USD 9,727 total for the 2-room search, with multiple bookable partners visible.",
+            "Booking.com has a heavy, current review footprint and explicitly references residence categories; I did not complete an official-engine two-booking pairing for parents-plus-kids and grandparents.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Discover's summer 2026 schedule shows Frankfurt -> Dubrovnik operating daily from the end of March, which is the best Croatia frequency in the whole pass.",
+            "Wrocław route databases still show direct seasonal Dubrovnik returns, so the open-jaw logic is clean even if the exact weekday choice still matters.",
+            "The main transport trade-off is not route existence but the 20- to 25-minute final transfer from the airport and the need to choose a civilized outbound slot.",
+        ],
+        "watchouts": [
+            "The resort is outside the old town, so this is a resort-first Dubrovnik trip rather than a walk-outside-and-you're-in-the-center trip.",
+            "Some recent guest complaints mention slippery pool areas and occasional service inconsistency relative to the price.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official resort site", "https://www.dubrovniksungardens.com/"),
+            ("Two-bedroom residence page", "https://www.dubrovniksungardens.com/en/accommodation/residences/two-bedroom-sea-view/two-bedroom-sea-view-residences"),
+            ("Booking.com property page", "https://www.booking.com/hotel/hr/radisson-blu-resort-spa-dubrovnik-riviera.html"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g1943776-d1414005-Reviews-Sun_Gardens_Dubrovnik-Orasac_Dubrovnik_Dubrovnik_Neretva_County_Dalmatia.html"),
+            ("Discover summer 2026 schedule", "https://www.discover-airlines.com/content/dam/four_y/pdfs/b2b/4y_summer-flight-schedule_2026.pdf"),
+        ],
+    },
+    {
+        "flyout_rank": 3,
+        "slug": "zaton-holiday-resort",
+        "name": "Zaton Holiday Resort",
+        "town": "Zaton / Nin",
+        "town_slug": "zaton-nin",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/45/4d/f4/zaton-holiday-resort.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best all-in family ease if you value sandy beach and activity depth over polish",
+        "signal_class": "strong",
+        "headline": "The easiest Croatia resort for younger kids if you want everything on-site.",
+        "summary": (
+            "Zaton is less elegant than Senia or Sun Gardens, but it is one of the strongest pure family machines in the whole study: sandy "
+            "beach, pine shade, apartments, supermarkets, pools, sports, playgrounds, and enough internal activity that you do not need to "
+            "invent a plan every day."
+        ),
+        "why_it_works": [
+            "The official site openly positions Zaton as a family-holiday destination with apartments, resort services, sandy beach, and multiple pool zones.",
+            "The Nin tourism page confirms 3- and 4-star apartments in the resort, and Zaton's own apartment pages emphasize proximity to pools, playgrounds, and beach.",
+            "Tripadvisor returned live 14-night pricing for 2 rooms and describes the resort as a family getaway with apartments in the pine forest and a long sandy beach.",
+        ],
+        "family_fit": [
+            "Very strong with a 3-year-old and 6-year-old if you want flat, low-friction family days and less emphasis on luxury styling.",
+            "It is a better practical answer than a romantic one: the stay works hard for children and grandparents, but it is not the chicest option in the foreign pass.",
+        ],
+        "availability": [
+            "Tripadvisor returned active 2-room pricing for the sample stay from about USD 9,385 total.",
+            "Booking review volume is very deep and current, which is a strong signal that the resort is both real and bookable for summer 2026.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Like Senia, this can use the Frankfurt -> Zadar and Zadar -> Wrocław open-jaw geometry, with only a short final transfer from Zadar Airport.",
+            "Zadar remains one of the more child-manageable foreign airports in the pass because you are not adding a long onward road transfer after landing.",
+            "Return-day selection matters if the direct Zadar -> Wrocław pattern still includes the early Monday morning flight.",
+        ],
+        "watchouts": [
+            "The resort is big, noisy, and sometimes described as crowded rather than peaceful.",
+            "Tripadvisor and Booking complaints focus on buffet quality, extra charges, and too many people around the pool complex in peak periods.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official resort site", "https://www.zaton.hr/"),
+            ("Official apartment notes", "https://www.zaton.hr/en/blog/253/finding-the-best-accommodation-at-zaton-holiday-resort"),
+            ("Nin tourism page", "https://www.nin.hr/en/accommodation/zaton-holiday-resort"),
+            ("Booking.com review page", "https://www.booking.com/reviews/hr/hotel/zaton-holiday-village.html"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g303820-d647873-Reviews-Zaton_Holiday_Resort-Nin_Zadar_County_Dalmatia.html"),
+        ],
+    },
+    {
+        "flyout_rank": 4,
+        "slug": "villaggio-torre-ruffa-robinson",
+        "name": "Villaggio Torre Ruffa Robinson",
+        "town": "Capo Vaticano / Tropea coast",
+        "town_slug": "capo-vaticano-tropea",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/27/8d/69/villaggio-torre-ruffa.jpg?w=1200&h=900&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best southern Italy fit once direct Calabria flights are considered",
+        "signal_class": "strong",
+        "headline": "Best Italy transport-to-fit compromise if you still want an apartment with beach access.",
+        "summary": (
+            "Calabria rose because it solves more of the brief than Sicily does. Torre Ruffa is on the seafront, the apartments really do have "
+            "fully equipped kitchenettes, the review signal is strong, and the Lamezia flight geometry looks easier than the Sicily option once "
+            "you account for Aachen-to-Frankfurt timing."
+        ),
+        "why_it_works": [
+            "The official rooms/aparthotel pages clearly separate rooms from apartments and residence-style options.",
+            "Booking.com explicitly says the apartments include a fully equipped kitchenette and places the property directly on the seafront with mini club and entertainment.",
+            "Tripadvisor returned live 2-room pricing for the 14-night sample and rated the property 4.5/5 from a very healthy review base.",
+        ],
+        "family_fit": [
+            "Very good if you want an Italian coast option that is still functional rather than just scenic.",
+            "This is less glamorous than Sicily, but more convincing on the actual apartment-plus-beach requirement.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 3,835 total for the 2-room search.",
+            "Booking shows an active 2026 property page with apartments, private beach, and mini-club positioning; I did not verify the exact two-booking mix in the official engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Frankfurt -> Lamezia direct service is active in the current 2026 schedule set, and route databases still show seasonal direct Lamezia -> Wrocław returns.",
+            "This works better than Sicily because the transport signal is less dependent on a pre-dawn Frankfurt departure.",
+            "The final road transfer to the Capo Vaticano/Tropea side still needs to be treated as roughly an hour, so it is simpler than Gargano but not instant.",
+        ],
+        "watchouts": [
+            "The design feels more classic village resort than polished luxury resort.",
+            "Recent complaints focus on dated rooms in some categories, tight beach spacing, and catering unevenness rather than on the coastline itself.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official rooms and apartments page", "https://villaggiorobinson.com/en/rooms/"),
+            ("Official aparthotel page", "https://villaggiorobinson.com/camere/aparthotel-e-appartamenti/"),
+            ("Booking.com review page", "https://www.booking.com/reviews/it/hotel/villaggio-torre-ruffa-robinson.html"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g1187099-d1100107-Reviews-Villaggio_Torre_Ruffa_Robinson-Torre_Ruffa_Province_of_Vibo_Valentia_Calabria.html"),
+            ("FlightsFrom Frankfurt -> Lamezia", "https://www.flightsfrom.com/FRA-SUF"),
+            ("FlightsFrom Lamezia -> Wrocław", "https://www.flightsfrom.com/SUF-WRO"),
+        ],
+    },
+    {
+        "flyout_rank": 5,
+        "slug": "unahotels-naxos-beach-sicilia",
+        "name": "UNAHOTELS Naxos Beach Sicilia",
+        "town": "Giardini Naxos / Taormina edge",
+        "town_slug": "giardini-naxos-taormina",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/00/ba/1f/unahotels-naxos-beach.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best Sicily beauty option, but the transport layer is less child-friendly",
+        "signal_class": "strong",
+        "headline": "The prettiest Italy lead if you are willing to accept tougher flight timing.",
+        "summary": (
+            "Naxos Beach makes the site because Sicily is genuinely more beautiful than a lot of northern-coast fallback ideas, and this resort is "
+            "one of the few direct-beach family compounds that still reads credibly for young kids. The weakness is not the sea, the pools, or the "
+            "children's programming. The weakness is the Frankfurt timing."
+        ),
+        "why_it_works": [
+            "Tripadvisor describes a private beach, multiple pools, babysitting, children's entertainment, and villa-style accommodation inside the resort.",
+            "Booking shows strong family sentiment, direct beach access, and a meaningful villa component rather than only standard rooms.",
+            "Taormina, Etna, and the east-Sicily setting make this one of the strongest 'beautiful enough to fly' options in the entire study.",
+        ],
+        "family_fit": [
+            "Good if the family wants a resort village with pools, private beach, and a real sense of place more than a perfect kitchenette-driven apartment.",
+            "The room shape is less exact than Senia or Torre Ruffa, so I would treat Sicily as experience-first rather than layout-first.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from roughly USD 7,029 total for the 2-room search.",
+            "Booking shows a heavy active review footprint and updated 2026 property pages, but I did not verify a grandparent-room pairing inside the official engine.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "The direct Frankfurt -> Catania Lufthansa pattern is the biggest problem: current flight data points to an early departure that makes same-day Aachen rail much less pleasant.",
+            "Return-side geometry is better, because Catania stays inside Wrocław's southern-Europe seasonal network and the final transfer from CTA to Giardini Naxos is only around an hour.",
+            "This becomes much more attractive if you are willing to sleep near Frankfurt the night before the outbound flight.",
+        ],
+        "watchouts": [
+            "The room product looks more village-resort than premium residence, so do not oversell the apartment aspect.",
+            "Breakfast and buffet comments are generally positive but can sound repetitive, and some room blocks feel more dated than the setting deserves.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("UNA family resort note", "https://www.gruppouna.it/it/newsroom/comunicati/early-booking"),
+            ("Booking.com review page", "https://www.booking.com/reviews/it/hotel/atahotel-naxos-beach-resort.html"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194774-d264464-Reviews-UNAHOTELS_Naxos_Beach_Sicilia-Giardini_Naxos_Province_of_Messina_Sicily.html"),
+            ("Frankfurt -> Catania flight page", "https://www.flight.info/LH306"),
+        ],
+    },
+]
+
+
+FLYOUT_TOWNS = [
+    {
+        "slug": "punta-skala-petrcane",
+        "name": "Punta Skala / Petrčane",
+        "image": commons_file_url("Zadar, Croatia (Unsplash).jpg"),
+        "headline": "Best foreign resort peninsula if you want premium apartments and very little day-to-day friction.",
+        "summary": (
+            "Punta Skala is less about town wandering and more about landing inside a very usable resort peninsula: sea views, private bays, "
+            "sports, pools, and apartment living. That makes it one of the cleanest abroad upgrades over the Poland baseline."
+        ),
+        "best_for": [
+            "Families who want a fly-out trip that still behaves predictably once they land.",
+            "Trips where the resort itself matters more than being in the middle of a historic old town.",
+        ],
+        "watchouts": [
+            "This is a peninsula-resort strategy, not a lively promenade-town strategy.",
+            "The current route logic works best with a carefully chosen return day.",
+        ],
+        "travel_notes": [
+            "Best route logic in the foreign pass: Frankfurt -> Zadar outbound, direct seasonal Zadar -> Wrocław return.",
+            "Aachen rail into Frankfurt is workable on a normal morning, which is not true for every Italy option.",
+        ],
+        "maps_query": "Punta Skala Petrčane Croatia",
+        "source_links": [
+            ("Zadar tourism", "https://zadar.travel/"),
+            ("Official resort", "https://www.falkensteiner.com/en/residences-senia"),
+            ("Discover summer 2026 schedule", "https://www.discover-airlines.com/content/dam/four_y/pdfs/b2b/4y_summer-flight-schedule_2026.pdf"),
+        ],
+    },
+    {
+        "slug": "dubrovnik-riviera-orasac",
+        "name": "Dubrovnik Riviera / Orašac",
+        "image": commons_file_url("Dubrovnik Old Town 1.jpg"),
+        "headline": "Best beauty-first Croatia base if you want a serious residence resort instead of a simple beach hotel.",
+        "summary": (
+            "This is the most photogenic foreign option in the pass. Orašac gives you sea views and resort calm, while Dubrovnik old town "
+            "sits close enough for selective day trips instead of becoming the daily logistics burden."
+        ),
+        "best_for": [
+            "Families who want one beautiful resort and a few high-value Dubrovnik outings rather than constant movement.",
+            "Trips where the visual payoff really matters.",
+        ],
+        "watchouts": [
+            "This is not a walk-to-old-town setup.",
+            "The resort setting is gorgeous, but you need to actively choose the right outbound and return flight days.",
+        ],
+        "travel_notes": [
+            "Frankfurt -> Dubrovnik is the strongest Croatia route on pure frequency, with daily summer service in Discover's 2026 schedule.",
+            "The return side still works for Wrocław, but you should treat exact day and departure time as a final booking check rather than assume any date is equally nice.",
+        ],
+        "maps_query": "Orasac Dubrovnik Croatia",
+        "source_links": [
+            ("Visit Dubrovnik", "https://www.visitdubrovnik.hr/"),
+            ("Sun Gardens Dubrovnik", "https://www.dubrovniksungardens.com/"),
+            ("Discover summer 2026 schedule", "https://www.discover-airlines.com/content/dam/four_y/pdfs/b2b/4y_summer-flight-schedule_2026.pdf"),
+        ],
+    },
+    {
+        "slug": "zaton-nin",
+        "name": "Zaton / Nin",
+        "image": "https://www.zaton.hr/fileadmin/user_upload/2024/hero/zaton-holiday-resort-family-bay.jpg",
+        "headline": "Best flat, sandy, little-kid Croatia base if the family wants easier beach days.",
+        "summary": (
+            "Zaton is more functional than romantic, but that matters with a 3-year-old and 6-year-old. Sandy beach, flat circulation, "
+            "internal shops and activities, and near-zero need to improvise make it one of the best stress-reduction options abroad."
+        ),
+        "best_for": [
+            "Families who want smoother beach logistics and fewer daily decisions.",
+            "Trips where the children should be able to stay busy without constant driving.",
+        ],
+        "watchouts": [
+            "You trade some charm and quiet for scale and crowding.",
+            "The resort feeling is strong, but it is not the prettiest foreign option in the study.",
+        ],
+        "travel_notes": [
+            "Shares the same Zadar airport geometry as Senia, but with an even simpler onward transfer.",
+            "This is the easiest foreign option for younger kids if a sandy bay is a real plus.",
+        ],
+        "maps_query": "Zaton Holiday Resort Nin Croatia",
+        "source_links": [
+            ("Official resort", "https://www.zaton.hr/"),
+            ("Nin tourism page", "https://www.nin.hr/en/accommodation/zaton-holiday-resort"),
+            ("Zadar tourism", "https://zadar.travel/"),
+        ],
+    },
+    {
+        "slug": "giardini-naxos-taormina",
+        "name": "Giardini Naxos / Taormina edge",
+        "image": commons_file_url("Giardini Naxos at sunrise.JPG"),
+        "headline": "Most beautiful Italy base in the pass, but with a real outbound-timing penalty.",
+        "summary": (
+            "This is the classic Sicily trade-off: huge scenic payoff, much richer day-trip value than a simple resort coast, and one of the "
+            "better family compounds on the east side of the island. The transport layer is what keeps it from climbing higher."
+        ),
+        "best_for": [
+            "Families who want beach plus iconic scenery plus easy Etna/Taormina optionality.",
+            "Trips where a slightly more effortful outbound day is still worth it.",
+        ],
+        "watchouts": [
+            "The direct Frankfurt -> Catania flight timing looks harsher than Croatia or Calabria.",
+            "The best room categories read more like villas than true self-catering apartments.",
+        ],
+        "travel_notes": [
+            "Return-side logic to Wrocław is workable through Catania's direct summer network, but the outbound from Frankfurt is early enough to be a real negative.",
+            "This is the foreign option I would only take if beauty and Sicily itself are part of the goal, not just the hotel.",
+        ],
+        "maps_query": "Giardini Naxos Sicily Italy",
+        "source_links": [
+            ("Municipality", "https://www.comune.giardini-naxos.me.it/"),
+            ("UNA family-resort note", "https://www.gruppouna.it/it/newsroom/comunicati/early-booking"),
+            ("Lufthansa Frankfurt -> Catania flight page", "https://www.flight.info/LH306"),
+        ],
+    },
+    {
+        "slug": "capo-vaticano-tropea",
+        "name": "Capo Vaticano / Tropea coast",
+        "image": commons_file_url("CapoVaticano02.jpg"),
+        "headline": "Best southern-Italy compromise between transport, beach beauty, and actual apartment usability.",
+        "summary": (
+            "Capo Vaticano and the Tropea side of Calabria do not have Sicily's fame, but the coastline is beautiful and the resort options "
+            "can be more practical. In this pass Calabria scored as the strongest Italy answer once direct transport and apartment proof were weighted together."
+        ),
+        "best_for": [
+            "Families who want Italy, but not at the price of a truly punishing outbound day.",
+            "Trips where the beach and apartment matter more than the most famous sightseeing list.",
+        ],
+        "watchouts": [
+            "The region feels lower-polish than Dubrovnik or some Sicily imagery suggests.",
+            "You still need a transfer from Lamezia, even if it is manageable.",
+        ],
+        "travel_notes": [
+            "Frankfurt -> Lamezia and Lamezia -> Wrocław direct seasonal logic makes Calabria materially easier than many other southern Italy ideas.",
+            "This is the Italy destination where transport and family room shape finally start to line up.",
+        ],
+        "maps_query": "Capo Vaticano Calabria Italy",
+        "source_links": [
+            ("Calabria tourism", "https://calabriastraordinaria.it/en/"),
+            ("Torre Ruffa Robinson", "https://villaggiorobinson.com/en/rooms/"),
+            ("FlightsFrom Frankfurt -> Lamezia", "https://www.flightsfrom.com/FRA-SUF"),
+            ("FlightsFrom Lamezia -> Wrocław", "https://www.flightsfrom.com/SUF-WRO"),
+        ],
+    },
+]
+
+
+FLYOUT_TOWN_DETAILS = {
+    "punta-skala-petrcane": {
+        "family_spots": [
+            ("Punta Skala peninsula", maps_search_url("Punta Skala Petrčane Croatia")),
+            ("Petrčane waterfront", maps_search_url("Petrčane waterfront Croatia")),
+            ("Zadar old town day trip", maps_search_url("Zadar old town Croatia")),
+            ("Queen's Beach Nin", maps_search_url("Kraljičina Plaža Nin Croatia")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Zadar, Croatia (Unsplash).jpg"),
+                "Zadar region waterfront mood",
+                "Wikimedia Commons",
+                commons_page_url("Zadar, Croatia (Unsplash).jpg"),
+            ),
+            (
+                commons_file_url("Small beach in front of the University of Zadar, Croatia (48669896633).jpg"),
+                "North Dalmatia beach look",
+                "Wikimedia Commons",
+                commons_page_url("Small beach in front of the University of Zadar, Croatia (48669896633).jpg"),
+            ),
+        ],
+    },
+    "dubrovnik-riviera-orasac": {
+        "family_spots": [
+            ("Sun Gardens beachfront", maps_search_url("Sun Gardens Dubrovnik beach")),
+            ("Dubrovnik old town", maps_search_url("Old Town Dubrovnik")),
+            ("Trsteno Arboretum", maps_search_url("Trsteno Arboretum")),
+            ("Copacabana / Lapad beach", maps_search_url("Lapad Beach Dubrovnik")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Dubrovnik Old Town 1.jpg"),
+                "Dubrovnik old town from above",
+                "Wikimedia Commons",
+                commons_page_url("Dubrovnik Old Town 1.jpg"),
+            ),
+            (
+                commons_file_url("Old City, Dubrovnik.jpg"),
+                "Dubrovnik old city waterfront",
+                "Wikimedia Commons",
+                commons_page_url("Old City, Dubrovnik.jpg"),
+            ),
+        ],
+    },
+    "zaton-nin": {
+        "family_spots": [
+            ("Zaton Holiday Resort", maps_search_url("Zaton Holiday Resort Croatia")),
+            ("Queen's Beach Nin", maps_search_url("Kraljičina Plaža Nin Croatia")),
+            ("Nin old town", maps_search_url("Nin old town Croatia")),
+            ("Zadar old town", maps_search_url("Zadar old town Croatia")),
+        ],
+        "gallery": [
+            (
+                "https://www.zaton.hr/fileadmin/user_upload/2024/hero/zaton-holiday-resort-family-bay.jpg",
+                "Zaton family beach bay",
+                "Zaton Holiday Resort official image",
+                "https://www.zaton.hr/",
+            ),
+            (
+                commons_file_url("Zadar, Croatia (Unsplash).jpg"),
+                "Zadar / Nin region atmosphere",
+                "Wikimedia Commons",
+                commons_page_url("Zadar, Croatia (Unsplash).jpg"),
+            ),
+        ],
+    },
+    "giardini-naxos-taormina": {
+        "family_spots": [
+            ("Giardini Naxos beach", maps_search_url("Giardini Naxos beach Sicily")),
+            ("Taormina cable car", maps_search_url("Taormina cable car")),
+            ("Isola Bella", maps_search_url("Isola Bella Taormina")),
+            ("Mount Etna south side", maps_search_url("Rifugio Sapienza Etna")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Giardini Naxos at sunrise.JPG"),
+                "Giardini Naxos sunrise",
+                "Wikimedia Commons",
+                commons_page_url("Giardini Naxos at sunrise.JPG"),
+            ),
+            (
+                commons_file_url("Giardini-naxos beach, Messina, Sicily, Italy - panoramio.jpg"),
+                "Giardini Naxos beach",
+                "Wikimedia Commons",
+                commons_page_url("Giardini-naxos beach, Messina, Sicily, Italy - panoramio.jpg"),
+            ),
+        ],
+    },
+    "capo-vaticano-tropea": {
+        "family_spots": [
+            ("Torre Ruffa beach", maps_search_url("Torre Ruffa beach Calabria")),
+            ("Capo Vaticano viewpoint", maps_search_url("Capo Vaticano viewpoint")),
+            ("Tropea old town", maps_search_url("Tropea old town")),
+            ("Santa Maria beach", maps_search_url("Santa Maria beach Ricadi")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("CapoVaticano02.jpg"),
+                "Capo Vaticano beach",
+                "Wikimedia Commons",
+                commons_page_url("CapoVaticano02.jpg"),
+            ),
+            (
+                commons_file_url("Beach in Tropea - Italy 2015.JPG"),
+                "Tropea beach",
+                "Wikimedia Commons",
+                commons_page_url("Beach in Tropea - Italy 2015.JPG"),
+            ),
+        ],
+    },
+}
+
+
+FLYOUT_HOTEL_EXTERNALS = {
+    "falkensteiner-residences-senia": {
+        "maps": maps_search_url("Falkensteiner Residences Senia"),
+        "booking_url": "https://www.booking.com/reviews/hr/hotel/falkensteiner-senia-apartments-zadar.en-gb.html",
+        "booking_snapshot": "Booking.com: 8.7/10 from 283 reviews.",
+        "booking_praise": [
+            "Guests consistently praise the sea view, modern apartments, and genuinely useful kitchen equipment.",
+            "The neighboring Falkensteiner resort stack, pools, and breakfast options make it feel easier than a standalone rental.",
+        ],
+        "booking_watch": [
+            "Value for money is the main pushback, and Wi-Fi is weaker than the rest of the product.",
+            "Some wellness access depends on the nearby hotel side and may come with extra cost.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g1182225-d7707770-Reviews-Falkensteiner_Residences_Senia-Petrcane_Zadar_County_Dalmatia.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 101 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor reviews praise huge, clean apartments, breakfast at Iadera, and the easy private-bay setting.",
+            "Longer-stay guests explicitly describe cooking in the apartments and leaving more relaxed than they arrived.",
+        ],
+        "tripadvisor_watch": [
+            "A 2025 review flagged construction noise in front of parts of the property.",
+            "Operational extras and resort pricing remain the biggest friction points.",
+        ],
+    },
+    "sun-gardens-dubrovnik": {
+        "maps": maps_search_url("Sun Gardens Dubrovnik"),
+        "booking_url": "https://www.booking.com/reviews/hr/hotel/radisson-blu-resort-spa-dubrovnik-riviera.en-gb.html",
+        "booking_snapshot": "Booking.com: very large review footprint with residence-specific family stays and kitchenette-equipped units visible.",
+        "booking_praise": [
+            "Guests love the sea views, resort cleanliness, breakfast spread, and the space of the residence product.",
+            "Booking snippets explicitly mention 2-bedroom residence categories and fully equipped kitchenettes, which is unusually helpful for this type of resort.",
+        ],
+        "booking_watch": [
+            "The resort is physically large, so some guests dislike the walking and the distance from old town.",
+            "A few recent reviews mention service inconsistency and the need to know which residence block you are booking.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g1943776-d1414005-Reviews-Sun_Gardens_Dubrovnik-Orasac_Dubrovnik_Dubrovnik_Neretva_County_Dalmatia.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 3,042 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor repeatedly praises the immaculate grounds, huge breakfast, kids enjoyment, and beautiful residence sea views.",
+            "Recent reviews from April 2026 describe spacious one-bedroom residences and a very strong overall family stay.",
+        ],
+        "tripadvisor_watch": [
+            "The biggest drawback is not the resort quality but the size and separation from Dubrovnik proper.",
+            "A minority of guests still mention slippery pool areas and service that is not always at true top-tier level.",
+        ],
+    },
+    "zaton-holiday-resort": {
+        "maps": maps_search_url("Zaton Holiday Resort Croatia"),
+        "booking_url": "https://www.booking.com/reviews/hr/hotel/zaton-holiday-village.html",
+        "booking_snapshot": "Booking.com: very large apartment review footprint, with repeated family comments around the sandy beach and pool complex.",
+        "booking_praise": [
+            "Guests repeatedly call it a big, clean family resort with excellent child appeal and enough infrastructure to stay self-sufficient.",
+            "The apartment product is described as practical and easy rather than glamorous.",
+        ],
+        "booking_watch": [
+            "Peak-summer crowding, food pricing, and reception responsiveness are the recurring complaints.",
+            "This is a scale play: very convenient with children, but not quiet.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g303820-d647873-Reviews-Zaton_Holiday_Resort-Nin_Zadar_County_Dalmatia.html",
+        "tripadvisor_snapshot": "Tripadvisor: 3.9/5 from 3,710 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests love the family atmosphere, pool and slide zones, long sandy beach, and broad activity stack.",
+            "The strongest praise comes from families who want an all-in-one resort with very little friction.",
+        ],
+        "tripadvisor_watch": [
+            "The most negative reviews are blunt about noise, crowds, paid loungers, and uneven buffet quality.",
+            "This is a high-energy family machine, not a calm design resort.",
+        ],
+    },
+    "villaggio-torre-ruffa-robinson": {
+        "maps": maps_search_url("Villaggio Torre Ruffa Robinson"),
+        "booking_url": "https://www.booking.com/reviews/it/hotel/villaggio-torre-ruffa-robinson.html",
+        "booking_snapshot": "Booking.com: 8.7/10 from 70 reviews.",
+        "booking_praise": [
+            "Booking explicitly confirms seafront location, private beach, mini club, and apartments with fully equipped kitchenettes.",
+            "Recent guests praise the food, cleanliness, layout, and the fact that it works especially well for families with children.",
+        ],
+        "booking_watch": [
+            "The resort is more practical than luxurious, and room finish varies by category.",
+            "Some guests mention dated details and tighter beach spacing than the marketing mood suggests.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g1187099-d1100107-Reviews-Villaggio_Torre_Ruffa_Robinson-Torre_Ruffa_Province_of_Vibo_Valentia_Calabria.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.5/5 from 1,371 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests repeatedly praise the sea, animation, food, and relaxed family atmosphere.",
+            "Bungalows and apartments are described as clean and usable rather than merely decorative.",
+        ],
+        "tripadvisor_watch": [
+            "Criticisms center on dated rooms in some categories and inconsistent food execution rather than on the location itself.",
+            "This is not a polished luxury resort, so the pitch should stay grounded.",
+        ],
+    },
+    "unahotels-naxos-beach-sicilia": {
+        "maps": maps_search_url("UNAHOTELS Naxos Beach Sicilia"),
+        "booking_url": "https://www.booking.com/reviews/it/hotel/atahotel-naxos-beach-resort.html",
+        "booking_snapshot": "Booking.com: 8.5/10 from 1,896 reviews.",
+        "booking_praise": [
+            "Guests praise the direct sea access, large gardens, Olympic pool, and the family-ready feel of the resort.",
+            "The property reads as a very good family resort village even when it is not a perfect apartment match.",
+        ],
+        "booking_watch": [
+            "Breakfast can feel repetitive and noisy, and some room blocks feel dated.",
+            "This is more resort-village than residence-luxury.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194774-d264464-Reviews-UNAHOTELS_Naxos_Beach_Sicilia-Giardini_Naxos_Province_of_Messina_Sicily.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.2/5 from 3,495 reviews.",
+        "tripadvisor_praise": [
+            "Tripadvisor guests repeatedly describe it as a strong family holiday with villas, entertainment, beach, and pools.",
+            "The location under Etna and near Taormina adds much more destination value than a generic fly-and-flop resort.",
+        ],
+        "tripadvisor_watch": [
+            "The room product is less polished than the setting, and some guests still describe it as dated for the rate level.",
+            "The transport penalty remains the biggest reason it does not rank higher.",
+        ],
+    },
+}
+
+
+FLYOUT_SHORTLIST = sorted(FLYOUT_HOTELS, key=lambda hotel: hotel["flyout_rank"])
+ALL_HOTELS = HOTELS + FLYOUT_HOTELS
+ALL_TOWNS = TOWNS + FLYOUT_TOWNS
+ALL_TOWN_DETAILS = {**TOWN_DETAILS, **FLYOUT_TOWN_DETAILS}
+ALL_HOTEL_EXTERNALS = {**HOTEL_EXTERNALS, **FLYOUT_HOTEL_EXTERNALS}
+
+HOTELS_BY_TOWN = {}
+for hotel in ALL_HOTELS:
+    HOTELS_BY_TOWN.setdefault(hotel["town_slug"], []).append(hotel)
+
+
 STYLES = dedent(
     """
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
@@ -2661,6 +3347,32 @@ def town_link(town: dict, depth: int = 0) -> str:
     return f"{prefix}towns/{town['slug']}.html"
 
 
+def hotel_rank_value(hotel: dict) -> int:
+    return hotel.get("rank", hotel.get("flyout_rank", 0))
+
+
+def hotel_rank_badge(hotel: dict) -> str:
+    return str(hotel_rank_value(hotel))
+
+
+def hotel_rank_text(hotel: dict) -> str:
+    if "rank" in hotel:
+        return f"Poland #{hotel['rank']}"
+    return f"Fly-out #{hotel['flyout_rank']}"
+
+
+def hotel_window(hotel: dict) -> str:
+    return hotel.get("window", STAY_WINDOW)
+
+
+def hotel_nights(hotel: dict) -> int:
+    return hotel.get("nights", STAY_NIGHTS)
+
+
+def hotel_track(hotel: dict) -> str:
+    return "Poland baseline" if "rank" in hotel else "Fly-out shortlist"
+
+
 def layout(title: str, body: str, depth: int = 0) -> str:
     prefix = "../" * depth
     return dedent(
@@ -2671,19 +3383,20 @@ def layout(title: str, body: str, depth: int = 0) -> str:
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>{escape(title)}</title>
-          <meta name="description" content="Polish coast vacation study for a family with two children and grandparents.">
+          <meta name="description" content="Family beach study across Poland, Croatia, and Italy, screened for apartment-friendly resort stays and child-manageable travel.">
           <link rel="stylesheet" href="{prefix}assets/styles.css">
         </head>
         <body>
           <header class="topbar">
             <div class="wrapper topbar-inner">
               <a class="brand" href="{prefix}index.html">
-                <span class="brand-mark">PL</span>
-                <span>Polish Sea Family Study</span>
+                <span class="brand-mark">FC</span>
+                <span>Family Coast Summer Study</span>
               </a>
               <nav class="nav">
+                <a href="{prefix}index.html#flyout">Fly-Outs</a>
                 <a href="{prefix}index.html#shortlist">Top Picks</a>
-                <a href="{prefix}index.html#ranking">Full Ranking</a>
+                <a href="{prefix}index.html#ranking">Poland Rank</a>
                 <a href="{prefix}index.html#towns">Towns</a>
                 <a href="{prefix}index.html#matrix">Fit Matrix</a>
               </nav>
@@ -2702,17 +3415,61 @@ def layout(title: str, body: str, depth: int = 0) -> str:
 
 
 def build_index() -> None:
+    towns_by_slug = {town["slug"]: town for town in ALL_TOWNS}
+
+    flyout_cards = []
+    for hotel in FLYOUT_SHORTLIST:
+        hotel_page = hotel_link(hotel)
+        town = towns_by_slug[hotel["town_slug"]]
+        town_page = town_link(town)
+        flyout_cards.append(
+            f"""
+            <article class="hotel-card">
+              {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
+              <div class="hotel-card-body">
+                <div class="card-topline">
+                  <span class="rank">{hotel_rank_badge(hotel)}</span>
+                  <span class="signal {hotel["signal_class"]}">{escape(hotel["signal"])}</span>
+                </div>
+                <div>
+                  <h3>{escape(hotel["name"])}</h3>
+                  <p class="muted" style="margin-top:0.35rem;">{escape(hotel["town"])}</p>
+                </div>
+                <p>{escape(hotel["headline"])}</p>
+                <p class="dense-copy">{escape(hotel["travel_fit"][0])}</p>
+                <p class="dense-copy">{escape(hotel_window(hotel))} | {hotel_nights(hotel)} nights</p>
+                <div class="hero-actions" style="margin-top:0;">
+                  <a class="button secondary small" href="{hotel_page}">Hotel report</a>
+                  <a class="button secondary small" href="{town_page}">Town page</a>
+                </div>
+              </div>
+            </article>
+            """
+        )
+
+    route_cards = []
+    for note in FLYOUT_ROUTE_NOTES:
+        route_cards.append(
+            f"""
+            <article class="note-card">
+              <strong>{escape(note["title"])}</strong>
+              <p>{escape(note["body"])}</p>
+              {render_link_chips(note["links"])}
+            </article>
+            """
+        )
+
     shortlist_cards = []
     for hotel in SHORTLIST:
         hotel_page = hotel_link(hotel)
-        town_page = town_link(next(t for t in TOWNS if t["slug"] == hotel["town_slug"]))
+        town_page = town_link(towns_by_slug[hotel["town_slug"]])
         shortlist_cards.append(
             f"""
             <article class="hotel-card">
               {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
               <div class="hotel-card-body">
                 <div class="card-topline">
-                  <span class="rank">{hotel["rank"]}</span>
+                  <span class="rank">{hotel_rank_badge(hotel)}</span>
                   <span class="signal {hotel["signal_class"]}">{escape(hotel["signal"])}</span>
                 </div>
                 <div>
@@ -2739,7 +3496,7 @@ def build_index() -> None:
               {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
               <div class="hotel-card-body">
                 <div class="card-topline">
-                  <span class="rank">{hotel["rank"]}</span>
+                  <span class="rank">{hotel_rank_badge(hotel)}</span>
                   <span class="signal {hotel["signal_class"]}">{escape(hotel["signal"])}</span>
                 </div>
                 <div>
@@ -2768,9 +3525,14 @@ def build_index() -> None:
         )
 
     town_cards = []
-    for town in TOWNS:
-        linked_hotels = HOTELS_BY_TOWN.get(town["slug"], [])
-        hotel_labels = ", ".join(hotel["name"] for hotel in linked_hotels) if linked_hotels else "No matching hotel in the source notes"
+    for town in ALL_TOWNS:
+        linked_hotels = sorted(HOTELS_BY_TOWN.get(town["slug"], []), key=hotel_rank_value)
+        if linked_hotels:
+            hotel_labels = ", ".join(hotel["name"] for hotel in linked_hotels[:3])
+            if len(linked_hotels) > 3:
+                hotel_labels += f", +{len(linked_hotels) - 3} more"
+        else:
+            hotel_labels = "No linked hotel yet"
         town_page = town_link(town)
         town_cards.append(
             f"""
@@ -2781,7 +3543,7 @@ def build_index() -> None:
                   <h3>{escape(town["name"])}</h3>
                   <p class="muted" style="margin-top:0.5rem;">{escape(town["headline"])}</p>
                 </div>
-                <p>{escape(hotel_labels)}</p>
+                <p class="dense-copy">{len(linked_hotels)} linked stay option(s): {escape(hotel_labels)}</p>
                 <a class="button secondary small" href="{town_page}">Town page</a>
               </div>
             </article>
@@ -2789,6 +3551,11 @@ def build_index() -> None:
         )
 
     hero_ranked_links = " ".join(
+        f'<a href="{hotel_link(hotel)}">{hotel["flyout_rank"]}. {escape(hotel["name"])}</a>'
+        for hotel in FLYOUT_SHORTLIST
+    )
+
+    poland_ranked_links = " ".join(
         f'<a href="{hotel_link(hotel)}">{hotel["rank"]}. {escape(hotel["name"])}</a>'
         for hotel in HOTELS[:6]
     )
@@ -2799,31 +3566,50 @@ def build_index() -> None:
         <div class="wrapper hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Family Vacation Study</span>
-            <h1>Best Polish Coast Fits</h1>
+            <h1>Best Family Coast Fits</h1>
             <p class="lede">
-              Weighted toward beach-adjacent apartment stays for parents and kids, plus a separate grandparents room,
-              with kitchenette evidence where possible.
+              Two-track pass: Poland as the no-flight baseline, plus Croatia and Italy fly-out options screened for
+              Aachen-to-Frankfurt rail, child-manageable flight timing, and resort-linked apartments.
             </p>
             <div class="meta-row">
               <span class="pill">{escape(RESEARCH_DATE)} research snapshot</span>
-              <span class="pill">{escape(STAY_WINDOW)} sample stay</span>
-              <span class="pill">{escape(str(STAY_NIGHTS))} nights tested where possible</span>
+              <span class="pill">Fly-out window: {escape(FLYOUT_WINDOW)}</span>
+              <span class="pill">Poland baseline: {escape(STAY_WINDOW)}</span>
             </div>
             <div class="hero-actions">
-              <a class="button" href="#shortlist">Top picks</a>
-              <a class="button secondary" href="#matrix">Fit matrix</a>
+              <a class="button" href="#flyout">Fly-out shortlist</a>
+              <a class="button secondary" href="#shortlist">Poland baseline</a>
               <a class="button secondary" href="#towns">Town pages</a>
             </div>
           </div>
           <div class="hero-card">
-            {render_image("https://r.profitroom.pl/lineamarepobierowo/images/202306201532590.zdj_cie_startowe.jpg", "Polish coast resort view", "Polish Coast", "hero-image")}
+            {render_image("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/2b/a5/bb/outdoor-pool.jpg?w=1600&h=1000&s=1", "Croatia fly-out resort view", "Fly-Out Coast", "hero-image")}
             <div class="hero-card-body">
-              <span class="eyebrow">Bottom line</span>
-              <h3 style="margin-top:0.65rem;">Current best-fit order</h3>
+              <span class="eyebrow">Fly-out order</span>
+              <h3 style="margin-top:0.65rem;">Current abroad leaders</h3>
               <p class="dense-copy ranking-links" style="margin-top:0.75rem;">
                 {hero_ranked_links}
               </p>
+              <p class="dense-copy" style="margin-top:0.7rem;">Croatia leads because the Frankfurt outbound and Wrocław return geometry is much cleaner than Italy in this pass.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="flyout">
+        <div class="wrapper">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Fly-Out Shortlist</span>
+              <h2>Best Croatia + Italy Options</h2>
+            </div>
+            <p class="section-note">14-night screen for June 27, 2026 to July 11, 2026, assuming Aachen rail to Frankfurt and a Wrocław return.</p>
+          </div>
+          <div class="grid grid-3">
+            {"".join(route_cards)}
+          </div>
+          <div class="grid grid-2" style="margin-top:1rem;">
+            {"".join(flyout_cards)}
           </div>
         </div>
       </section>
@@ -2832,10 +3618,10 @@ def build_index() -> None:
         <div class="wrapper">
           <div class="section-header">
             <div>
-              <span class="eyebrow">Shortlist</span>
-              <h2>Best Bets Right Now</h2>
+              <span class="eyebrow">Poland Baseline</span>
+              <h2>Best No-Flight Bets</h2>
             </div>
-            <p class="section-note">Top beach-first leads for this exact room shape.</p>
+            <p class="section-note">27-night benchmark for the same family room shape, kept as the domestic baseline.</p>
           </div>
           <div class="grid grid-2">
             {"".join(shortlist_cards)}
@@ -2848,9 +3634,9 @@ def build_index() -> None:
           <div class="section-header">
             <div>
               <span class="eyebrow">Ranking</span>
-              <h2>Full Hotel Ranking</h2>
+              <h2>Full Poland Hotel Ranking</h2>
             </div>
-            <p class="section-note">Ordered by fit, beach convenience, and room shape.</p>
+            <p class="section-note">Ordered by fit, beach convenience, and room shape inside the Poland-only baseline.</p>
           </div>
           <div class="grid grid-3">
             {"".join(ranking_cards)}
@@ -2863,9 +3649,9 @@ def build_index() -> None:
           <div class="section-header">
             <div>
               <span class="eyebrow">Comparison</span>
-              <h2>Quick-Glance Fit Matrix</h2>
+              <h2>Poland Fit Matrix</h2>
             </div>
-            <p class="section-note">Fastest read before opening the full reports.</p>
+            <p class="section-note">Fastest read for the no-flight baseline before opening the full reports.</p>
           </div>
           <table class="matrix">
             <thead>
@@ -2890,7 +3676,7 @@ def build_index() -> None:
               <span class="eyebrow">Destinations</span>
               <h2>Town Pages</h2>
             </div>
-            <p class="section-note">Expanded with Sopot, stronger Świnoujście mapping, and more town imagery.</p>
+            <p class="section-note">Poland, Croatia, and Italy destination pages with map pins, town photos, and linked hotel reports.</p>
           </div>
           <div class="grid grid-3">
             {"".join(town_cards)}
@@ -2902,7 +3688,7 @@ def build_index() -> None:
         <div class="wrapper panel-grid">
           <article class="quote-card">
             <span class="eyebrow">Source Notes</span>
-            <h2 style="margin-top:0.8rem;">Original Hotel Notes</h2>
+            <h2 style="margin-top:0.8rem;">Original Poland Inputs</h2>
             <div class="quote-list" style="margin-top:1rem;">
               {"".join(f'<blockquote class="quote">{escape(quote)}</blockquote>' for quote in WHATSAPP_QUOTES)}
             </div>
@@ -2919,29 +3705,40 @@ def build_index() -> None:
         <div class="wrapper">
           <div class="grid grid-3">
             <article class="note-card">
-              <strong>Most proven inventory</strong>
-              <p>Linea Mare, Rosevia, Saltic Grzybowo, and Saltic Łeba still have the cleanest direct booking-engine evidence.</p>
+              <strong>Strongest fly-out fit</strong>
+              <p>Falkensteiner Senia is the cleanest abroad answer, with Sun Gardens as the beauty-first premium alternative and Zaton as the easiest little-kid machine.</p>
             </article>
             <article class="note-card">
-              <strong>Best new ecosystems</strong>
-              <p>Baltic Park Molo and Fort materially improve Świnoujście, while Golden Tulip properties make both Międzyzdroje and the Sopot area more practical for a long family stay.</p>
+              <strong>Best no-flight fit</strong>
+              <p>Linea Mare, Rosevia, and Saltic Grzybowo remain the domestic anchors because they combine the room shape best with the strongest July proof.</p>
             </article>
             <article class="note-card">
               <strong>Main caveat</strong>
-              <p>Every availability statement here is a snapshot from {escape(RESEARCH_DATE)}. Even very good options can tighten quickly for July.</p>
+              <p>Every availability statement here is a snapshot from {escape(RESEARCH_DATE)}. Exact outbound and return days still matter, especially for the foreign open-jaw flights.</p>
             </article>
           </div>
         </div>
       </section>
     </main>
     """
-    (SITE / "index.html").write_text(layout("Polish Sea Family Study", html), encoding="utf-8")
+    (SITE / "index.html").write_text(layout("Family Coast Summer Study", html), encoding="utf-8")
 
 
 def build_hotel_pages() -> None:
-    for hotel in HOTELS:
-        town = next(t for t in TOWNS if t["slug"] == hotel["town_slug"])
-        external = HOTEL_EXTERNALS[hotel["slug"]]
+    towns_by_slug = {town["slug"]: town for town in ALL_TOWNS}
+    for hotel in ALL_HOTELS:
+        town = towns_by_slug[hotel["town_slug"]]
+        external = ALL_HOTEL_EXTERNALS[hotel["slug"]]
+        index_anchor = "ranking" if "rank" in hotel else "flyout"
+        back_label = "Back to Poland ranking" if "rank" in hotel else "Back to fly-out shortlist"
+        town_travel_block = ""
+        if town.get("travel_notes"):
+            town_travel_block = (
+                '<div class="source-card" style="margin-top:1rem;">'
+                "<strong>Travel notes</strong>"
+                f'{render_points(town["travel_notes"])}'
+                "</div>"
+            )
         quick_links = [
             ("Official site", hotel["sources"][0][1]),
             ("Google Maps", external["maps"]),
@@ -2956,7 +3753,7 @@ def build_hotel_pages() -> None:
         body = f"""
         <main class="page-hero">
           <div class="wrapper page-shell">
-            <a class="back-link" href="../index.html#ranking">Back to ranking</a>
+            <a class="back-link" href="../index.html#{index_anchor}">{back_label}</a>
             <div class="page-grid">
               <section class="hero-copy">
                 <span class="eyebrow">Hotel Report</span>
@@ -2964,13 +3761,13 @@ def build_hotel_pages() -> None:
                 <p class="lede">{escape(hotel["headline"])}</p>
                 <div class="pill-row">
                   <span class="signal {hotel["signal_class"]}">{escape(hotel["signal"])}</span>
-                  <span class="pill">Rank #{hotel["rank"]}</span>
+                  <span class="pill">{escape(hotel_rank_text(hotel))}</span>
                   <span class="pill">{escape(hotel["town"])}</span>
                 </div>
                 <div class="stat-band">
                   <div class="stat"><span>Research snapshot</span><strong>{escape(RESEARCH_DATE)}</strong></div>
-                  <div class="stat"><span>Window checked</span><strong>{escape(STAY_WINDOW)}</strong></div>
-                  <div class="stat"><span>Priority filter</span><strong>Apartment + separate grandparents room</strong></div>
+                  <div class="stat"><span>Window checked</span><strong>{escape(hotel_window(hotel))}</strong></div>
+                  <div class="stat"><span>Study track</span><strong>{escape(hotel_track(hotel))}</strong></div>
                 </div>
                 {render_link_chips(quick_links)}
               </section>
@@ -3007,6 +3804,10 @@ def build_hotel_pages() -> None:
                 <span class="eyebrow">Availability</span>
                 <h2 style="margin-top:0.8rem;">What Was Actually Verified</h2>
                 {render_points(hotel["availability"])}
+                <div class="source-card" style="margin-top:1rem;">
+                  <strong>Travel fit</strong>
+                  {render_points(hotel.get("travel_fit", ["No flight screen needed. This property belongs to the Poland baseline."]))}
+                </div>
                 <div class="source-card" style="margin-top:1rem;">
                   <strong>Watch-outs</strong>
                   {render_points(hotel["watchouts"])}
@@ -3047,8 +3848,9 @@ def build_hotel_pages() -> None:
                 <span class="eyebrow">Context</span>
                 <h2 style="margin-top:0.8rem;">Town Fit</h2>
                 <p>{escape(town["summary"])}</p>
+                {town_travel_block}
                 <div class="hero-actions" style="margin-top:1rem;">
-                  <a class="button secondary small" href="../index.html#shortlist">Back to shortlist</a>
+                  <a class="button secondary small" href="../index.html#{index_anchor}">{back_label}</a>
                   <a class="button secondary small" href="../index.html#towns">Back to towns</a>
                 </div>
               </article>
@@ -3063,17 +3865,26 @@ def build_hotel_pages() -> None:
 
 
 def build_town_pages() -> None:
-    for town in TOWNS:
-        hotels = HOTELS_BY_TOWN.get(town["slug"], [])
-        detail = TOWN_DETAILS[town["slug"]]
-        town_map = maps_search_url(f"{town['name']} Poland")
+    for town in ALL_TOWNS:
+        hotels = sorted(HOTELS_BY_TOWN.get(town["slug"], []), key=hotel_rank_value)
+        detail = ALL_TOWN_DETAILS[town["slug"]]
+        town_map = maps_search_url(town.get("maps_query", f"{town['name']} Poland"))
+        travel_panel = ""
+        if town.get("travel_notes"):
+            travel_panel = (
+                '<article class="panel">'
+                '<span class="eyebrow">Travel</span>'
+                '<h2 style="margin-top:0.8rem;">Route Notes</h2>'
+                f'{render_points(town["travel_notes"])}'
+                "</article>"
+            )
         quick_links = [("Google Maps", town_map)] + town["source_links"]
         hotel_cards = []
         for hotel in hotels:
             hotel_cards.append(
                 f"""
                 <article class="source-card">
-                  <strong>#{hotel["rank"]} {escape(hotel["name"])}</strong>
+                  <strong>{escape(hotel_rank_text(hotel))}: {escape(hotel["name"])}</strong>
                   <p class="dense-copy">{escape(hotel["headline"])}</p>
                   <a href="../hotels/{hotel["slug"]}.html">Open hotel report</a>
                 </article>
@@ -3127,6 +3938,8 @@ def build_town_pages() -> None:
                 {render_points(town["watchouts"])}
               </article>
             </div>
+
+            {travel_panel}
 
             <div class="page-grid">
               <article class="panel">
