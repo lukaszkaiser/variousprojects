@@ -1922,6 +1922,19 @@ FLYOUT_ROUTE_NOTES = [
             ("FlightsFrom Frankfurt -> Lamezia", "https://www.flightsfrom.com/FRA-SUF"),
         ],
     },
+    {
+        "title": "Southern France is the best new route add through Nice",
+        "body": (
+            "France does not beat Croatia on apartment-resort depth, but Nice is a very comfortable transport gateway: Lufthansa runs "
+            "frequent Frankfurt -> Nice service, and Wrocław's new Wizz Air Nice route gives a direct return several times a week. "
+            "The best properties are either a proper beach residence tied to hotel services or a big holiday village above Agay Bay."
+        ),
+        "links": [
+            ("Frankfurt -> Nice route", "https://www.flightsfrom.com/FRA-NCE"),
+            ("Nice -> Wrocław route", "https://www.flightsfrom.com/NCE-WRO"),
+            ("Wrocław Airport Nice announcement", "https://airport.wroclaw.pl/en/as-many-as-7-new-routes-from-wizz-air-from-wroclaw/"),
+        ],
+    },
 ]
 
 
@@ -2127,6 +2140,105 @@ FLYOUT_HOTELS = [
     },
     {
         "flyout_rank": 5,
+        "slug": "cap-esterel-holiday-village",
+        "name": "Pierre & Vacances Cap Esterel Holiday Village",
+        "town": "Agay / Estérel coast",
+        "town_slug": "agay-esterel",
+        "image": commons_file_url("AgayStRaphaël.JPG"),
+        "image_credit": "Wikimedia Commons",
+        "signal": "Best Southern France kids-machine, with very strong Nice route logic",
+        "signal_class": "strong",
+        "headline": "The most practical France add if pools, kids clubs, and scenery matter more than classic hotel polish.",
+        "summary": (
+            "Cap Esterel is the strongest France addition for young children because the product is designed as a full holiday village: "
+            "apartments, pools, paid children's clubs, restaurants, sports, and the red-rock Estérel coastline above Agay Bay. It is "
+            "less hotel-like than Senia or Sun Gardens, but the Nice flight geometry is clean and the day-to-day child logistics are strong."
+        ),
+        "why_it_works": [
+            "Pierre & Vacances positions Cap Esterel as a large self-catering holiday village with apartment-style stays, restaurants, pools, sports, and children's clubs.",
+            "The Agay / Estérel setting is one of the prettiest family-friendly stretches of the French Riviera, with red-rock scenery rather than generic resort sprawl.",
+            "Nice Airport keeps transfers manageable, and the new Nice -> Wrocław direct route makes the open-jaw return much cleaner than many France ideas.",
+        ],
+        "family_fit": [
+            "Very good if the children need easy pools, activities, and low-effort days more than a refined hotel corridor.",
+            "Grandparents would need to be comfortable with a holiday-village rhythm; this is less elegant than a boutique hotel residence.",
+        ],
+        "availability": [
+            "The official Pierre & Vacances booking footprint remains active for 2026, but I did not get the same direct two-room room-count proof as with the strongest Poland properties.",
+            "Tripadvisor/Booking review depth is large enough to treat the property as a serious, bookable summer option rather than a marginal listing.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Aachen -> Frankfurt plus Frankfurt -> Nice is the cleanest France outbound pattern because Lufthansa has frequent direct service and you can avoid pre-dawn rail if you choose a later flight.",
+            "Nice -> Wrocław direct service is the key advantage over many French coast options; it keeps the return simple with kids and grandparents.",
+            "Transfer from Nice Airport to Agay / Cap Esterel is roughly an hour by car in normal conditions, so this is materially easier than the deeper Gulf of Saint-Tropez options.",
+        ],
+        "watchouts": [
+            "This is a holiday village, not a five-star hotel residence; reviews can sound mixed on maintenance, crowds, and uphill walking.",
+            "The beach access is not as effortless as a hotel sitting directly on sand, so exact apartment location inside the village matters.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official Pierre & Vacances page", "https://www.pierreetvacances.com/gb-en/fp_SVL_self-catering-holiday-village-cap-esterel"),
+            ("Children's clubs page", "https://www.pierreetvacances.com/gb-en/de_children-clubs"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g635814-d314427-Reviews-Village_Pierre_Vacances_Cap_Esterel-Agay_Saint_Raphael_French_Riviera_Cote_d_Azur.html"),
+            ("Booking.com review page", "https://www.booking.com/reviews/fr/hotel/capesterel.fr.html"),
+            ("Frankfurt -> Nice route", "https://www.flightsfrom.com/FRA-NCE"),
+            ("Nice -> Wrocław route", "https://www.flightsfrom.com/NCE-WRO"),
+        ],
+    },
+    {
+        "flyout_rank": 6,
+        "slug": "la-residence-du-bailli",
+        "name": "La Résidence du Bailli",
+        "town": "Rayol-Canadel / Gulf of Saint-Tropez",
+        "town_slug": "rayol-canadel",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/24/77/9f/la-residence-du-bailli.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best exact France apartment-plus-hotel-services shape",
+        "signal_class": "strong",
+        "headline": "The prettiest France apartment-residence lead, with direct sea access and hotel-domain services.",
+        "summary": (
+            "La Résidence du Bailli is the most on-brief France property shape I found: self-catering apartments in a preserved Gulf of "
+            "Saint-Tropez cove, direct sea access, restaurants in season, and the ability to use services from the linked hotel domain. "
+            "It is more serene and beautiful than child-programmed, so it ranks behind Cap Esterel for pure kids logistics."
+        ),
+        "why_it_works": [
+            "Tripadvisor's hotel detail describes fully equipped seaside holiday apartments, direct access to the sea and beach, and three seasonal restaurants.",
+            "Recent guest reviews specifically praise the well-equipped kitchen, proximity to the beach, and the option to use hotel services.",
+            "Rayol-Canadel is one of the more beautiful and less overbuilt corners of the southern French coast, with gardens, coves, and the Îles d'Or views nearby.",
+        ],
+        "family_fit": [
+            "Excellent for parents who want a real apartment, quiet evenings, and grandparents close by in the same small domain.",
+            "Weaker than Zaton or Cap Esterel if the top priority is children's programming and weather-proof kid infrastructure.",
+        ],
+        "availability": [
+            "Tripadvisor returned active 2-room pricing for the sample stay, from about USD 7,030 before taxes and fees, with Expedia/Hotels.com/Booking.com offers visible.",
+            "The same Tripadvisor result rated the property 4.2/5 from 129 reviews and included recent April 2026 feedback.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "The Nice flight geometry is good, but Rayol-Canadel sits deeper into the Gulf of Saint-Tropez side than Agay, so the final transfer is the main penalty.",
+            "This works best if the family is willing to pay for a private transfer and then stay mostly in place rather than move around daily.",
+            "The return via Nice -> Wrocław direct is still much simpler than routing home through Paris or a multi-stop rail/flight combination.",
+        ],
+        "watchouts": [
+            "This is not an all-singing kids-club resort; it is a beautiful seaside residence with services.",
+            "Some reviews mention that pool access and service levels can be less seamless than the four-star framing suggests.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official residence page", "https://www.residence-lebaillidesuffren.com/en/"),
+            ("Linked hotel domain", "https://www.domaine-lebaillidesuffren.com/en/"),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g674121-d3340800-Reviews-La_Residence_du_Bailli-Rayol_Canadel_sur_Mer_French_Riviera_Cote_d_Azur_Provence_Alpes.html"),
+            ("Booking.com review page", "https://www.booking.com/reviews/fr/hotel/la-ra-c-sidence-du-bailli.html"),
+            ("Nice -> Wrocław route", "https://www.flightsfrom.com/NCE-WRO"),
+        ],
+    },
+    {
+        "flyout_rank": 7,
         "slug": "unahotels-naxos-beach-sicilia",
         "name": "UNAHOTELS Naxos Beach Sicilia",
         "town": "Giardini Naxos / Taormina edge",
@@ -2318,6 +2430,62 @@ FLYOUT_TOWNS = [
             ("FlightsFrom Lamezia -> Wrocław", "https://www.flightsfrom.com/SUF-WRO"),
         ],
     },
+    {
+        "slug": "agay-esterel",
+        "name": "Agay / Estérel coast",
+        "image": commons_file_url("AgayStRaphaël.JPG"),
+        "headline": "Best Southern France child-logistics base if you want pools, activities, and Riviera scenery.",
+        "summary": (
+            "Agay is the France option that makes the most sense with small kids: close enough to Nice Airport, framed by the red Estérel "
+            "massif, and calmer than the showier Cannes/Saint-Tropez circuit. The trade-off is that the best property is a holiday village, not a classic hotel."
+        ),
+        "best_for": [
+            "Families who want Southern France scenery without making every day depend on driving or sightseeing.",
+            "Trips where children need pools, activities, and short beach outings more than white-glove hotel service.",
+        ],
+        "watchouts": [
+            "The terrain can be hilly, so apartment location inside the village matters with a 3-year-old and grandparents.",
+            "It is scenic and useful, but less polished than the highest-ranked Croatia residence resorts.",
+        ],
+        "travel_notes": [
+            "Best France airport logic: Aachen rail to Frankfurt, direct Frankfurt -> Nice, then about an hour by car to Agay / Cap Esterel.",
+            "The return is unusually clean for Southern France because Nice -> Wrocław direct service exists several times weekly.",
+        ],
+        "maps_query": "Agay Cap Esterel Saint Raphael France",
+        "source_links": [
+            ("Official Cap Esterel page", "https://www.pierreetvacances.com/gb-en/fp_SVL_self-catering-holiday-village-cap-esterel"),
+            ("Saint-Raphaël tourism", "https://www.saint-raphael.com/en/"),
+            ("Nice -> Wrocław route", "https://www.flightsfrom.com/NCE-WRO"),
+        ],
+    },
+    {
+        "slug": "rayol-canadel",
+        "name": "Rayol-Canadel / Gulf of Saint-Tropez",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/d2/8d/57/la-residence-du-bailli.jpg?w=1600&h=1000&s=1",
+        "headline": "Most beautiful Southern France residence idea, with direct sea access and quieter rhythm.",
+        "summary": (
+            "Rayol-Canadel is the elegant France counterpoint to Cap Esterel: more beautiful, quieter, and more apartment-residence shaped, "
+            "but less programmed for kids. It is best if the family wants a protected cove, easy beach time, gardens, and a slower stay."
+        ),
+        "best_for": [
+            "Families who want a real Mediterranean cove and apartment independence rather than a big resort machine.",
+            "Trips where grandparents would prefer calm views, restaurants, and short walks over constant animation.",
+        ],
+        "watchouts": [
+            "The transfer from Nice is longer than Agay, especially in summer traffic.",
+            "Children's infrastructure is thinner than Cap Esterel, Zaton, or Sun Gardens.",
+        ],
+        "travel_notes": [
+            "Uses the same strong Nice open-jaw logic, but the final transfer is the biggest weakness.",
+            "This works best as a stay-put beach residence, not as a base for daily Côte d'Azur driving.",
+        ],
+        "maps_query": "Rayol Canadel sur Mer France",
+        "source_links": [
+            ("Official residence", "https://www.residence-lebaillidesuffren.com/en/"),
+            ("Rayol-Canadel tourism", "https://www.visitvar.com/what-to-do/beaches/rayol-canadel-sur-mer"),
+            ("Nice -> Wrocław route", "https://www.flightsfrom.com/NCE-WRO"),
+        ],
+    },
 ]
 
 
@@ -2429,6 +2597,50 @@ FLYOUT_TOWN_DETAILS = {
                 "Tropea beach",
                 "Wikimedia Commons",
                 commons_page_url("Beach in Tropea - Italy 2015.JPG"),
+            ),
+        ],
+    },
+    "agay-esterel": {
+        "family_spots": [
+            ("Cap Esterel village", maps_search_url("Village Pierre Vacances Cap Esterel Agay")),
+            ("Agay beach", maps_search_url("Plage d'Agay Saint Raphael")),
+            ("Dramont beach", maps_search_url("Plage du Dramont Saint Raphael")),
+            ("Saint-Raphaël waterfront", maps_search_url("Saint Raphael waterfront France")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("AgayStRaphaël.JPG"),
+                "Agay and the Estérel coastline",
+                "Wikimedia Commons",
+                commons_page_url("AgayStRaphaël.JPG"),
+            ),
+            (
+                commons_file_url("AgayStRaphaël.JPG"),
+                "Agay bay and Estérel coastline",
+                "Wikimedia Commons",
+                commons_page_url("AgayStRaphaël.JPG"),
+            ),
+        ],
+    },
+    "rayol-canadel": {
+        "family_spots": [
+            ("La Résidence du Bailli", maps_search_url("La Residence du Bailli Rayol Canadel")),
+            ("Rayol beach", maps_search_url("Plage du Rayol Canadel")),
+            ("Domaine du Rayol gardens", maps_search_url("Domaine du Rayol")),
+            ("Le Lavandou harbor", maps_search_url("Le Lavandou harbor France")),
+        ],
+        "gallery": [
+            (
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/d2/8d/57/la-residence-du-bailli.jpg?w=1600&h=1000&s=1",
+                "Beach below La Résidence du Bailli",
+                "Tripadvisor traveler photo",
+                "https://www.tripadvisor.com/Hotel_Review-g674121-d3340800-Reviews-La_Residence_du_Bailli-Rayol_Canadel_sur_Mer_French_Riviera_Cote_d_Azur_Provence_Alpes.html",
+            ),
+            (
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/24/77/9f/la-residence-du-bailli.jpg?w=1600&h=1000&s=1",
+                "Rayol residence and Mediterranean setting",
+                "Tripadvisor property photo",
+                "https://www.tripadvisor.com/Hotel_Review-g674121-d3340800-Reviews-La_Residence_du_Bailli-Rayol_Canadel_sur_Mer_French_Riviera_Cote_d_Azur_Provence_Alpes.html",
             ),
         ],
     },
@@ -2549,6 +2761,52 @@ FLYOUT_HOTEL_EXTERNALS = {
         "tripadvisor_watch": [
             "The room product is less polished than the setting, and some guests still describe it as dated for the rate level.",
             "The transport penalty remains the biggest reason it does not rank higher.",
+        ],
+    },
+    "cap-esterel-holiday-village": {
+        "maps": maps_search_url("Village Pierre Vacances Cap Esterel Agay"),
+        "booking_url": "https://www.booking.com/reviews/fr/hotel/capesterel.fr.html",
+        "booking_snapshot": "Booking.com: large review footprint for the Cap Esterel apartment village; scores are more practical than luxury.",
+        "booking_praise": [
+            "Guests like the views, pools, activity depth, and the fact that apartments make family days more self-sufficient.",
+            "The strongest comments are from families who want a lot of on-site structure rather than a tiny boutique residence.",
+        ],
+        "booking_watch": [
+            "Maintenance, crowds, parking, and uphill walking are recurring friction points.",
+            "Apartment category and exact location inside the village matter more here than the brand name alone.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g635814-d314427-Reviews-Village_Pierre_Vacances_Cap_Esterel-Agay_Saint_Raphael_French_Riviera_Cote_d_Azur.html",
+        "tripadvisor_snapshot": "Tripadvisor: broad mixed review footprint for a large family holiday village.",
+        "tripadvisor_praise": [
+            "Guests praise the scenery, sea views, pools, and activity stack for children.",
+            "The property feels most successful when expectations are set around a lively self-catering village, not a polished hotel.",
+        ],
+        "tripadvisor_watch": [
+            "Reviews are mixed on service, queueing, cleanliness, and the amount of walking.",
+            "This is why it ranks as a useful France option, not as a top-three foreign lead.",
+        ],
+    },
+    "la-residence-du-bailli": {
+        "maps": maps_search_url("La Residence du Bailli Rayol Canadel"),
+        "booking_url": "https://www.booking.com/reviews/fr/hotel/la-ra-c-sidence-du-bailli.html",
+        "booking_snapshot": "Booking.com/OTA footprint shows active apartment inventory; Tripadvisor metasearch surfaced Booking.com offers for the sample stay.",
+        "booking_praise": [
+            "Guests praise the quiet cove, direct beach proximity, and the usefulness of apartment kitchens.",
+            "The residence is repeatedly described as a calm, beautiful place rather than a generic serviced apartment block.",
+        ],
+        "booking_watch": [
+            "Service expectations should stay modest: this is a residence with services, not a full luxury resort.",
+            "Pool access and exact seasonal restaurant availability should be checked before paying.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g674121-d3340800-Reviews-La_Residence_du_Bailli-Rayol_Canadel_sur_Mer_French_Riviera_Cote_d_Azur_Provence_Alpes.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.2/5 from 129 reviews; live sample-stay pricing surfaced from about USD 7,030 before taxes and fees.",
+        "tripadvisor_praise": [
+            "Recent guests praise the beach setting, well-equipped kitchens, cleanliness, gardens, and sea-facing calm.",
+            "One review explicitly notes the ability to use services offered by the hotel, which is exactly the shape we were looking for.",
+        ],
+        "tripadvisor_watch": [
+            "A minority of reviews call out service inconsistency and a residence feel that is simpler than four-star expectations.",
+            "It is not the most kid-programmed option, so the children need to be happy with beach, pool, and low-key days.",
         ],
     },
 }
@@ -2732,7 +2990,7 @@ STYLES = dedent(
       color: var(--deep);
     }
 
-    h1 { font-size: clamp(2.2rem, 4.9vw, 3.8rem); margin-top: 0.72rem; }
+    h1 { font-size: clamp(1.9rem, 3.45vw, 2.9rem); margin-top: 0.72rem; }
     h2 { font-size: clamp(1.58rem, 3.4vw, 2.2rem); }
     h3 { font-size: clamp(1.18rem, 1.9vw, 1.6rem); }
 
@@ -3259,7 +3517,7 @@ STYLES = dedent(
       }
 
       h1 {
-        font-size: clamp(2.15rem, 14vw, 3.25rem);
+        font-size: clamp(2rem, 11vw, 2.85rem);
       }
     }
     """
@@ -3568,7 +3826,7 @@ def build_index() -> None:
             <span class="eyebrow">Family Vacation Study</span>
             <h1>Best Family Coast Fits</h1>
             <p class="lede">
-              Two-track pass: Poland as the no-flight baseline, plus Croatia and Italy fly-out options screened for
+              Two-track pass: Poland as the no-flight baseline, plus Croatia, Italy, and France fly-out options screened for
               Aachen-to-Frankfurt rail, child-manageable flight timing, and resort-linked apartments.
             </p>
             <div class="meta-row">
@@ -3590,7 +3848,7 @@ def build_index() -> None:
               <p class="dense-copy ranking-links" style="margin-top:0.75rem;">
                 {hero_ranked_links}
               </p>
-              <p class="dense-copy" style="margin-top:0.7rem;">Croatia leads because the Frankfurt outbound and Wrocław return geometry is much cleaner than Italy in this pass.</p>
+              <p class="dense-copy" style="margin-top:0.7rem;">Croatia still leads overall; Southern France is the strongest new route add through Nice.</p>
             </div>
           </div>
         </div>
@@ -3601,7 +3859,7 @@ def build_index() -> None:
           <div class="section-header">
             <div>
               <span class="eyebrow">Fly-Out Shortlist</span>
-              <h2>Best Croatia + Italy Options</h2>
+              <h2>Best Croatia, Italy + France Options</h2>
             </div>
             <p class="section-note">14-night screen for June 27, 2026 to July 11, 2026, assuming Aachen rail to Frankfurt and a Wrocław return.</p>
           </div>
