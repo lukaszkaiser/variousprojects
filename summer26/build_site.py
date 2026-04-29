@@ -2840,6 +2840,18 @@ VENICE_ROUTE_NOTES = [
         ],
     },
     {
+        "title": "Italy gets a hotel-first exception when the resort is strong enough",
+        "body": (
+            "Kitchenettes still score well, but near Venice I now allow true family-room hotels to compete: direct beach, excellent food, "
+            "connecting rooms or family suites, and easy transfers can beat a weaker self-catering product."
+        ),
+        "links": [
+            ("Almar Family Deluxe", "https://www.almarjesolo.com/en/suites-e-rooms/rooms/family-deluxe.html"),
+            ("Bibione Palace suites", "https://www.hotelbibionepalace.it/en/rooms-suites/rooms-suites/easy-suite-plus"),
+            ("Park Hotel Brasilia Family Room", "https://www.parkhotelbrasilia.com/en/hotel/our-rooms/family-room/"),
+        ],
+    },
+    {
         "title": "South of Venice was checked, but it is a backup lane",
         "body": (
             "Chioggia/Sottomarina gives the best southern angle because it has lagoon charm plus beach hotels. Isamar is a big kid-machine, "
@@ -2857,6 +2869,55 @@ VENICE_ROUTE_NOTES = [
 VENICE_DIRECTION_HOTELS = [
     {
         "venice_rank": 1,
+        "slug": "almar-jesolo-resort-spa",
+        "name": "Almar Jesolo Resort & Spa",
+        "town": "Lido di Jesolo",
+        "town_slug": "lido-di-jesolo",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/60/57/34/almar-jesolo-resort-spa.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best luxury hotel-first Venice option",
+        "signal_class": "verified",
+        "headline": "A true 5-star beachfront resort with Family Deluxe / interconnecting-room logic and strong food.",
+        "summary": (
+            "Almar is the answer to the new question. It does not solve the kitchenette brief, but it is a serious five-star Jesolo resort "
+            "with direct beach, a large pool/spa setup, strong dining, babysitting, and an official Family Deluxe room product described "
+            "as interconnecting rooms. If Italy is allowed to be hotel-first, this jumps to the top of the Venice lane."
+        ),
+        "why_it_works": [
+            "Official room pages show a Family Deluxe product built from two interconnecting rooms, which is the right family-room signal.",
+            "Tripadvisor returned a 4.6/5 profile from 1,081 reviews, beach/pool/spa/babysitting amenities, and live sample-stay offers.",
+            "Recent reviews repeatedly praise spacious clean rooms, breakfast, pools, spa, service, and restaurant quality, while still warning that the hotel is not uniformly family-focused.",
+        ],
+        "family_fit": [
+            "Best for parents and kids in an interconnecting family-room setup, with grandparents in a separate room in the same resort.",
+            "This is not a self-catering solution; it works because the food, beach, pool, and hotel services are strong enough to reduce kitchenette dependence.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 12,362 total for the 2-room search, with Expedia, Hotels.com, and Booking.com offers visible.",
+            "Some offers showed only a few rooms remaining, so this needs early direct-room-category confirmation if it becomes a serious contender.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Jesolo is the easiest premium beach base from Venice Marco Polo and still sensible for a Treviso -> Wrocław return.",
+            "The transfer layer is cleaner than Bibione, Caorle, or Chioggia, which matters with two young children and grandparents.",
+            "This is the best Venice-direction option if the family wants to fly and then avoid complicated logistics.",
+        ],
+        "watchouts": [
+            "One recent family review complained that the spa rules/service felt inconsistent with young children, so use the beach/pool/food more than spa as the family center.",
+            "No kitchenette: book this only if hotel dining and room service can replace the apartment routine.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.almarjesolo.com/en/"),
+            ("Family Deluxe rooms", "https://www.almarjesolo.com/en/suites-e-rooms/rooms/family-deluxe.html"),
+            ("Booking.com search", booking_search_url("Almar Jesolo Resort Spa")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g580246-d6207800-Reviews-Almar_Jesolo_Resort_Spa-Jesolo_Veneto.html"),
+            ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+        ],
+    },
+    {
+        "venice_rank": 2,
         "slug": "junior-family-hotel-apartments",
         "name": "Junior Family Hotel & Apartments",
         "town": "Cavallino-Treporti",
@@ -2905,7 +2966,103 @@ VENICE_DIRECTION_HOTELS = [
         ],
     },
     {
-        "venice_rank": 2,
+        "venice_rank": 3,
+        "slug": "cavallino-bianco-caorle-venezia",
+        "name": "Cavallino Bianco Caorle - Venezia",
+        "town": "Caorle / Duna Verde",
+        "town_slug": "caorle-duna-verde",
+        "image": commons_file_url("Caorle Spiaggia di Levante.jpg"),
+        "image_credit": "Wikimedia Commons town photo",
+        "signal": "Most exciting new luxury-family wildcard",
+        "signal_class": "strong",
+        "headline": "A new 2026 luxury family hotel on the Caorle coast, very promising but not review-proven yet.",
+        "summary": (
+            "Cavallino Bianco Caorle is the most intriguing new find: a purpose-built luxury family hotel on the Venetian coast, from the "
+            "South Tyrol Cavallino Bianco family-hotel concept. It could be the most beautiful kid-first product near Venice, but because "
+            "Tripadvisor still has no review base and no live pricing, it stays below Almar and Junior until the official engine proves dates and room pairing."
+        ),
+        "why_it_works": [
+            "Official material positions it as a new family hotel in Caorle/Duna Verde with child-focused services, beach-holiday structure, and premium hospitality.",
+            "Tripadvisor has a new listing at Viale dei Cacciatori in Duna Verde, but no meaningful review or price history yet.",
+            "This is the rare option that may combine young-child infrastructure with a higher-end hotel-food model.",
+        ],
+        "family_fit": [
+            "Potentially excellent if the family-suite layout can put parents/kids together and grandparents nearby in a separate room.",
+            "Best treated as a high-upside lead to verify directly, not as a proven top pick yet.",
+        ],
+        "availability": [
+            "Tripadvisor returned the property listing but no live sample-stay price or review evidence yet.",
+            "Because it is new for the 2026 season, the official booking engine should be checked directly before comparing it on price.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Caorle is farther than Jesolo/Cavallino from Venice Marco Polo, but still plausible with a planned private transfer.",
+            "The extra transfer only makes sense if the family-hotel product is meaningfully better than Almar or Junior.",
+            "For a Wrocław return from Treviso, it is acceptable but not as clean as Jesolo.",
+        ],
+        "watchouts": [
+            "No mature review base yet, so this is an upside bet rather than an evidence-led pick.",
+            "Do not book until the exact family suite, food plan, beach setup, and cancellation terms are clear.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://caorle.cavallino-bianco.com/en/"),
+            ("Booking.com search", booking_search_url("Cavallino Bianco Caorle Venezia")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g1182866-d34341677-Reviews-Cavallino_Bianco_Caorle_Venezia-Duna_Verde_Caorle_Veneto.html"),
+            ("Caorle tourism", "https://www.caorle.eu/en/"),
+        ],
+    },
+    {
+        "venice_rank": 4,
+        "slug": "hotel-bibione-palace",
+        "name": "Hotel Bibione Palace",
+        "town": "Bibione",
+        "town_slug": "bibione-venice-direction",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/da/cc/99/caption.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best food-and-kids suite hotel in Bibione",
+        "signal_class": "verified",
+        "headline": "A beachfront suite hotel with strong kids programming, food, pools, and some suite/kitchenette evidence.",
+        "summary": (
+            "Bibione Palace becomes more interesting under the relaxed Italy rule. It is not a 5-star, but it is a polished beachfront suite "
+            "hotel with excellent review scores, strong kids club comments, multiple restaurants, pools, and at least some room-review evidence "
+            "of living areas and kitchenette-style layouts."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.7/5 profile from 656 reviews and live sample-stay offers from major OTAs.",
+            "Reviews repeatedly praise food, beach position, kids club, pools, family activities, and larger family-friendly spaces.",
+            "One detailed review specifically mentioned a living area with a kitchenette and children's bed, which keeps it relevant to the original apartment brief.",
+        ],
+        "family_fit": [
+            "Very good if the family wants hotel food and kids programming instead of cooking.",
+            "Grandparents can stay in a separate room while parents/kids use a larger suite category, subject to exact availability.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 9,175 total for the 2-room search, with many OTA rooms visible in the feed.",
+            "OTA messages included free cancellation, breakfast, and no-prepayment signals on some offers.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Bibione is a longer Venice-airport transfer, so this wins only if the hotel/kids/food product is the draw.",
+            "Once there, day-to-day logistics are excellent: beach, pool, kids club, food, and promenade are all close.",
+            "Private transfer is the sane default with small children.",
+        ],
+        "watchouts": [
+            "Not 5-star and not a guaranteed kitchenette unless a specific suite category is selected.",
+            "Transfer length is the main reason it does not outrank the strongest Jesolo/Cavallino options.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.hotelbibionepalace.it/en/"),
+            ("Booking.com search", booking_search_url("Hotel Bibione Palace")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194691-d616411-Reviews-Hotel_Bibione_Palace-Bibione_San_Michele_Al_Tagliamento_Veneto.html"),
+            ("Bibione tourism", "https://www.bibione.com/en/"),
+        ],
+    },
+    {
+        "venice_rank": 5,
         "slug": "lino-delle-fate-bibione",
         "name": "Lino Delle Fate Eco Village Resort",
         "town": "Bibione",
@@ -2953,7 +3110,56 @@ VENICE_DIRECTION_HOTELS = [
         ],
     },
     {
-        "venice_rank": 3,
+        "venice_rank": 6,
+        "slug": "park-hotel-brasilia-jesolo",
+        "name": "Park Hotel Brasilia",
+        "town": "Lido di Jesolo",
+        "town_slug": "lido-di-jesolo",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/64/b8/d6/park-hotel-brasilia.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best service-and-food boutique family hotel",
+        "signal_class": "verified",
+        "headline": "A smaller beachfront hotel with superb reviews, family rooms, play area, and unusually praised food.",
+        "summary": (
+            "Park Hotel Brasilia is not the biggest or flashiest Venice option, but it is the review-cleanest Jesolo family hotel I found. "
+            "It has direct beach, heated pool, family rooms, a children’s play area, and repeated praise for breakfast, half-board dinners, "
+            "and staff warmth. This is a strong lower-friction alternative if Almar feels too spa/adult or too expensive."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.9/5 profile from 1,126 reviews, with beach, pool, free breakfast, indoor play area, and family-room notes.",
+            "Recent reviews repeatedly praise food quality, staff, breakfast, pool, beach position, and child-friendly service.",
+            "It is directly on the Jesolo beach strip, so the transfer and daily logistics are easy.",
+        ],
+        "family_fit": [
+            "Good for parents/kids in a family room or paired rooms, with grandparents in a separate room in a compact hotel.",
+            "Best if great food and gentle service matter more than kitchenette independence.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 7,312 total for the 2-room search, with only a small number of rooms visible on some offers.",
+            "OTA offers included breakfast/free-cancellation messaging, but final room category should be verified directly.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Jesolo makes the transfer layer easy from Venice Marco Polo and acceptable to Treviso for the Wrocław return.",
+            "This is one of the better options if grandparents value a smaller hotel and good restaurant over a massive resort.",
+            "It is less 'wow' than Almar, but probably calmer.",
+        ],
+        "watchouts": [
+            "Not 5-star and no kitchenette angle.",
+            "Small remaining-room signals mean this should be checked early if it enters the final shortlist.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.parkhotelbrasilia.com/en/"),
+            ("Family Room", "https://www.parkhotelbrasilia.com/en/hotel/our-rooms/family-room/"),
+            ("Booking.com search", booking_search_url("Park Hotel Brasilia Jesolo")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g580246-d454998-Reviews-Park_Hotel_Brasilia-Jesolo_Veneto.html"),
+            ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+        ],
+    },
+    {
+        "venice_rank": 8,
         "slug": "villaggio-turistico-internazionale-bibione",
         "name": "Villaggio Turistico Internazionale",
         "town": "Bibione",
@@ -3001,7 +3207,7 @@ VENICE_DIRECTION_HOTELS = [
         ],
     },
     {
-        "venice_rank": 4,
+        "venice_rank": 9,
         "slug": "mosella-suite-hotel",
         "name": "Mosella Suite Hotel",
         "town": "Sottomarina / Chioggia",
@@ -3049,7 +3255,7 @@ VENICE_DIRECTION_HOTELS = [
         ],
     },
     {
-        "venice_rank": 5,
+        "venice_rank": 7,
         "slug": "falkensteiner-hotel-spa-jesolo",
         "name": "Falkensteiner Hotel & Spa Jesolo",
         "town": "Lido di Jesolo",
@@ -3096,7 +3302,55 @@ VENICE_DIRECTION_HOTELS = [
         ],
     },
     {
-        "venice_rank": 6,
+        "venice_rank": 10,
+        "slug": "pra-delle-torri-caorle",
+        "name": "Centro Vacanze Pra' delle Torri",
+        "town": "Caorle",
+        "town_slug": "caorle-duna-verde",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/c7/68/9f/waterpark-beach.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Big practical Caorle family village",
+        "signal_class": "strong",
+        "headline": "A huge beach, waterpark, golf, and lodging ecosystem; practical rather than luxury-hotel elegant.",
+        "summary": (
+            "Pra delle Torri is not an Almar-style five-star hotel, but it belongs in the expanded Venice screen because it is one of the "
+            "largest and most complete family ecosystems near Venice: beach, waterpark, pools, restaurants, sports, supermarket, hotel rooms, "
+            "camping, apartments, and lodge-style units. It is a practical backup if the family wants infrastructure above refinement."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.4/5 profile from 3,380 reviews, with beach, pool, children's playground, restaurants, and family styling.",
+            "Recent positive reviews praise the pools, food, kids activities, restaurants, beach, cleanliness, and range of services.",
+            "The official holiday-centre model includes many accommodation styles, which may help solve parents/kids plus grandparents in separate units.",
+        ],
+        "family_fit": [
+            "Very strong for kids who want a waterpark and stay-put holiday village.",
+            "Grandparents need the right location inside the complex because the scale can become tiring.",
+        ],
+        "availability": [
+            "Tripadvisor did not return a live price in the sample metasearch feed, so direct official-engine confirmation is needed.",
+            "The listing is very active, but final fit depends on exact apartment/lodge/hotel category and distance within the complex.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Caorle is a longer transfer than Jesolo but easier than pushing much farther south.",
+            "It works best if the family intends to stay mostly inside the resort rather than use Venice often.",
+            "Private transfer is strongly preferred.",
+        ],
+        "watchouts": [
+            "Some negative reviews mention crowding, beach/pool pressure, and inflexible cancellation moments.",
+            "This is a mass-family holiday centre, not a quiet luxury hotel.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.pradelletorri.it/en/"),
+            ("Booking.com search", booking_search_url("Centro Vacanze Pra delle Torri Caorle")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194710-d616414-Reviews-Centro_Vacanze_Pra_delle_Torri-Caorle_Veneto.html"),
+            ("Caorle tourism", "https://www.caorle.eu/en/"),
+        ],
+    },
+    {
+        "venice_rank": 11,
         "slug": "isaresidence-isamar-chioggia",
         "name": "Isaresidence / Isamar Holiday Village",
         "town": "Isola Verde / Chioggia",
@@ -3201,6 +3455,7 @@ VENICE_DIRECTION_TOWNS = [
         "source_links": [
             ("Bibione tourism", "https://www.bibione.com/en/"),
             ("Lino Delle Fate", "https://www.linodellefateresort.com/eng/"),
+            ("Hotel Bibione Palace", "https://www.hotelbibionepalace.it/en/"),
             ("Villaggio Turistico Internazionale", "https://www.vti.it/en/"),
         ],
     },
@@ -3228,8 +3483,38 @@ VENICE_DIRECTION_TOWNS = [
         "maps_query": "Lido di Jesolo Italy",
         "source_links": [
             ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+            ("Almar Jesolo", "https://www.almarjesolo.com/en/"),
             ("Falkensteiner Jesolo", "https://www.falkensteiner.com/en/hotel-spa-jesolo"),
+            ("Park Hotel Brasilia", "https://www.parkhotelbrasilia.com/en/"),
             ("Frankfurt -> Venice route", "https://www.flightsfrom.com/FRA-VCE"),
+        ],
+    },
+    {
+        "slug": "caorle-duna-verde",
+        "name": "Caorle / Duna Verde",
+        "image": commons_file_url("Caorle Spiaggia di Levante.jpg"),
+        "headline": "The new high-upside family-luxury beach lane, especially because Cavallino Bianco opens here in 2026.",
+        "summary": (
+            "Caorle is farther than Jesolo but more interesting than a generic beach strip: family beaches, a pretty old town, cycling paths, "
+            "and now a new luxury family hotel concept that could justify the extra transfer."
+        ),
+        "best_for": [
+            "Families willing to trade a longer transfer for a purpose-built family resort or giant stay-put holiday centre.",
+            "Trips where the adults want a more charming coastal town nearby than pure resort-strip Jesolo.",
+        ],
+        "watchouts": [
+            "Cavallino Bianco is new in 2026, so it lacks mature guest reviews.",
+            "Pra delle Torri is huge and practical, but not luxury-hotel quiet.",
+        ],
+        "travel_notes": [
+            "Venezia Marco Polo and Treviso are both plausible by private transfer; neither is as easy as Jesolo.",
+            "Choose Caorle only if the property itself is the reason for the Italy plan.",
+        ],
+        "maps_query": "Caorle Duna Verde Italy",
+        "source_links": [
+            ("Caorle tourism", "https://www.caorle.eu/en/"),
+            ("Cavallino Bianco Caorle", "https://caorle.cavallino-bianco.com/en/"),
+            ("Pra delle Torri", "https://www.pradelletorri.it/en/"),
         ],
     },
     {
@@ -3289,6 +3574,7 @@ VENICE_DIRECTION_TOWN_DETAILS = {
     "bibione-venice-direction": {
         "family_spots": [
             ("Lino Delle Fate", maps_search_url("Lino Delle Fate Eco Village Resort Bibione")),
+            ("Hotel Bibione Palace", maps_search_url("Hotel Bibione Palace Bibione")),
             ("Villaggio Turistico Internazionale", maps_search_url("Villaggio Turistico Internazionale Bibione")),
             ("Bibione beach", maps_search_url("Bibione beach")),
             ("Bibione lighthouse", maps_search_url("Bibione lighthouse")),
@@ -3310,7 +3596,9 @@ VENICE_DIRECTION_TOWN_DETAILS = {
     },
     "lido-di-jesolo": {
         "family_spots": [
+            ("Almar Jesolo Resort & Spa", maps_search_url("Almar Jesolo Resort Spa")),
             ("Falkensteiner Jesolo", maps_search_url("Falkensteiner Hotel Spa Jesolo")),
+            ("Park Hotel Brasilia", maps_search_url("Park Hotel Brasilia Jesolo")),
             ("Lido di Jesolo beach", maps_search_url("Lido di Jesolo beach")),
             ("Caribe Bay waterpark", maps_search_url("Caribe Bay Jesolo")),
             ("Jesolo promenade", maps_search_url("Lido di Jesolo promenade")),
@@ -3327,6 +3615,28 @@ VENICE_DIRECTION_TOWN_DETAILS = {
                 "Jesolo beach view",
                 "Wikimedia Commons",
                 commons_page_url("Jesolo Beach View.jpg"),
+            ),
+        ],
+    },
+    "caorle-duna-verde": {
+        "family_spots": [
+            ("Cavallino Bianco Caorle", maps_search_url("Cavallino Bianco Caorle Venezia Duna Verde")),
+            ("Centro Vacanze Pra' delle Torri", maps_search_url("Centro Vacanze Pra delle Torri Caorle")),
+            ("Caorle old town", maps_search_url("Caorle old town")),
+            ("Duna Verde beach", maps_search_url("Duna Verde beach Caorle")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Caorle Spiaggia di Levante.jpg"),
+                "Caorle beach",
+                "Wikimedia Commons",
+                commons_page_url("Caorle Spiaggia di Levante.jpg"),
+            ),
+            (
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/c7/68/9f/waterpark-beach.jpg?w=1600&h=1000&s=1",
+                "Pra delle Torri waterpark and beach",
+                "Tripadvisor property photo",
+                "https://www.tripadvisor.com/Hotel_Review-g194710-d616414-Reviews-Centro_Vacanze_Pra_delle_Torri-Caorle_Veneto.html",
             ),
         ],
     },
@@ -3356,6 +3666,75 @@ VENICE_DIRECTION_TOWN_DETAILS = {
 
 
 VENICE_DIRECTION_HOTEL_EXTERNALS = {
+    "almar-jesolo-resort-spa": {
+        "maps": maps_search_url("Almar Jesolo Resort Spa"),
+        "booking_url": booking_search_url("Almar Jesolo Resort Spa"),
+        "booking_snapshot": "Booking.com/OTA footprint: live sample-stay availability surfaced through Tripadvisor; breakfast and refundable offers were visible.",
+        "booking_praise": [
+            "The official Family Deluxe product is the key: two interconnecting rooms works better for this family than one normal hotel room.",
+            "Jesolo gives one of the cleanest Venice-airport transfer patterns in the whole Italy screen.",
+        ],
+        "booking_watch": [
+            "Some metasearch offers showed only a few rooms remaining, so this should be checked directly before it becomes the plan.",
+            "No kitchenette: this is a hotel-food decision, not a self-catering decision.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g580246-d6207800-Reviews-Almar_Jesolo_Resort_Spa-Jesolo_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.6/5 from 1,081 reviews; live sample pricing from about USD 12,362.",
+        "tripadvisor_praise": [
+            "Guests praise spacious clean rooms, breakfast, pools, spa, beach position, and restaurant quality.",
+            "Amenities surfaced include beach, pool, free breakfast, and babysitting.",
+        ],
+        "tripadvisor_watch": [
+            "One detailed recent family review complained the spa/service felt inconsistent with young children.",
+            "It is expensive, and it solves family space through connecting rooms rather than an apartment.",
+        ],
+    },
+    "cavallino-bianco-caorle-venezia": {
+        "maps": maps_search_url("Cavallino Bianco Caorle Venezia Duna Verde"),
+        "booking_url": booking_search_url("Cavallino Bianco Caorle Venezia"),
+        "booking_snapshot": "Booking.com/OTA search: new 2026 luxury-family hotel; direct official confirmation is more important than metasearch.",
+        "booking_praise": [
+            "High-upside concept: a purpose-built luxury family hotel near the beach should fit young kids better than most adult-leaning five-star hotels.",
+            "Caorle gives more coastal charm than a pure resort strip.",
+        ],
+        "booking_watch": [
+            "No mature review base yet, so treat all claims as official-positioning until guest evidence accumulates.",
+            "Confirm exact suite layout, food plan, beach setup, and cancellation before ranking it above proven options.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g1182866-d34341677-Reviews-Cavallino_Bianco_Caorle_Venezia-Duna_Verde_Caorle_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: new listing with no meaningful review score or live sample price yet.",
+        "tripadvisor_praise": [
+            "The listing confirms the Duna Verde / Caorle location for the new hotel.",
+            "The concept is unusually promising for families with small children.",
+        ],
+        "tripadvisor_watch": [
+            "No guest-review evidence yet.",
+            "Longer transfer than Jesolo and Cavallino-Treporti.",
+        ],
+    },
+    "hotel-bibione-palace": {
+        "maps": maps_search_url("Hotel Bibione Palace Bibione"),
+        "booking_url": booking_search_url("Hotel Bibione Palace"),
+        "booking_snapshot": "Booking.com/OTA footprint: live sample-stay offers surfaced through Tripadvisor, with free-cancellation, breakfast, and no-prepayment signals on some offers.",
+        "booking_praise": [
+            "The suite-hotel model, kids club, beach, food, and pool infrastructure all point in the right direction.",
+            "Some room evidence supports living-area/kitchenette-style layouts, depending on category.",
+        ],
+        "booking_watch": [
+            "Not every room is kitchenette-like, so category choice matters.",
+            "Bibione is a longer transfer than Jesolo.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194691-d616411-Reviews-Hotel_Bibione_Palace-Bibione_San_Michele_Al_Tagliamento_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.7/5 from 656 reviews; live sample pricing from about USD 9,175.",
+        "tripadvisor_praise": [
+            "Guests praise family activities, kids club, food, pool, beach position, and larger room layouts.",
+            "A detailed family review mentioned a living area with kitchenette and child bed.",
+        ],
+        "tripadvisor_watch": [
+            "Not a five-star property.",
+            "Transfer planning matters because Bibione is farther east.",
+        ],
+    },
     "junior-family-hotel-apartments": {
         "maps": maps_search_url("Junior Family Hotel Apartments Cavallino Treporti"),
         "booking_url": booking_search_url("Junior Family Hotel Apartments Cavallino Treporti"),
@@ -3400,6 +3779,29 @@ VENICE_DIRECTION_HOTEL_EXTERNALS = {
         "tripadvisor_watch": [
             "Some guests mention crowded breakfast/restaurant moments and service inconsistency.",
             "Transfer time from Venice airports is the biggest strategic negative.",
+        ],
+    },
+    "park-hotel-brasilia-jesolo": {
+        "maps": maps_search_url("Park Hotel Brasilia Jesolo"),
+        "booking_url": booking_search_url("Park Hotel Brasilia Jesolo"),
+        "booking_snapshot": "Booking.com/OTA footprint: live sample-stay availability surfaced through Tripadvisor, but some offers showed only a couple of rooms remaining.",
+        "booking_praise": [
+            "A very strong review signal for food, staff, breakfast, beach, and quiet family service.",
+            "Jesolo keeps transfer logistics simple.",
+        ],
+        "booking_watch": [
+            "This is a hotel-room solution, not an apartment/kitchenette solution.",
+            "Room scarcity means final feasibility depends on direct room-category availability.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g580246-d454998-Reviews-Park_Hotel_Brasilia-Jesolo_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.9/5 from 1,126 reviews; live sample pricing from about USD 7,312.",
+        "tripadvisor_praise": [
+            "Guests repeatedly praise exceptional service, breakfast, half-board dinner quality, pool, and beachfront location.",
+            "Amenities include beach, pool, free breakfast, children's TV networks, and an indoor play area.",
+        ],
+        "tripadvisor_watch": [
+            "Not five-star and less spectacular than Almar or Falkensteiner.",
+            "Family fit depends on booking the right family room or paired rooms.",
         ],
     },
     "villaggio-turistico-internazionale-bibione": {
@@ -3469,6 +3871,29 @@ VENICE_DIRECTION_HOTEL_EXTERNALS = {
         "tripadvisor_watch": [
             "Common complaints center on value, paid extras, parking/drink costs, and occasional service inconsistency.",
             "It is weaker than the leaders on the apartment/kitchenette brief.",
+        ],
+    },
+    "pra-delle-torri-caorle": {
+        "maps": maps_search_url("Centro Vacanze Pra delle Torri Caorle"),
+        "booking_url": booking_search_url("Centro Vacanze Pra delle Torri Caorle"),
+        "booking_snapshot": "Booking.com/OTA search: active holiday-centre ecosystem, but Tripadvisor did not return a live sample-stay price.",
+        "booking_praise": [
+            "Huge infrastructure: beach, waterpark, pools, restaurants, sports, supermarket, and multiple lodging styles.",
+            "The lodging variety may solve family-plus-grandparents better than a normal hotel.",
+        ],
+        "booking_watch": [
+            "Official-engine confirmation is essential because the exact unit type and location inside the complex matter.",
+            "This is a large holiday centre, not a quiet five-star resort.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194710-d616414-Reviews-Centro_Vacanze_Pra_delle_Torri-Caorle_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 3,380 reviews; no live sample price returned in the metasearch feed.",
+        "tripadvisor_praise": [
+            "Guests praise pools, kids activities, food, restaurants, beach, cleanliness, and the range of services.",
+            "The family infrastructure is deeper than most hotel-only options.",
+        ],
+        "tripadvisor_watch": [
+            "Negative reviews mention crowding, beach/pool pressure, extra costs, and cancellation inflexibility.",
+            "Scale can be tiring for grandparents unless the room location is chosen carefully.",
         ],
     },
     "isaresidence-isamar-chioggia": {
