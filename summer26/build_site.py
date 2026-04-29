@@ -2812,11 +2812,697 @@ FLYOUT_HOTEL_EXTERNALS = {
 }
 
 
+VENICE_ROUTE_NOTES = [
+    {
+        "title": "The Venice route is real, but it uses two Venice airports",
+        "body": (
+            "Frankfurt -> Venice Marco Polo has direct Lufthansa service, while Venice Treviso -> Wrocław is the cleaner direct-return "
+            "signal. That means the best bases need to work for both airport transfers, not just look close to Venice on a map."
+        ),
+        "links": [
+            ("Frankfurt -> Venice route", "https://www.flightsfrom.com/FRA-VCE"),
+            ("Lufthansa", "https://www.lufthansa.com/"),
+            ("Treviso -> Wrocław route", "https://www.flightsfrom.com/TSF-WRO"),
+            ("Ryanair", "https://www.ryanair.com/"),
+        ],
+    },
+    {
+        "title": "The family base should be a beach town, not Venice city",
+        "body": (
+            "For a 3-year-old, 6-year-old, parents, and grandparents, the best Venice-direction holiday is Cavallino, Jesolo, Bibione, "
+            "or Chioggia/Sottomarina: beach first, apartment first, Venice as a selective day trip."
+        ),
+        "links": [
+            ("Cavallino-Treporti tourism", "https://www.visitcavallino.com/en/"),
+            ("Bibione tourism", "https://www.bibione.com/en/"),
+            ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+            ("Chioggia tourism", "https://www.chioggia.org/"),
+        ],
+    },
+    {
+        "title": "South of Venice was checked, but it is a backup lane",
+        "body": (
+            "Chioggia/Sottomarina gives the best southern angle because it has lagoon charm plus beach hotels. Isamar is a big kid-machine, "
+            "but review quality is mixed; Mosella is much cleaner and more elegant, though less of a full resort."
+        ),
+        "links": [
+            ("Mosella Suite Hotel", "https://www.mosellasuitehotel.it/en/"),
+            ("Isaresidence", "https://www.isaresidence.com/en/"),
+            ("Sottomarina map", maps_search_url("Sottomarina Chioggia beach Italy")),
+        ],
+    },
+]
+
+
+VENICE_DIRECTION_HOTELS = [
+    {
+        "venice_rank": 1,
+        "slug": "junior-family-hotel-apartments",
+        "name": "Junior Family Hotel & Apartments",
+        "town": "Cavallino-Treporti",
+        "town_slug": "cavallino-treporti",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/56/2a/95/piscina-hotel.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best exact Venice-direction room shape",
+        "signal_class": "verified",
+        "headline": "The cleanest near-Venice answer: apartments, hotel services, pool, and a very short beach walk.",
+        "summary": (
+            "Junior is the best Venice-direction fit because it is not just a nice beach hotel. It has a real apartment layer, strong family "
+            "reviews, useful hotel services, and a location that keeps both Venice and the beach manageable. It is less glamorous than "
+            "Falkensteiner Jesolo, but it solves the actual room-shape problem much better."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.7/5 profile from 435 reviews and live official-site availability for the June 27 to July 11 sample.",
+            "Recent reviews specifically mention apartments, kitchen corners, two-bedroom layouts, terraces, and family-friendly beach logistics.",
+            "The property sits in Cavallino-Treporti, which keeps Venice day-trip access possible without making Venice city the daily base.",
+        ],
+        "family_fit": [
+            "Very strong for parents and kids in an apartment-style unit, with grandparents able to take a separate hotel or apartment room.",
+            "Best for a quieter, smaller hotel rhythm rather than a giant holiday village with hundreds of moving parts.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 5,520 total for the 2-room search, with the official hotel site visible as the provider.",
+            "This was the cleanest Venice-direction availability signal in the pass because it matched the apartment-plus-hotel brief rather than only a normal room search.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Frankfurt -> Venice Marco Polo can work as the outbound; Cavallino is close enough that the arrival transfer is not the holiday's main event.",
+            "Treviso -> Wrocław is the cleaner direct-return signal, and Cavallino remains reasonable for that return airport too.",
+            "This is one of the few Italy ideas where the airport layer, beach layer, and apartment layer all point in the same direction.",
+        ],
+        "watchouts": [
+            "The beach is close rather than fully inside a private resort bubble, so this is not a gated-resort answer.",
+            "Exact apartment category matters: do not book a standard hotel room if the kitchenette/apartment shape is the reason to choose it.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.junior-family.it/en/"),
+            ("Booking.com search", booking_search_url("Junior Family Hotel Apartments Cavallino Treporti")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194724-d653729-Reviews-Junior_Family_Hotel_Apartments-Cavallino_Treporti_Veneto.html"),
+            ("Frankfurt -> Venice route", "https://www.flightsfrom.com/FRA-VCE"),
+            ("Treviso -> Wrocław route", "https://www.flightsfrom.com/TSF-WRO"),
+        ],
+    },
+    {
+        "venice_rank": 2,
+        "slug": "lino-delle-fate-bibione",
+        "name": "Lino Delle Fate Eco Village Resort",
+        "town": "Bibione",
+        "town_slug": "bibione-venice-direction",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/fe/40/07/lino-delle-fate-eco-village.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best apartment-resort product if the longer transfer is acceptable",
+        "signal_class": "verified",
+        "headline": "A real eco-village resort with bungalows, kitchens, pools, and an unusually strong family layout.",
+        "summary": (
+            "Lino delle Fate is probably the best pure accommodation product in the Venice direction: independent bungalows, apartment-style "
+            "living, a car-light resort feel, pools, bike paths, and a beach/nature setting. It ranks just behind Junior because Bibione is "
+            "farther from the Venice airports, but the stay itself is extremely close to the original brief."
+        ),
+        "why_it_works": [
+            "The official site and Tripadvisor both describe independent bungalows/apartments rather than ordinary hotel rooms.",
+            "Tripadvisor returned a 3.9/5 profile from 214 reviews and live sample-stay pricing, with Booking.com and Expedia-family offers visible.",
+            "Guest comments repeatedly praise the pool area, quiet beach rhythm, spacious bungalows, and family structure.",
+        ],
+        "family_fit": [
+            "Excellent for parents and kids who want their own apartment rhythm and enough kitchen independence to survive young-child mornings.",
+            "Grandparents could either take a separate bungalow/unit or a more classic room category, depending on what the official engine exposes.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 7,589 total for the 2-room search, with multiple partners surfaced.",
+            "The key follow-up before booking is exact unit pairing: one family bungalow/apartment plus a separate grandparents room or second unit.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Bibione is farther from Venice Marco Polo and Treviso than Cavallino/Jesolo, so it only wins if the property quality is the reason for Italy.",
+            "The airport geometry still works, but this is the Venice-direction option where I would pre-book a private transfer rather than improvise.",
+            "The upside is that once you arrive, the day-to-day family logistics are stronger than many prettier but hotel-only Italy options.",
+        ],
+        "watchouts": [
+            "Transfer length is the biggest negative compared with Cavallino and Jesolo.",
+            "Some reviews mention crowding at breakfast/restaurant moments and variable service, so the bungalow product is more convincing than the dining layer.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.linodellefateresort.com/eng/"),
+            ("Booking.com search", booking_search_url("Lino Delle Fate Eco Village Resort Bibione")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194691-d15208558-Reviews-Lino_Delle_Fate_Eco_Village_Resort-Bibione_San_Michele_Al_Tagliamento_Veneto.html"),
+            ("Bibione tourism", "https://www.bibione.com/en/"),
+        ],
+    },
+    {
+        "venice_rank": 3,
+        "slug": "villaggio-turistico-internazionale-bibione",
+        "name": "Villaggio Turistico Internazionale",
+        "town": "Bibione",
+        "town_slug": "bibione-venice-direction",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/38/7d/a3/new-waterpark.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best Bibione kid-machine with apartment inventory",
+        "signal_class": "verified",
+        "headline": "A big, direct-beach family village with waterpark energy, restaurants, and apartment/bungalow-style options.",
+        "summary": (
+            "VTI is the practical Bibione alternative to Lino delle Fate: less elegant, more energetic, and more obviously built for children. "
+            "It belongs in the Venice direction because it combines private-beach logistics, pools/waterpark, sports, restaurants, and lodging "
+            "that can work more like a family unit than a standard hotel corridor."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.4/5 profile from 1,167 reviews, with live June 27 to July 11 availability visible through major partners.",
+            "The official site positions the property as a holiday village in Bibione with beach, restaurants, pools, and family infrastructure.",
+            "Guest comments praise the clean family infrastructure, activities, food, and houses/apartments that feel equipped for longer stays.",
+        ],
+        "family_fit": [
+            "Strong for children who need animation, pools, sports, and easy beach days.",
+            "Grandparents need to be comfortable with a large holiday-village setting rather than a quiet boutique hotel.",
+        ],
+        "availability": [
+            "Tripadvisor surfaced live partner offers for the sample stay, including Booking.com/Expedia-family channels and visible room counts on some offers.",
+            "The exact price moved by provider and unit type, so treat this as available-but-needs-room-pairing rather than a final quote.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Uses the same Venice airport logic as Lino delle Fate: feasible, but transfer planning matters more than with Cavallino/Jesolo.",
+            "The reward for the longer transfer is a very self-contained kid holiday once you are there.",
+            "This is a better fit if the family wants lively structure every day rather than calm design.",
+        ],
+        "watchouts": [
+            "Scale and crowding are the predictable trade-offs.",
+            "Extra costs for beach/services and mixed value comments appear in review summaries, so compare final package inclusions carefully.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.vti.it/en/"),
+            ("Booking.com search", booking_search_url("Villaggio Turistico Internazionale Bibione")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194691-d1893321-Reviews-Villaggio_Turistico_Internazionale-Bibione_San_Michele_Al_Tagliamento_Veneto.html"),
+            ("Bibione tourism", "https://www.bibione.com/en/"),
+        ],
+    },
+    {
+        "venice_rank": 4,
+        "slug": "mosella-suite-hotel",
+        "name": "Mosella Suite Hotel",
+        "town": "Sottomarina / Chioggia",
+        "town_slug": "sottomarina-chioggia",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/8f/12/de/mosella-suite-hotel.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Best south-of-Venice suite-hotel wildcard",
+        "signal_class": "verified",
+        "headline": "A polished suite hotel between lagoon and beach, more elegant than the big southern holiday villages.",
+        "summary": (
+            "Mosella is the most interesting south-of-Venice addition. It is not a giant kids resort, but it gives a more beautiful and compact "
+            "suite-hotel answer near Chioggia/Sottomarina: lagoon views, beach access, pool, breakfast, bikes, restaurant context, and apartment-like "
+            "reviews. This is the grown-up Venice-direction wildcard."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.8/5 profile from 223 reviews and live Booking.com/Vio sample-stay availability.",
+            "Recent guest comments repeatedly mention spacious suites/apartments, modern rooms, breakfast, parking, bikes, pool, and the lagoon/beach position.",
+            "Chioggia gives a real town and lagoon atmosphere rather than only a holiday-village strip.",
+        ],
+        "family_fit": [
+            "Good if the adults want beauty, calm, and a proper town nearby, and the kids are happy with beach/pool rather than full animation.",
+            "Less bulletproof than Junior or Lino for the kitchenette brief, so the exact suite category needs to be checked before it becomes a top pick.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 7,264 total for the 2-room search, with Booking.com availability visible.",
+            "The best next step is to verify which family suite or apartment category gives the needed kitchen/micro-kitchen setup.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Sottomarina is south of Venice and still workable from both Venice airports, though the final drive is less tidy than Jesolo/Cavallino.",
+            "It becomes more attractive if you want Chioggia/lagoon atmosphere as part of the trip rather than only beach infrastructure.",
+            "For young kids, the transfer is acceptable but should be private rather than stitched together with public transport.",
+        ],
+        "watchouts": [
+            "This is not a classic kids-club resort, so it should not be chosen if daily child programming is essential.",
+            "Kitchenette confidence is category-dependent; book only after confirming the exact suite layout.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.mosellasuitehotel.it/en/"),
+            ("Booking.com search", booking_search_url("Mosella Suite Hotel Sottomarina")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g194923-d17557020-Reviews-Mosella_Suite_Hotel-Sottomarina_Chioggia_Veneto.html"),
+            ("Chioggia tourism", "https://www.chioggia.org/"),
+        ],
+    },
+    {
+        "venice_rank": 5,
+        "slug": "falkensteiner-hotel-spa-jesolo",
+        "name": "Falkensteiner Hotel & Spa Jesolo",
+        "town": "Lido di Jesolo",
+        "town_slug": "lido-di-jesolo",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/69/10/b6/falkensteiner-hotel-spa.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Most beautiful premium hotel, weaker on apartment shape",
+        "signal_class": "strong",
+        "headline": "The premium direct-beach option near Venice if hotel quality beats kitchenette certainty.",
+        "summary": (
+            "Falkensteiner Jesolo is the Venice-direction beauty play: direct beach, stylish pools, spa, strong breakfast, kids club, and very easy "
+            "airport geography. It ranks lower only because the apartment/kitchenette proof is weaker than Junior, Lino, VTI, or Mosella."
+        ),
+        "why_it_works": [
+            "Tripadvisor returned a 4.3/5 profile from 646 reviews and live sample-stay availability with major OTAs.",
+            "The property description emphasizes a family-friendly five-star beach hotel with pools, spa, kids club, restaurants, and direct Adriatic setting.",
+            "Jesolo is one of the simplest Venice-direction bases for airport transfers and beach logistics.",
+        ],
+        "family_fit": [
+            "Strong if grandparents want a polished hotel and the parents are willing to compromise on kitchenette/apartment independence.",
+            "Best as a premium hotel fallback, not as the most exact room-shape answer.",
+        ],
+        "availability": [
+            "Tripadvisor returned live sample-stay pricing from about USD 16,599 total for the 2-room search, with many rooms remaining on Expedia/Hotels.com.",
+            "Booking.com also surfaced availability in the metasearch feed, including refundable/breakfast-included messaging.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "Jesolo is one of the easiest beach bases from Venice Marco Polo and still manageable for Treviso return to Wrocław.",
+            "This is the least stressful Venice-direction airport transfer among the premium hotel ideas.",
+            "The flight geometry is a strong reason to keep it on the list even though the room shape is less perfect.",
+        ],
+        "watchouts": [
+            "Very expensive in the sample window compared with the apartment-first options.",
+            "Review summaries praise beach/pools/spa but also flag value, parking/drinks, and occasional service inconsistency.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official site", "https://www.falkensteiner.com/en/hotel-spa-jesolo"),
+            ("Booking.com search", booking_search_url("Falkensteiner Hotel Spa Jesolo")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g580246-d7179326-Reviews-Falkensteiner_Hotel_Spa_Jesolo-Jesolo_Veneto.html"),
+            ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+        ],
+    },
+    {
+        "venice_rank": 6,
+        "slug": "isaresidence-isamar-chioggia",
+        "name": "Isaresidence / Isamar Holiday Village",
+        "town": "Isola Verde / Chioggia",
+        "town_slug": "sottomarina-chioggia",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/3e/7d/87/view-water-park.jpg?w=1600&h=1000&s=1",
+        "image_credit": "Tripadvisor property photo",
+        "signal": "Big south-of-Venice kid-machine, but review quality is mixed",
+        "signal_class": "strong",
+        "headline": "A huge beach-and-waterpark village south of Venice, useful but less elegant and less review-clean.",
+        "summary": (
+            "Isamar/Isaresidence is worth keeping because it is exactly the kind of large family complex that can make young-child days easy: "
+            "beach, waterpark, pools, entertainment, restaurants, bungalows, mobile homes, and apartments. It ranks last in the Venice direction "
+            "because the review signal is much messier than the top five."
+        ),
+        "why_it_works": [
+            "Tripadvisor describes a large holiday park south of the Venetian lagoon with private beach, waterpark, bars, restaurants, sports, entertainment, and apartments/bungalows.",
+            "The official Isaresidence site keeps the apartment-residence angle visible for the same Isamar ecosystem.",
+            "Recent guest comments praise the waterpark, beach, pools, supermarket, and child activity depth.",
+        ],
+        "family_fit": [
+            "Strong if children need a full-scale activity village and adults accept a less refined setting.",
+            "Grandparents should be checked carefully against the exact accommodation location inside the complex because scale can become friction.",
+        ],
+        "availability": [
+            "Tripadvisor did not return a live price in the sample metasearch feed, so this remains a backup that needs direct official-engine confirmation.",
+            "The property itself is active and heavily reviewed, but it should not outrank hotels with cleaner June 27 to July 11 availability evidence.",
+            f"Research snapshot date: {RESEARCH_DATE}. Window checked: {FLYOUT_WINDOW} ({FLYOUT_NIGHTS} nights).",
+        ],
+        "travel_fit": [
+            "This is the most explicitly south-of-Venice family village in the pass, but transfer simplicity is weaker than Jesolo/Cavallino.",
+            "It is viable if the family wants a stay-put waterpark village, not if the goal is frequent Venice outings.",
+            "I would only book it with a private transfer and a very specific accommodation location inside the village.",
+        ],
+        "watchouts": [
+            "Tripadvisor score is only 3.4/5 from a large review base, with complaints around cleanliness, organization, costs, and room variability.",
+            "The sea/beach setting is practical, but not as beautiful as the stronger Croatia, France, or Bibione leads.",
+        ],
+        "window": FLYOUT_WINDOW,
+        "nights": FLYOUT_NIGHTS,
+        "sources": [
+            ("Official Isaresidence site", "https://www.isaresidence.com/en/"),
+            ("Booking.com search", booking_search_url("Isamar Holiday Village Chioggia")),
+            ("Tripadvisor listing", "https://www.tripadvisor.com/Hotel_Review-g1186877-d237883-Reviews-Isamar_Holiday_Village-Isola_Verde_Chioggia_Veneto.html"),
+            ("Chioggia tourism", "https://www.chioggia.org/"),
+        ],
+    },
+]
+
+
+VENICE_DIRECTION_TOWNS = [
+    {
+        "slug": "cavallino-treporti",
+        "name": "Cavallino-Treporti",
+        "image": commons_file_url("Panorama of wonderful European beach at Cavallino.jpg"),
+        "headline": "Best near-Venice beach strip for apartment stays, Venice day trips, and manageable airport transfers.",
+        "summary": (
+            "Cavallino-Treporti is the sweet spot for the Venice direction: family beach town first, lagoon/Venice access second, and close "
+            "enough to both Venice airports to avoid a punishing transfer day."
+        ),
+        "best_for": [
+            "Families who want a beach base that still allows a selective Venice or lagoon outing.",
+            "Trips where a smaller apartment-hotel rhythm is more attractive than a giant waterpark village.",
+        ],
+        "watchouts": [
+            "Some accommodation is spread along a long coastal strip, so exact walking distance to beach and restaurants matters.",
+            "The best properties are not in Venice itself; this is a beach-town strategy.",
+        ],
+        "travel_notes": [
+            "Best Venice-direction transfer logic among the apartment-first options.",
+            "Works for Frankfurt -> Venice Marco Polo outbound and Treviso -> Wrocław return without putting the family too far east or south.",
+        ],
+        "maps_query": "Cavallino-Treporti Italy",
+        "source_links": [
+            ("Cavallino-Treporti tourism", "https://www.visitcavallino.com/en/"),
+            ("Junior Family Hotel & Apartments", "https://www.junior-family.it/en/"),
+            ("Frankfurt -> Venice route", "https://www.flightsfrom.com/FRA-VCE"),
+            ("Treviso -> Wrocław route", "https://www.flightsfrom.com/TSF-WRO"),
+        ],
+    },
+    {
+        "slug": "bibione-venice-direction",
+        "name": "Bibione",
+        "image": commons_file_url("Bibione spiaggia.jpg"),
+        "headline": "Best apartment-resort depth in the Venice direction, at the cost of a longer airport transfer.",
+        "summary": (
+            "Bibione is farther from the airports, but it has the strongest concentration of family-resort apartment products in this Venice "
+            "pass. It is the place to choose if the stay itself matters more than shaving 25 minutes off the transfer."
+        ),
+        "best_for": [
+            "Families who want resort-apartment depth, pools, bungalows, bike paths, and very low daily friction.",
+            "Trips where the property quality is the reason to choose Italy over Poland.",
+        ],
+        "watchouts": [
+            "Transfers from Venice airports are materially longer than Cavallino or Jesolo.",
+            "The town is a classic holiday resort town, so charm is beach-family practicality rather than old-world Venice atmosphere.",
+        ],
+        "travel_notes": [
+            "Feasible from both Venice airports, but this is where a private transfer becomes the sane default.",
+            "Ranks highly only because the accommodation fit is unusually strong.",
+        ],
+        "maps_query": "Bibione Italy",
+        "source_links": [
+            ("Bibione tourism", "https://www.bibione.com/en/"),
+            ("Lino Delle Fate", "https://www.linodellefateresort.com/eng/"),
+            ("Villaggio Turistico Internazionale", "https://www.vti.it/en/"),
+        ],
+    },
+    {
+        "slug": "lido-di-jesolo",
+        "name": "Lido di Jesolo",
+        "image": commons_file_url("Lido di Jesolo 1.jpg"),
+        "headline": "Best premium-hotel beach base near Venice, but less convincing for kitchenette apartments.",
+        "summary": (
+            "Jesolo is the easiest classic beach resort base from Venice Marco Polo: direct beach hotels, promenades, restaurants, family "
+            "attractions, and quick transfers. It only scores down because the best hotel found is hotel-first, not apartment-first."
+        ),
+        "best_for": [
+            "Families who want polished beach-hotel services and the shortest Venice-direction transfer.",
+            "Grandparents who would prefer classic hotel comfort over a bungalow village.",
+        ],
+        "watchouts": [
+            "Apartment-with-kitchen evidence is weaker in the premium hotel layer.",
+            "Peak-season Jesolo can feel busy and urban compared with Bibione's resort-village products.",
+        ],
+        "travel_notes": [
+            "Strongest pure airport convenience in the Venice direction.",
+            "Use this town if the family decides premium hotel comfort matters more than self-catering certainty.",
+        ],
+        "maps_query": "Lido di Jesolo Italy",
+        "source_links": [
+            ("Jesolo tourism", "https://www.visitjesolo.it/en/"),
+            ("Falkensteiner Jesolo", "https://www.falkensteiner.com/en/hotel-spa-jesolo"),
+            ("Frankfurt -> Venice route", "https://www.flightsfrom.com/FRA-VCE"),
+        ],
+    },
+    {
+        "slug": "sottomarina-chioggia",
+        "name": "Sottomarina / Chioggia",
+        "image": commons_file_url("Sottomarina Chioggia.jpg"),
+        "headline": "Best south-of-Venice angle: lagoon town charm plus beach, but weaker resort certainty.",
+        "summary": (
+            "Chioggia/Sottomarina is the useful southern counterweight to Jesolo and Bibione. It gives a real lagoon town, beach access, and "
+            "some interesting suite/residence products, but it is less obviously built around the exact apartment-hotel-with-kids brief."
+        ),
+        "best_for": [
+            "Families who want a prettier, more local Venice-lagoon feel and are comfortable with a calmer beach rhythm.",
+            "Trips where adults value Chioggia, harbor views, and restaurants as much as kid programming.",
+        ],
+        "watchouts": [
+            "The strongest exact family-resort product is not as clean as Cavallino or Bibione.",
+            "Large holiday villages here can be very practical but have mixed review quality.",
+        ],
+        "travel_notes": [
+            "South of Venice is viable, but it is less transfer-efficient than Jesolo or Cavallino.",
+            "Best handled with a private transfer and a stay-put plan rather than repeated Venice outings.",
+        ],
+        "maps_query": "Sottomarina Chioggia Italy",
+        "source_links": [
+            ("Chioggia tourism", "https://www.chioggia.org/"),
+            ("Mosella Suite Hotel", "https://www.mosellasuitehotel.it/en/"),
+            ("Isaresidence", "https://www.isaresidence.com/en/"),
+        ],
+    },
+]
+
+
+VENICE_DIRECTION_TOWN_DETAILS = {
+    "cavallino-treporti": {
+        "family_spots": [
+            ("Junior Family Hotel & Apartments", maps_search_url("Junior Family Hotel Apartments Cavallino Treporti")),
+            ("Cavallino beach", maps_search_url("Cavallino-Treporti beach")),
+            ("Punta Sabbioni ferry to Venice", maps_search_url("Punta Sabbioni ferry Venice")),
+            ("Lio Piccolo lagoon outing", maps_search_url("Lio Piccolo Cavallino Treporti")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Panorama of wonderful European beach at Cavallino.jpg"),
+                "Cavallino beach panorama",
+                "Wikimedia Commons",
+                commons_page_url("Panorama of wonderful European beach at Cavallino.jpg"),
+            ),
+            (
+                commons_file_url("Cavallino banner.jpg"),
+                "Cavallino-Treporti coastal read",
+                "Wikimedia Commons",
+                commons_page_url("Cavallino banner.jpg"),
+            ),
+        ],
+    },
+    "bibione-venice-direction": {
+        "family_spots": [
+            ("Lino Delle Fate", maps_search_url("Lino Delle Fate Eco Village Resort Bibione")),
+            ("Villaggio Turistico Internazionale", maps_search_url("Villaggio Turistico Internazionale Bibione")),
+            ("Bibione beach", maps_search_url("Bibione beach")),
+            ("Bibione lighthouse", maps_search_url("Bibione lighthouse")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Bibione spiaggia.jpg"),
+                "Bibione beach",
+                "Wikimedia Commons",
+                commons_page_url("Bibione spiaggia.jpg"),
+            ),
+            (
+                commons_file_url("Bibione Faro.jpg"),
+                "Bibione lighthouse",
+                "Wikimedia Commons",
+                commons_page_url("Bibione Faro.jpg"),
+            ),
+        ],
+    },
+    "lido-di-jesolo": {
+        "family_spots": [
+            ("Falkensteiner Jesolo", maps_search_url("Falkensteiner Hotel Spa Jesolo")),
+            ("Lido di Jesolo beach", maps_search_url("Lido di Jesolo beach")),
+            ("Caribe Bay waterpark", maps_search_url("Caribe Bay Jesolo")),
+            ("Jesolo promenade", maps_search_url("Lido di Jesolo promenade")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Lido di Jesolo 1.jpg"),
+                "Lido di Jesolo beachfront",
+                "Wikimedia Commons",
+                commons_page_url("Lido di Jesolo 1.jpg"),
+            ),
+            (
+                commons_file_url("Jesolo Beach View.jpg"),
+                "Jesolo beach view",
+                "Wikimedia Commons",
+                commons_page_url("Jesolo Beach View.jpg"),
+            ),
+        ],
+    },
+    "sottomarina-chioggia": {
+        "family_spots": [
+            ("Mosella Suite Hotel", maps_search_url("Mosella Suite Hotel Sottomarina")),
+            ("Isaresidence / Isamar", maps_search_url("Isaresidence Isamar Holiday Village Chioggia")),
+            ("Sottomarina beach", maps_search_url("Sottomarina beach")),
+            ("Chioggia old town", maps_search_url("Chioggia old town")),
+        ],
+        "gallery": [
+            (
+                commons_file_url("Sottomarina Chioggia.jpg"),
+                "Sottomarina and Chioggia",
+                "Wikimedia Commons",
+                commons_page_url("Sottomarina Chioggia.jpg"),
+            ),
+            (
+                commons_file_url("Spiaggia sottomarina.JPG"),
+                "Sottomarina beach",
+                "Wikimedia Commons",
+                commons_page_url("Spiaggia sottomarina.JPG"),
+            ),
+        ],
+    },
+}
+
+
+VENICE_DIRECTION_HOTEL_EXTERNALS = {
+    "junior-family-hotel-apartments": {
+        "maps": maps_search_url("Junior Family Hotel Apartments Cavallino Treporti"),
+        "booking_url": booking_search_url("Junior Family Hotel Apartments Cavallino Treporti"),
+        "booking_snapshot": "Booking.com/OTA search: active apartment-hotel footprint; final room-category pairing should be checked directly before booking.",
+        "booking_praise": [
+            "The listing ecosystem supports the hotel-plus-apartments positioning rather than only standard rooms.",
+            "The low-friction Cavallino location is the main reason this leads the Venice direction.",
+        ],
+        "booking_watch": [
+            "Use Booking.com mainly as a cross-check; the clearest sample-stay provider surfaced through Tripadvisor was the official hotel site.",
+            "Exact kitchen/kitchenette details are category-dependent.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194724-d653729-Reviews-Junior_Family_Hotel_Apartments-Cavallino_Treporti_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.7/5 from 435 reviews; live sample pricing from about USD 5,520 via official hotel site.",
+        "tripadvisor_praise": [
+            "Guests repeatedly praise the friendly staff, cleanliness, beach proximity, pool, and relaxed family atmosphere.",
+            "Recent apartment reviews mention kitchen corners, larger layouts, terraces, and easy beach/restaurants nearby.",
+        ],
+        "tripadvisor_watch": [
+            "The beach is a short walk rather than a full private-resort bubble.",
+            "Apartment type matters; avoid booking a normal hotel room if self-catering is the point.",
+        ],
+    },
+    "lino-delle-fate-bibione": {
+        "maps": maps_search_url("Lino Delle Fate Eco Village Resort Bibione"),
+        "booking_url": booking_search_url("Lino Delle Fate Eco Village Resort Bibione"),
+        "booking_snapshot": "Booking.com/OTA footprint: active summer listing signal for an eco-village resort with apartment and bungalow categories.",
+        "booking_praise": [
+            "The strongest appeal is the independent bungalow/apartment setup with kitchen equipment and child-friendly outdoor space.",
+            "The product reads much more like a self-contained family stay than a standard hotel room.",
+        ],
+        "booking_watch": [
+            "The exact family-plus-grandparents pairing needs direct confirmation because the best unit mix may be two separate bungalows/units.",
+            "Dining comments are less consistently positive than the accommodation/pool comments.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194691-d15208558-Reviews-Lino_Delle_Fate_Eco_Village_Resort-Bibione_San_Michele_Al_Tagliamento_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 3.9/5 from 214 reviews; live sample pricing surfaced from about USD 7,589.",
+        "tripadvisor_praise": [
+            "Guests praise the clean resort feel, pools, spacious bungalows, quiet beach rhythm, and child-friendly layout.",
+            "The resort's nature setting and car-light layout are repeatedly more convincing than a normal beach hotel.",
+        ],
+        "tripadvisor_watch": [
+            "Some guests mention crowded breakfast/restaurant moments and service inconsistency.",
+            "Transfer time from Venice airports is the biggest strategic negative.",
+        ],
+    },
+    "villaggio-turistico-internazionale-bibione": {
+        "maps": maps_search_url("Villaggio Turistico Internazionale Bibione"),
+        "booking_url": booking_search_url("Villaggio Turistico Internazionale Bibione"),
+        "booking_snapshot": "Booking.com/OTA footprint: active partner availability surfaced in Tripadvisor's sample-stay feed.",
+        "booking_praise": [
+            "Guests like the scale of the family infrastructure: pools, beach, sports, activities, restaurants, and apartment/bungalow-style stays.",
+            "The village is especially strong if the children need structure every day.",
+        ],
+        "booking_watch": [
+            "Peak-season value and extra-cost details should be compared carefully.",
+            "This is a lively village, not a quiet design resort.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194691-d1893321-Reviews-Villaggio_Turistico_Internazionale-Bibione_San_Michele_Al_Tagliamento_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.4/5 from 1,167 reviews; sample-stay OTA offers were visible.",
+        "tripadvisor_praise": [
+            "Guests praise the beachfront setting, cleanliness, activities, waterpark/pool zones, and friendly service.",
+            "Recent comments describe houses/accommodation as equipped for a real family stay.",
+        ],
+        "tripadvisor_watch": [
+            "Value-for-money and extra costs appear as recurring cautions.",
+            "Crowds are the predictable price of choosing a high-infrastructure family village.",
+        ],
+    },
+    "mosella-suite-hotel": {
+        "maps": maps_search_url("Mosella Suite Hotel Sottomarina"),
+        "booking_url": booking_search_url("Mosella Suite Hotel Sottomarina"),
+        "booking_snapshot": "Booking.com surfaced in Tripadvisor metasearch for the sample stay, with breakfast-included availability.",
+        "booking_praise": [
+            "The hotel/residence shape is much more polished than the big south-of-Venice holiday villages.",
+            "The lagoon-plus-beach location gives adults a stronger sense of place than many resort strips.",
+        ],
+        "booking_watch": [
+            "Confirm the exact suite category before treating it as a kitchenette apartment.",
+            "This is not a kids-club resort, so do not choose it for daily animation.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g194923-d17557020-Reviews-Mosella_Suite_Hotel-Sottomarina_Chioggia_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.8/5 from 223 reviews; live sample pricing from about USD 7,264.",
+        "tripadvisor_praise": [
+            "Guests repeatedly praise spacious suites/apartments, modern design, breakfast, parking, staff, and lagoon/beach position.",
+            "Recent comments make it feel like a credible suite-hotel rather than a generic beach block.",
+        ],
+        "tripadvisor_watch": [
+            "Kitchenette evidence is less standardized than Junior or Lino.",
+            "Child programming is light compared with Bibione/Cavallino holiday villages.",
+        ],
+    },
+    "falkensteiner-hotel-spa-jesolo": {
+        "maps": maps_search_url("Falkensteiner Hotel Spa Jesolo"),
+        "booking_url": booking_search_url("Falkensteiner Hotel Spa Jesolo"),
+        "booking_snapshot": "Booking.com/OTA footprint: live sample-stay availability surfaced through Tripadvisor, with breakfast/free-cancellation messaging visible.",
+        "booking_praise": [
+            "The premium beach-hotel product is clearly active and easy to book.",
+            "It is one of the strongest Venice-direction options for grandparents who prefer classic hotel comfort.",
+        ],
+        "booking_watch": [
+            "Price is very high and apartment/kitchenette evidence is weak.",
+            "This should be booked as a hotel choice, not as a self-catering solution.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g580246-d7179326-Reviews-Falkensteiner_Hotel_Spa_Jesolo-Jesolo_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 4.3/5 from 646 reviews; live sample pricing from about USD 16,599.",
+        "tripadvisor_praise": [
+            "Guests praise the direct beach, modern rooms, pools, spa, breakfast, and family-friendly feel.",
+            "Jesolo's transfer logic is one of the easiest in the Venice pass.",
+        ],
+        "tripadvisor_watch": [
+            "Common complaints center on value, paid extras, parking/drink costs, and occasional service inconsistency.",
+            "It is weaker than the leaders on the apartment/kitchenette brief.",
+        ],
+    },
+    "isaresidence-isamar-chioggia": {
+        "maps": maps_search_url("Isaresidence Isamar Holiday Village Chioggia"),
+        "booking_url": booking_search_url("Isamar Holiday Village Chioggia"),
+        "booking_snapshot": "Booking.com/OTA search: active property ecosystem, but Tripadvisor did not return live sample-stay pricing.",
+        "booking_praise": [
+            "The appeal is all-in family infrastructure: waterpark, beach, pools, sports, restaurants, shops, and apartment/mobile-home inventory.",
+            "This is the most child-programmed south-of-Venice backup.",
+        ],
+        "booking_watch": [
+            "Do not treat it as availability-verified until the official engine confirms the exact dates and unit pairing.",
+            "Accommodation location inside the complex matters for grandparents and small children.",
+        ],
+        "tripadvisor_url": "https://www.tripadvisor.com/Hotel_Review-g1186877-d237883-Reviews-Isamar_Holiday_Village-Isola_Verde_Chioggia_Veneto.html",
+        "tripadvisor_snapshot": "Tripadvisor: 3.4/5 from 2,103 reviews; no live price returned in the sample metasearch feed.",
+        "tripadvisor_praise": [
+            "Guests praise the waterpark, kids club, private beach, activities, supermarket, and family scale.",
+            "The strongest reviews come from families who want a big stay-put holiday village.",
+        ],
+        "tripadvisor_watch": [
+            "Cleanliness, organization, service, costs, and room variability appear often enough to keep it below the leaders.",
+            "It is practical rather than beautiful.",
+        ],
+    },
+}
+
+
 FLYOUT_SHORTLIST = sorted(FLYOUT_HOTELS, key=lambda hotel: hotel["flyout_rank"])
-ALL_HOTELS = HOTELS + FLYOUT_HOTELS
-ALL_TOWNS = TOWNS + FLYOUT_TOWNS
-ALL_TOWN_DETAILS = {**TOWN_DETAILS, **FLYOUT_TOWN_DETAILS}
-ALL_HOTEL_EXTERNALS = {**HOTEL_EXTERNALS, **FLYOUT_HOTEL_EXTERNALS}
+VENICE_DIRECTION_SHORTLIST = sorted(VENICE_DIRECTION_HOTELS, key=lambda hotel: hotel["venice_rank"])
+ALL_HOTELS = HOTELS + FLYOUT_HOTELS + VENICE_DIRECTION_HOTELS
+ALL_TOWNS = TOWNS + FLYOUT_TOWNS + VENICE_DIRECTION_TOWNS
+ALL_TOWN_DETAILS = {**TOWN_DETAILS, **FLYOUT_TOWN_DETAILS, **VENICE_DIRECTION_TOWN_DETAILS}
+ALL_HOTEL_EXTERNALS = {**HOTEL_EXTERNALS, **FLYOUT_HOTEL_EXTERNALS, **VENICE_DIRECTION_HOTEL_EXTERNALS}
 
 HOTELS_BY_TOWN = {}
 for hotel in ALL_HOTELS:
@@ -2990,7 +3676,7 @@ STYLES = dedent(
       color: var(--deep);
     }
 
-    h1 { font-size: clamp(1.9rem, 3.45vw, 2.9rem); margin-top: 0.72rem; }
+    h1 { font-size: clamp(1.8rem, 3.05vw, 2.55rem); margin-top: 0.72rem; }
     h2 { font-size: clamp(1.58rem, 3.4vw, 2.2rem); }
     h3 { font-size: clamp(1.18rem, 1.9vw, 1.6rem); }
 
@@ -3517,7 +4203,7 @@ STYLES = dedent(
       }
 
       h1 {
-        font-size: clamp(2rem, 11vw, 2.85rem);
+        font-size: clamp(1.8rem, 9vw, 2.45rem);
       }
     }
     """
@@ -3606,7 +4292,7 @@ def town_link(town: dict, depth: int = 0) -> str:
 
 
 def hotel_rank_value(hotel: dict) -> int:
-    return hotel.get("rank", hotel.get("flyout_rank", 0))
+    return hotel.get("rank", hotel.get("flyout_rank", hotel.get("venice_rank", 0)))
 
 
 def hotel_rank_badge(hotel: dict) -> str:
@@ -3616,7 +4302,9 @@ def hotel_rank_badge(hotel: dict) -> str:
 def hotel_rank_text(hotel: dict) -> str:
     if "rank" in hotel:
         return f"Poland #{hotel['rank']}"
-    return f"Fly-out #{hotel['flyout_rank']}"
+    if "flyout_rank" in hotel:
+        return f"Fly-out #{hotel['flyout_rank']}"
+    return f"Venice #{hotel['venice_rank']}"
 
 
 def hotel_window(hotel: dict) -> str:
@@ -3628,7 +4316,11 @@ def hotel_nights(hotel: dict) -> int:
 
 
 def hotel_track(hotel: dict) -> str:
-    return "Poland baseline" if "rank" in hotel else "Fly-out shortlist"
+    if "rank" in hotel:
+        return "Poland baseline"
+    if "flyout_rank" in hotel:
+        return "Fly-out shortlist"
+    return "Venice direction"
 
 
 def layout(title: str, body: str, depth: int = 0) -> str:
@@ -3641,7 +4333,7 @@ def layout(title: str, body: str, depth: int = 0) -> str:
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>{escape(title)}</title>
-          <meta name="description" content="Family beach study across Poland, Croatia, and Italy, screened for apartment-friendly resort stays and child-manageable travel.">
+          <meta name="description" content="Family beach study across Poland, Croatia, Italy, France, and the Venice direction, screened for apartment-friendly resort stays and child-manageable travel.">
           <link rel="stylesheet" href="{prefix}assets/styles.css">
         </head>
         <body>
@@ -3653,6 +4345,7 @@ def layout(title: str, body: str, depth: int = 0) -> str:
               </a>
               <nav class="nav">
                 <a href="{prefix}index.html#flyout">Fly-Outs</a>
+                <a href="{prefix}index.html#venice-direction">Venice</a>
                 <a href="{prefix}index.html#shortlist">Top Picks</a>
                 <a href="{prefix}index.html#ranking">Poland Rank</a>
                 <a href="{prefix}index.html#towns">Towns</a>
@@ -3708,6 +4401,48 @@ def build_index() -> None:
     route_cards = []
     for note in FLYOUT_ROUTE_NOTES:
         route_cards.append(
+            f"""
+            <article class="note-card">
+              <strong>{escape(note["title"])}</strong>
+              <p>{escape(note["body"])}</p>
+              {render_link_chips(note["links"])}
+            </article>
+            """
+        )
+
+    venice_cards = []
+    for hotel in VENICE_DIRECTION_SHORTLIST:
+        hotel_page = hotel_link(hotel)
+        town = towns_by_slug[hotel["town_slug"]]
+        town_page = town_link(town)
+        venice_cards.append(
+            f"""
+            <article class="hotel-card">
+              {render_image(hotel["image"], hotel["name"], hotel["name"], href=hotel_page)}
+              <div class="hotel-card-body">
+                <div class="card-topline">
+                  <span class="rank">{hotel_rank_badge(hotel)}</span>
+                  <span class="signal {hotel["signal_class"]}">{escape(hotel["signal"])}</span>
+                </div>
+                <div>
+                  <h3>{escape(hotel["name"])}</h3>
+                  <p class="muted" style="margin-top:0.35rem;">{escape(hotel["town"])}</p>
+                </div>
+                <p>{escape(hotel["headline"])}</p>
+                <p class="dense-copy">{escape(hotel["travel_fit"][0])}</p>
+                <p class="dense-copy">{escape(hotel_window(hotel))} | {hotel_nights(hotel)} nights</p>
+                <div class="hero-actions" style="margin-top:0;">
+                  <a class="button secondary small" href="{hotel_page}">Hotel report</a>
+                  <a class="button secondary small" href="{town_page}">Town page</a>
+                </div>
+              </div>
+            </article>
+            """
+        )
+
+    venice_note_cards = []
+    for note in VENICE_ROUTE_NOTES:
+        venice_note_cards.append(
             f"""
             <article class="note-card">
               <strong>{escape(note["title"])}</strong>
@@ -3813,6 +4548,11 @@ def build_index() -> None:
         for hotel in FLYOUT_SHORTLIST
     )
 
+    venice_ranked_links = " ".join(
+        f'<a href="{hotel_link(hotel)}">{hotel["venice_rank"]}. {escape(hotel["name"])}</a>'
+        for hotel in VENICE_DIRECTION_SHORTLIST[:5]
+    )
+
     poland_ranked_links = " ".join(
         f'<a href="{hotel_link(hotel)}">{hotel["rank"]}. {escape(hotel["name"])}</a>'
         for hotel in HOTELS[:6]
@@ -3826,8 +4566,8 @@ def build_index() -> None:
             <span class="eyebrow">Family Vacation Study</span>
             <h1>Best Family Coast Fits</h1>
             <p class="lede">
-              Two-track pass: Poland as the no-flight baseline, plus Croatia, Italy, and France fly-out options screened for
-              Aachen-to-Frankfurt rail, child-manageable flight timing, and resort-linked apartments.
+              Poland baseline plus Croatia, France, and a new Venice-direction pass, screened for child-manageable flights,
+              beach access, and resort-linked apartment options.
             </p>
             <div class="meta-row">
               <span class="pill">{escape(RESEARCH_DATE)} research snapshot</span>
@@ -3836,8 +4576,8 @@ def build_index() -> None:
             </div>
             <div class="hero-actions">
               <a class="button" href="#flyout">Fly-out shortlist</a>
+              <a class="button secondary" href="#venice-direction">Venice direction</a>
               <a class="button secondary" href="#shortlist">Poland baseline</a>
-              <a class="button secondary" href="#towns">Town pages</a>
             </div>
           </div>
           <div class="hero-card">
@@ -3848,7 +4588,9 @@ def build_index() -> None:
               <p class="dense-copy ranking-links" style="margin-top:0.75rem;">
                 {hero_ranked_links}
               </p>
-              <p class="dense-copy" style="margin-top:0.7rem;">Croatia still leads overall; Southern France is the strongest new route add through Nice.</p>
+              <p class="dense-copy ranking-links" style="margin-top:0.7rem;">
+                Venice lane: {venice_ranked_links}
+              </p>
             </div>
           </div>
         </div>
@@ -3868,6 +4610,24 @@ def build_index() -> None:
           </div>
           <div class="grid grid-2" style="margin-top:1rem;">
             {"".join(flyout_cards)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="venice-direction">
+        <div class="wrapper">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">Venice Direction</span>
+              <h2>Near-Venice Family Resorts</h2>
+            </div>
+            <p class="section-note">Separate screen for Frankfurt -> Venice outbound plus a Treviso -> Wrocław return, with Cavallino, Bibione, Jesolo, and Chioggia checked.</p>
+          </div>
+          <div class="grid grid-3">
+            {"".join(venice_note_cards)}
+          </div>
+          <div class="grid grid-2" style="margin-top:1rem;">
+            {"".join(venice_cards)}
           </div>
         </div>
       </section>
@@ -3987,8 +4747,15 @@ def build_hotel_pages() -> None:
     for hotel in ALL_HOTELS:
         town = towns_by_slug[hotel["town_slug"]]
         external = ALL_HOTEL_EXTERNALS[hotel["slug"]]
-        index_anchor = "ranking" if "rank" in hotel else "flyout"
-        back_label = "Back to Poland ranking" if "rank" in hotel else "Back to fly-out shortlist"
+        if "rank" in hotel:
+            index_anchor = "ranking"
+            back_label = "Back to Poland ranking"
+        elif "flyout_rank" in hotel:
+            index_anchor = "flyout"
+            back_label = "Back to fly-out shortlist"
+        else:
+            index_anchor = "venice-direction"
+            back_label = "Back to Venice direction"
         town_travel_block = ""
         if town.get("travel_notes"):
             town_travel_block = (
